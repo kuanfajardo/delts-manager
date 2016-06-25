@@ -120,6 +120,12 @@
                                     <action selector="loginPressed" destination="P8K-Py-7dy" eventType="touchUpInside" id="AxS-Nj-UXJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Error: Wrong login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-zU-M2x">
+                                <rect key="frame" x="20" y="339" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.52955204398288358" green="0.11682364710210935" blue="1" alpha="0.64310344827586208" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -133,7 +139,9 @@
                             <constraint firstItem="5Lz-HM-i7D" firstAttribute="leading" secondItem="IAR-T6-lGC" secondAttribute="leading" id="OEF-Jp-3Wz"/>
                             <constraint firstItem="0gO-MF-zFn" firstAttribute="top" secondItem="N5p-wO-ziG" secondAttribute="bottom" constant="34" id="QS6-C6-Gdx"/>
                             <constraint firstAttribute="leadingMargin" secondItem="IAR-T6-lGC" secondAttribute="leading" id="RYJ-lm-Keo"/>
+                            <constraint firstItem="Umy-zU-M2x" firstAttribute="leading" secondItem="PtP-ts-RJJ" secondAttribute="leading" id="VGE-a5-XJy"/>
                             <constraint firstItem="IAR-T6-lGC" firstAttribute="top" secondItem="0gO-MF-zFn" secondAttribute="bottom" constant="81" id="XZn-vy-UsG"/>
+                            <constraint firstItem="Umy-zU-M2x" firstAttribute="top" secondItem="PtP-ts-RJJ" secondAttribute="bottom" constant="21" id="Y09-CH-KsK"/>
                             <constraint firstItem="5Lz-HM-i7D" firstAttribute="top" secondItem="IAR-T6-lGC" secondAttribute="bottom" constant="15" id="Ykw-Wu-Ok9"/>
                             <constraint firstItem="dwI-4e-5xI" firstAttribute="centerX" secondItem="5Lz-HM-i7D" secondAttribute="centerX" id="Zyf-t8-KIt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IAR-T6-lGC" secondAttribute="trailing" constant="92" id="h5T-ix-iSt"/>
@@ -141,6 +149,7 @@
                             <constraint firstItem="0gO-MF-zFn" firstAttribute="centerX" secondItem="aDZ-Ci-vFD" secondAttribute="centerX" id="lhN-5P-bqB"/>
                             <constraint firstItem="PtP-ts-RJJ" firstAttribute="top" secondItem="5Lz-HM-i7D" secondAttribute="bottom" constant="15" id="mgi-th-Yd4"/>
                             <constraint firstItem="IAR-T6-lGC" firstAttribute="centerX" secondItem="aDZ-Ci-vFD" secondAttribute="centerX" id="nDQ-uY-KNz"/>
+                            <constraint firstItem="Umy-zU-M2x" firstAttribute="trailing" secondItem="PtP-ts-RJJ" secondAttribute="trailing" id="zFR-Sg-b5j"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
