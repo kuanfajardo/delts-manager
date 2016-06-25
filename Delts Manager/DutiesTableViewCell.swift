@@ -1,5 +1,5 @@
 //
-//  DutyTableViewCell.swift
+//  DutiesTableViewCell.swift
 //  Delts Manager
 //
 //  Created by Juan Diego Fajardo on 6/24/16.
@@ -8,6 +8,10 @@
 
 import UIKit
 
-class DutyTableViewCell: UITableViewCell {
-
+class DutiesTableViewCell: UITableViewCell {
+    // MARK: Properties
+    @IBOutlet weak var dutyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
 }
