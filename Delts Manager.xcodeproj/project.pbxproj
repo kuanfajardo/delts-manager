@@ -18,6 +18,7 @@
 		564C96251D1E230E003EE50F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96241D1E230E003EE50F /* Constants.swift */; };
 		564C96271D1E3731003EE50F /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96261D1E3731003EE50F /* DutiesTableViewController.swift */; };
 		564C96291D1E374F003EE50F /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */; };
+		564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962A1D1E3AA7003EE50F /* Duty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		564C96241D1E230E003EE50F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		564C96261D1E3731003EE50F /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
 		564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
+		564C962A1D1E3AA7003EE50F /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				564C96241D1E230E003EE50F /* Constants.swift */,
 				564C96261D1E3731003EE50F /* DutiesTableViewController.swift */,
 				564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */,
+				564C962A1D1E3AA7003EE50F /* Duty.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				564C96251D1E230E003EE50F /* Constants.swift in Sources */,
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				564C96051D1E0A6A003EE50F /* SecondViewController.swift in Sources */,
+				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
 				564C96271D1E3731003EE50F /* DutiesTableViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */,
