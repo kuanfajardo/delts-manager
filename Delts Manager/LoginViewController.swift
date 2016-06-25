@@ -14,15 +14,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var debugTextLabel: UILabel!
     
     
     // MARK: Actions
     @IBAction func loginPressed() {
         // TODO: Code for login
         if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            //debugTextLabel.text = "Username or Password Empty."
+            displayError("Empty email and/or password")
         } else {
             setUIEnabled(false)
+            debugTextLabel.text = ""
             authenticateLogin()
         }
     }
@@ -52,6 +54,8 @@ class LoginViewController: UIViewController {
         if emailTextField.text! == Constants.UserInfo.email && passwordTextField.text! == Constants.UserInfo.password {
             completeLogin()
         } else {
+            // TODO: more specific debug (ie email doesnt exist, connection bad, etc.)
+            displayError("Invalid email/password combination")
             setUIEnabled(true)
         }
     }
@@ -59,6 +63,10 @@ class LoginViewController: UIViewController {
     private func completeLogin() {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("TabController") as! UITabBarController
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    private func displayError(error: String) {
+        debugTextLabel.text = error
     }
 
     /*

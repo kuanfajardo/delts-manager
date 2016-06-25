@@ -120,7 +120,7 @@
                                     <action selector="loginPressed" destination="P8K-Py-7dy" eventType="touchUpInside" id="AxS-Nj-UXJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Error: Wrong login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-zU-M2x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-zU-M2x" userLabel="Debug Text Label">
                                 <rect key="frame" x="20" y="339" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,6 +164,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="debugTextLabel" destination="Umy-zU-M2x" id="Sou-bQ-yXT"/>
                         <outlet property="emailTextField" destination="IAR-T6-lGC" id="60s-Po-gpx"/>
                         <outlet property="loginButton" destination="PtP-ts-RJJ" id="fTn-M8-VgI"/>
                         <outlet property="passwordTextField" destination="5Lz-HM-i7D" id="ivC-hk-Kcf"/>
