@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="dZW-nH-4W1">
             <objects>
-                <viewController id="P8K-Py-7dy" sceneMemberID="viewController">
+                <viewController id="P8K-Py-7dy" customClass="LoginViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N5p-wO-ziG"/>
                         <viewControllerLayoutGuide type="bottom" id="Wxn-XD-2km"/>
@@ -89,11 +89,13 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-T6-lGC">
                                 <rect key="frame" x="20" y="198" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Email Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Lz-HM-i7D">
                                 <rect key="frame" x="20" y="243" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Password Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
@@ -114,9 +116,13 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed" destination="P8K-Py-7dy" eventType="touchUpInside" id="AxS-Nj-UXJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.52955204398288358" green="0.11682364710210935" blue="1" alpha="0.64310344827586208" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Wxn-XD-2km" firstAttribute="top" secondItem="dwI-4e-5xI" secondAttribute="bottom" constant="8" symbolic="YES" id="3XF-Cn-nXG"/>
                             <constraint firstItem="PtP-ts-RJJ" firstAttribute="trailing" secondItem="5Lz-HM-i7D" secondAttribute="trailing" id="4eL-Nf-qBR"/>
@@ -144,16 +150,29 @@
                                 <exclude reference="lEE-No-Moq"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pbQ-Ro-a3B" appends="YES" id="hkN-Sa-XTb"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="IAR-T6-lGC" id="60s-Po-gpx"/>
+                        <outlet property="loginButton" destination="PtP-ts-RJJ" id="fTn-M8-VgI"/>
+                        <outlet property="passwordTextField" destination="5Lz-HM-i7D" id="ivC-hk-Kcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAz-Xb-pQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pbQ-Ro-a3B">
+                    <connections>
+                        <action selector="userDidTapView:" destination="P8K-Py-7dy" id="iCM-6a-eDj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-734" y="163"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
