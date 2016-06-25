@@ -20,13 +20,14 @@ class LoginViewController: UIViewController {
     // MARK: Actions
     @IBAction func loginPressed() {
         // TODO: Code for login
-        if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+        /*if emailTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
             displayError("Empty email and/or password")
         } else {
             setUIEnabled(false)
             debugTextLabel.text = ""
             authenticateLogin()
-        }
+        }*/
+        authenticateLogin()
     }
     
     
@@ -51,13 +52,14 @@ class LoginViewController: UIViewController {
     // MARK: Authentication
     private func authenticateLogin() {
         // TODO: Later, implement actual login procedure
-        if emailTextField.text! == Constants.UserInfo.email && passwordTextField.text! == Constants.UserInfo.password {
+        /*if emailTextField.text! == Constants.UserInfo.email && passwordTextField.text! == Constants.UserInfo.password {
             completeLogin()
         } else {
             // TODO: more specific debug (ie email doesnt exist, connection bad, etc.)
             displayError("Invalid email/password combination")
             setUIEnabled(true)
-        }
+        }*/
+        completeLogin()
     }
     
     private func completeLogin() {
