@@ -14,6 +14,8 @@
 		564C960A1D1E0A6A003EE50F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564C96091D1E0A6A003EE50F /* Assets.xcassets */; };
 		564C960D1D1E0A6A003EE50F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564C960B1D1E0A6A003EE50F /* LaunchScreen.storyboard */; };
 		564C96181D1E0A6A003EE50F /* Delts_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96171D1E0A6A003EE50F /* Delts_ManagerTests.swift */; };
+		564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96221D1E1753003EE50F /* LoginViewController.swift */; };
+		564C96251D1E230E003EE50F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96241D1E230E003EE50F /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		564C96131D1E0A6A003EE50F /* Delts ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delts ManagerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C96171D1E0A6A003EE50F /* Delts_ManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delts_ManagerTests.swift; sourceTree = "<group>"; };
 		564C96191D1E0A6A003EE50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564C96221D1E1753003EE50F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		564C96241D1E230E003EE50F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				564C96091D1E0A6A003EE50F /* Assets.xcassets */,
 				564C960B1D1E0A6A003EE50F /* LaunchScreen.storyboard */,
 				564C960E1D1E0A6A003EE50F /* Info.plist */,
+				564C96221D1E1753003EE50F /* LoginViewController.swift */,
+				564C96241D1E230E003EE50F /* Constants.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564C96251D1E230E003EE50F /* Constants.swift in Sources */,
+				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				564C96051D1E0A6A003EE50F /* SecondViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */,
