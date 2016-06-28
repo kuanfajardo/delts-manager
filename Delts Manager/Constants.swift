@@ -16,4 +16,17 @@ struct Constants {
         static let email = "jfajardo@mit.edu"
         static let password = "yeet"
     }
+    
+    enum Status: String {
+        case Completed = "Completed"
+        case Pending = "Pending"
+        case Incomplete = "Incomplete"
+        case Punted = "Punted"
+        
+        // TODO: Implement init so can use in Duty
+        /*init(status: String) {
+            
+        }*/
+    }
+    
 }
