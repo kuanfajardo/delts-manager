@@ -1,5 +1,5 @@
 //
-//  DutiesDataSourceDelegate.swift
+//  DutiesViewController.swift
 //  Delts Manager
 //
 //  Created by Juan Diego Fajardo on 6/28/16.
@@ -17,6 +17,7 @@ class DutiesViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
+        loadSampleDuties()
     }
     
     // MARK: Properties:
@@ -34,7 +35,6 @@ class DutiesViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        print("yeeet")
         let identifier = "DutyTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
         
@@ -45,7 +45,7 @@ class DutiesViewController: UIViewController, UITableViewDataSource, UITableView
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
         cell.dateLabel.text = dateFormatter.stringFromDate(duty.date)
-        print(cell)
+
         return cell
     }
     
