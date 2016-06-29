@@ -38,19 +38,35 @@ class DutiesViewController: UIViewController, UITableViewDataSource, UITableView
         let identifier = "DutyTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(red:1.0, green:0.87004060520000004, blue:0.50798801100000002, alpha:0.5)
+        } else {
+            cell.backgroundColor = UIColor(red: 1.0, green: 0.87004060520000004, blue: 0.50798801100000002, alpha: 1.0)
+        }
+
+        guard indexPath.row < duties.count else {
+            cell.dutyLabel.text = ""
+            cell.dateLabel.text = ""
+            cell.statusLabel.text = ""
+            cell.statusImageView?.image = nil
+            
+            return cell
+        }
+        
         let duty = duties[indexPath.row]
         
         cell.dutyLabel.text = duty.name
-        cell.statusLabel.text = duty.status
+        cell.statusLabel.text = ""
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.dateFormat = "EEE, MM/dd"
         cell.dateLabel.text = dateFormatter.stringFromDate(duty.date)
+        cell.statusImageView?.image = UIImage(named: "first")
 
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return duties.count
+        return 25
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
