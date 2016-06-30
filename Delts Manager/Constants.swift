@@ -29,4 +29,15 @@ struct Constants {
         }*/
     }
     
+    struct Settings {
+        static let email = "jfajardo@mit.edu"
+        static let password = "yeet"
+        static let notificationsOn = true
+        static let dutiesReminders = true
+        static let dutyReminderTime = "08:00"
+        static let puntMakeupPostedNotificationsOn = true
+        static let checkoffNotificationsOn = true
+        static let puntNotificationsOn = true
+    }
+    
 }
