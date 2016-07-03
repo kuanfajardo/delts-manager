@@ -6,8 +6,11 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PuntsTableViewCell: UITableViewCell {
-
+    // MARK: Properties
+    @IBOutlet weak var puntLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var checkoffImageView: UIImageView!
 }
