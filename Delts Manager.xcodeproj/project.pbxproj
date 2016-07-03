@@ -23,6 +23,9 @@
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
 		568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* NewDutiesViewController.swift */; };
 		5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */; };
+		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
+		568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */; };
+		568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
 		568720981D29B555001D9AF3 /* NewDutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesViewController.swift; sourceTree = "<group>"; };
 		5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesTableViewCell.swift; sourceTree = "<group>"; };
+		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
+		568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewCell.swift; sourceTree = "<group>"; };
+		568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,9 @@
 				561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */,
 				568720981D29B555001D9AF3 /* NewDutiesViewController.swift */,
 				5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */,
+				5687209E1D29C019001D9AF3 /* Punt.swift */,
+				568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */,
+				568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -233,10 +242,13 @@
 				564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
+				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
+				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */,
 				568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */,
 				564C96291D1E374F003EE50F /* DutiesTableViewCell.swift in Sources */,
+				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
 				5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,
 			);
