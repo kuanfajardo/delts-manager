@@ -21,6 +21,8 @@
 		564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962C1D22C43D003EE50F /* DutiesViewController.swift */; };
 		564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962E1D243419003EE50F /* SettingsViewController.swift */; };
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
+		568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* NewDutiesViewController.swift */; };
+		5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		564C962C1D22C43D003EE50F /* DutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesViewController.swift; sourceTree = "<group>"; };
 		564C962E1D243419003EE50F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
+		568720981D29B555001D9AF3 /* NewDutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesViewController.swift; sourceTree = "<group>"; };
+		5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				564C962E1D243419003EE50F /* SettingsViewController.swift */,
 				564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */,
 				561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */,
+				568720981D29B555001D9AF3 /* NewDutiesViewController.swift */,
+				5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -229,7 +235,9 @@
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */,
+				568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */,
 				564C96291D1E374F003EE50F /* DutiesTableViewCell.swift in Sources */,
+				5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
