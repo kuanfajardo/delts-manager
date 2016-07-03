@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96001D1E0A6A003EE50F /* AppDelegate.swift */; };
 		564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96021D1E0A6A003EE50F /* FirstViewController.swift */; };
 		564C96081D1E0A6A003EE50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564C96061D1E0A6A003EE50F /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		564C95FD1D1E0A6A003EE50F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C96001D1E0A6A003EE50F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564C96021D1E0A6A003EE50F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				564C962C1D22C43D003EE50F /* DutiesViewController.swift */,
 				564C962E1D243419003EE50F /* SettingsViewController.swift */,
 				564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */,
+				561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
 				564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */,
+				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */,
@@ -418,6 +422,7 @@
 				564C961E1D1E0A6A003EE50F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		564C961F1D1E0A6A003EE50F /* Build configuration list for PBXNativeTarget "Delts ManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +431,7 @@
 				564C96211D1E0A6A003EE50F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
