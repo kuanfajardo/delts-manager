@@ -6,8 +6,15 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class SettingsSwitchTableViewCell: UITableViewCell {
-
+    // MARK: Outlets
+    @IBOutlet weak var settingLabel: UILabel!
+    @IBOutlet weak var settingSwitch: UISwitch!
+    
+    // MARK: Actions
+    @IBAction func switchFlipped(sender: UISwitch) {
+        //
+    }
 }

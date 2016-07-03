@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let standardDefaults = NSUserDefaults.standardUserDefaults()
+        
+        let appDefaults: [String : AnyObject] = [
+            Constants.DefaultsKeys.LoggedIn : false,
+            Constants.DefaultsKeys.Email : "",
+            Constants.DefaultsKeys.Notifications : true,
+            Constants.DefaultsKeys.DutyReminders : true,
+            Constants.DefaultsKeys.DutyTime : "08:00",
+            Constants.DefaultsKeys.PuntMakupPosted : true,
+            Constants.DefaultsKeys.CheckoffNotification : true,
+            Constants.DefaultsKeys.PuntNotification : true
+        ]
+
+        standardDefaults.registerDefaults(appDefaults)
+        
         return true
     }
 
