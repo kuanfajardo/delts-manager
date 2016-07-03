@@ -9,7 +9,13 @@
 import UIKit
 
 class NewDutiesTableViewCell: UITableViewCell {
-
+    
+    // MARK: Properties
+    @IBOutlet weak var dutyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +27,5 @@ class NewDutiesTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }
