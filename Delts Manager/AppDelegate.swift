@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appDefaults: [String : AnyObject] = [
             Constants.DefaultsKeys.LoggedIn : false,
-            Constants.DefaultsKeys.Email : "",
+            // TODO: Replace email with "" and implement way of updating when user logs in
+            Constants.DefaultsKeys.Email : "jfajardo@mit.edu",
             Constants.DefaultsKeys.Notifications : true,
             Constants.DefaultsKeys.DutyReminders : true,
             Constants.DefaultsKeys.DutyTime : "08:00",
