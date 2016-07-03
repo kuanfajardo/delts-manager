@@ -39,9 +39,9 @@ class DutiesViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red:1.0, green:0.87004060520000004, blue:0.50798801100000002, alpha:0.5)
+            cell.backgroundColor = Constants.Colors.deltsLightPurple
         } else {
-            cell.backgroundColor = UIColor(red: 1.0, green: 0.87004060520000004, blue: 0.50798801100000002, alpha: 1.0)
+            cell.backgroundColor = Constants.Colors.deltsYellow
         }
 
         guard indexPath.row < duties.count else {
