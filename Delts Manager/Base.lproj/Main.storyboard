@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P8K-Py-7dy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1378" y="196"/>
+            <point key="canvasLocation" x="-1630" y="172"/>
         </scene>
         <!--Duties-->
         <scene sceneID="0gv-AS-Rw5">
@@ -78,6 +78,7 @@
                                     <outlet property="dateLabel" destination="x0h-PR-76q" id="GeQ-Ck-hdN"/>
                                     <outlet property="dutyLabel" destination="OAe-DF-Jef" id="aHI-5h-dhI"/>
                                     <outlet property="statusImageView" destination="iwF-rL-lhf" id="IVB-u6-LVo"/>
+                                    <segue destination="em0-Jz-xf3" kind="show" id="hIl-ZN-sbX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,7 +91,93 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fE4-nQ-I5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-950" y="1346"/>
+            <point key="canvasLocation" x="-804" y="934"/>
+        </scene>
+        <!--Duty-->
+        <scene sceneID="1AN-DX-i33">
+            <objects>
+                <viewController title="Duty" id="em0-Jz-xf3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aSO-gK-nAg"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXr-HN-gcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iNj-2a-2Cv">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrG-IH-Pb7">
+                                <rect key="frame" x="20" y="338" width="102.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNo-h1-8Ls">
+                                <rect key="frame" x="20" y="267" width="42" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1K-G0-MlS">
+                                <rect key="frame" x="20" y="196" width="42.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DutyFill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KD8-AN-5es">
+                                <rect key="frame" x="20" y="228" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateFill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJm-Qd-iBa">
+                                <rect key="frame" x="20" y="299" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="C5a-jL-s6A">
+                                <rect key="frame" x="213" y="0.0" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="175" id="1YL-so-Ynd"/>
+                                    <constraint firstAttribute="width" constant="175" id="TT4-NQ-nXp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DescriptionFill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItC-Ny-oHb">
+                                <rect key="frame" x="20" y="370" width="560" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="IOH-Lp-PPB"/>
+                                    <constraint firstAttribute="height" constant="90" id="Qp8-cB-zZC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ItC-Ny-oHb" firstAttribute="top" secondItem="OrG-IH-Pb7" secondAttribute="bottom" constant="8" id="7H0-eT-1rg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Y1K-G0-MlS" secondAttribute="leading" id="B71-ki-IUa"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="nNo-h1-8Ls" secondAttribute="leading" id="B85-oF-Qbo"/>
+                            <constraint firstItem="C5a-jL-s6A" firstAttribute="centerX" secondItem="iNj-2a-2Cv" secondAttribute="centerX" id="BId-ID-Y1q"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KD8-AN-5es" secondAttribute="leading" id="DaX-CS-zzz"/>
+                            <constraint firstItem="Y1K-G0-MlS" firstAttribute="top" secondItem="C5a-jL-s6A" secondAttribute="bottom" constant="21" id="EGi-Us-xe2"/>
+                            <constraint firstItem="SJm-Qd-iBa" firstAttribute="top" secondItem="nNo-h1-8Ls" secondAttribute="bottom" constant="8" id="KG5-Bk-RZE"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ItC-Ny-oHb" secondAttribute="leading" id="OOR-M6-s0n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KD8-AN-5es" secondAttribute="trailing" id="Ptd-AN-bmQ"/>
+                            <constraint firstItem="nNo-h1-8Ls" firstAttribute="top" secondItem="KD8-AN-5es" secondAttribute="bottom" constant="18" id="ZSk-rI-fub"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="SJm-Qd-iBa" secondAttribute="leading" id="koR-fZ-Hkn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ItC-Ny-oHb" secondAttribute="trailing" id="mJO-Ee-C9o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SJm-Qd-iBa" secondAttribute="trailing" id="oRl-g0-QgV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="OrG-IH-Pb7" secondAttribute="leading" id="qmo-DC-cqM"/>
+                            <constraint firstItem="KD8-AN-5es" firstAttribute="top" secondItem="Y1K-G0-MlS" secondAttribute="bottom" constant="8" id="rdX-Ps-pla"/>
+                            <constraint firstItem="C5a-jL-s6A" firstAttribute="top" secondItem="aSO-gK-nAg" secondAttribute="bottom" id="vYA-J4-e40"/>
+                            <constraint firstItem="OrG-IH-Pb7" firstAttribute="top" secondItem="SJm-Qd-iBa" secondAttribute="bottom" constant="18" id="vpZ-8V-mkQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbr-Fp-XrT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-804" y="1696"/>
         </scene>
         <!--Duties-->
         <scene sceneID="PnH-9u-RQ3">
@@ -111,7 +198,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zT3-ms-4bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1650" y="1238"/>
+            <point key="canvasLocation" x="-804" y="172"/>
         </scene>
         <!--Settings-->
         <scene sceneID="koD-rc-f03">
@@ -208,7 +295,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7la-B3-XJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="1346"/>
+            <point key="canvasLocation" x="810" y="934"/>
         </scene>
         <!--Settings-->
         <scene sceneID="cNj-6w-3LX">
@@ -230,7 +317,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tY-oy-EMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="1385"/>
+            <point key="canvasLocation" x="810" y="172"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="dZW-nH-4W1">
@@ -344,7 +431,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-400" y="-1337"/>
+            <point key="canvasLocation" x="-400" y="-1537"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -366,7 +453,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400" y="-557"/>
+            <point key="canvasLocation" x="-400" y="-737"/>
         </scene>
         <!--Punts-->
         <scene sceneID="U0c-ev-XKe">
@@ -432,7 +519,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azw-jD-AfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056" y="130"/>
+            <point key="canvasLocation" x="6" y="934"/>
         </scene>
         <!--Punts-->
         <scene sceneID="NxO-cI-cyv">
@@ -453,7 +540,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joz-Yd-zMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="130"/>
+            <point key="canvasLocation" x="6" y="172"/>
         </scene>
     </scenes>
     <resources>
