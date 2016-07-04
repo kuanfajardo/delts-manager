@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */; };
+		560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765711D2A47F6008D3337 /* PuntDetailViewController.swift */; };
 		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96001D1E0A6A003EE50F /* AppDelegate.swift */; };
 		564C96031D1E0A6A003EE50F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96021D1E0A6A003EE50F /* FirstViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutyDetailViewController.swift; sourceTree = "<group>"; };
+		560765711D2A47F6008D3337 /* PuntDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntDetailViewController.swift; sourceTree = "<group>"; };
 		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		564C95FD1D1E0A6A003EE50F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C96001D1E0A6A003EE50F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */,
 				568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */,
 				5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */,
+				560765711D2A47F6008D3337 /* PuntDetailViewController.swift */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
 				564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
+				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
