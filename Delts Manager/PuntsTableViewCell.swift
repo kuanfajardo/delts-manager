@@ -10,6 +10,9 @@ import UIKit
 
 class PuntsTableViewCell: UITableViewCell {
     // MARK: Properties
+    var punt: Punt?
+    
+    // MARK: Outlets
     @IBOutlet weak var puntLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkoffImageView: UIImageView!
