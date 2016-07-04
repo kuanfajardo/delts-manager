@@ -16,11 +16,6 @@ class DutyDetailViewController: UIViewController {
     @IBOutlet weak var statusImageView: UIImageView!
     
     // MARK: Properties
-    var dutyText = ""
-    var dateText = ""
-    var descriptionText = ""
-    var image = UIImage()
-    
     var duty: Duty?
     
     @IBAction func statusImagePressed(sender: UIButton) {
