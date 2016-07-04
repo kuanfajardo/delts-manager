@@ -54,6 +54,7 @@ class NewDutiesViewController: UITableViewController {
         cell.duty = duty
         cell.dutyLabel.text = duty.name
         cell.dateLabel.text = duty.dateString
+        // TODO: Real
         cell.statusImageView?.image = UIImage(named: "first")
         cell.selectionStyle = .Gray
         
