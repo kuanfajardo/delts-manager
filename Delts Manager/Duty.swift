@@ -13,6 +13,11 @@ class Duty: NSObject, NSCoding {
     
     var name: String
     var date: NSDate
+    var dateString: String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEE, MM/dd"
+        return dateFormatter.stringFromDate(date)
+    }
     // TODO: implement as Const.Status (init all three methods below)
     var status: String
     
