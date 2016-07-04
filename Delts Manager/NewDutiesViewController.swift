@@ -44,17 +44,18 @@ class NewDutiesViewController: UITableViewController {
             cell.dutyLabel.text = ""
             cell.dateLabel.text = ""
             cell.statusImageView?.image = nil
+            cell.userInteractionEnabled = false
             
             return cell
         }
         
         let duty = duties[indexPath.row]
         
+        cell.duty = duty
         cell.dutyLabel.text = duty.name
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, MM/dd"
-        cell.dateLabel.text = dateFormatter.stringFromDate(duty.date)
+        cell.dateLabel.text = duty.dateString
         cell.statusImageView?.image = UIImage(named: "first")
+        cell.selectionStyle = .Gray
         
         return cell
     }
@@ -68,14 +69,15 @@ class NewDutiesViewController: UITableViewController {
     }
 
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Go to detail duty view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let controller = segue.destinationViewController as! DutyDetailViewController
+        let cell = sender as! NewDutiesTableViewCell
+ 
+        controller.duty = cell.duty
     }
-    */
 
 }
