@@ -19,9 +19,9 @@ class PuntsTableViewController: UITableViewController {
     var punts = [Punt]()
     
     func loadSamplePunts() {
-        let punt1 = Punt(name: "Pantry", date: NSDate(), status: "Completed")
-        let punt2 = Punt(name: "Pantry", date: NSDate(), status: "Incomplete")
-        let punt3 = Punt(name: "Kitchen", date: NSDate(), status: "Pending")
+        let punt1 = Punt(name: "Pantry", date: NSDate(), givenBy: "Erick Friis", status: "Completed")
+        let punt2 = Punt(name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: "Incomplete")
+        let punt3 = Punt(name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: "Pending")
         
         punts += [punt1, punt2, punt3]
     }
@@ -49,10 +49,10 @@ class PuntsTableViewController: UITableViewController {
         
         let punt = punts[indexPath.row]
         
+        cell.punt = punt
         cell.puntLabel.text = punt.name
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, MM/dd"
-        cell.dateLabel.text = dateFormatter.stringFromDate(punt.date)
+        cell.dateLabel.text = punt.dateString
+        // TODO: Real
         cell.checkoffImageView?.image = UIImage(named: "first")
         
         return cell
@@ -65,5 +65,16 @@ class PuntsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
+    // MARK: - Navigation
+    
+    // Go to detail punt view
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let controller = segue.destinationViewController as! PuntDetailViewController
+        let cell = sender as! PuntsTableViewCell
+        
+        controller.punt = cell.punt
+    }
+    
 
 }
