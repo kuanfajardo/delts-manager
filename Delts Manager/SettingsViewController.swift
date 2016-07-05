@@ -35,6 +35,7 @@ class SettingsTableViewController: UITableViewController {
         self.settings = [
                 "Account Settings" : [
                     ("Email", "Text", Constants.defaults.valueForKey(Constants.DefaultsKeys.Email)!),
+                    ("Change Password", "Text", "")
                 ],
                 "Notifications" : [
                     ("Toggle Notifications", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.Notifications)!),
@@ -63,6 +64,10 @@ class SettingsTableViewController: UITableViewController {
             
             cell.settingLabel.text = settingName
             cell.descriptionLabel.text = (settingDescription as! String)
+            
+            if settingName == "Email" {
+                cell.userInteractionEnabled = false
+            }
             
             return cell
             
@@ -102,12 +107,29 @@ class SettingsTableViewController: UITableViewController {
         header.textLabel?.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            performSegueWithIdentifier("ChangePassword", sender: self)
+        } else {
+            let alertController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            alertController.addAction(UIAlertAction(title: "Logout", style: .Default, handler: { (alert: UIAlertAction) in
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                return
+            }))
+            
+            self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
     
     func switchFlipped(sender: UISwitch) {
-        print(keys[sender.tag])
         Constants.defaults.setBool(sender.on, forKey: keys[sender.tag])
-        print(Constants.defaults.valueForKey(keys[sender.tag]))
         Constants.defaults.synchronize()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //
     }
     
     

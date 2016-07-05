@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P8K-Py-7dy">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -319,10 +319,134 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="SeO-hT-cWh"/>
+                    <connections>
+                        <segue destination="LMS-ir-dOa" kind="presentation" identifier="ChangePassword" id="P1L-u9-aLA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7la-B3-XJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="810" y="934"/>
+        </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="QLz-Tc-y9s">
+            <objects>
+                <viewController id="LMS-ir-dOa" customClass="ChangePasswordViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4qr-ci-NjD"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Ek-vY-511"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NQH-eN-PQP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i07-ZJ-UDA">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="barTintColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Change Password" id="7tn-pS-mih">
+                                        <barButtonItem key="backBarButtonItem" title="Cancel" id="vEe-tw-neP"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="dvO-lJ-XpC">
+                                            <color key="tintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="cancel:" destination="LMS-ir-dOa" id="Aau-J5-2uf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb8-Dz-qNN">
+                                <rect key="frame" x="20" y="91" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repeat Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFz-bk-obU">
+                                <rect key="frame" x="20" y="167" width="130.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-vX-N5g">
+                                <rect key="frame" x="20" y="120" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="New Password"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOm-yK-Fih">
+                                <rect key="frame" x="20" y="196" width="560" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Repeat Password"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojF-uk-aXl">
+                                <rect key="frame" x="20" y="256" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="LMS-ir-dOa" eventType="touchUpInside" id="h0I-Xg-u52"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZK-s0-Ue9">
+                                <rect key="frame" x="20" y="316" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Gux-us-Pk8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="DFz-bk-obU" firstAttribute="top" secondItem="KhE-vX-N5g" secondAttribute="bottom" constant="17" id="0SX-Kg-UMp"/>
+                            <constraint firstItem="KhE-vX-N5g" firstAttribute="leading" secondItem="NQH-eN-PQP" secondAttribute="leadingMargin" id="36z-sk-63Q"/>
+                            <constraint firstItem="wOm-yK-Fih" firstAttribute="centerX" secondItem="NQH-eN-PQP" secondAttribute="centerX" id="7gH-Rz-dzt"/>
+                            <constraint firstItem="DFz-bk-obU" firstAttribute="leading" secondItem="NQH-eN-PQP" secondAttribute="leadingMargin" id="Aum-1U-QKt"/>
+                            <constraint firstItem="i07-ZJ-UDA" firstAttribute="top" secondItem="4qr-ci-NjD" secondAttribute="bottom" id="EKL-mF-7ku"/>
+                            <constraint firstItem="ojF-uk-aXl" firstAttribute="centerX" secondItem="NQH-eN-PQP" secondAttribute="centerX" id="Kbi-SI-rmh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pZK-s0-Ue9" secondAttribute="leading" id="NrJ-mP-0LY"/>
+                            <constraint firstItem="KhE-vX-N5g" firstAttribute="centerX" secondItem="NQH-eN-PQP" secondAttribute="centerX" id="O2a-Vq-0Ph"/>
+                            <constraint firstItem="i07-ZJ-UDA" firstAttribute="leading" secondItem="NQH-eN-PQP" secondAttribute="leadingMargin" constant="-20" id="S0y-vB-Oqi"/>
+                            <constraint firstItem="KhE-vX-N5g" firstAttribute="top" secondItem="Jb8-Dz-qNN" secondAttribute="bottom" constant="8" id="WaR-KU-MnY"/>
+                            <constraint firstItem="ojF-uk-aXl" firstAttribute="top" secondItem="wOm-yK-Fih" secondAttribute="bottom" constant="30" id="Yxy-lK-aFq"/>
+                            <constraint firstItem="pZK-s0-Ue9" firstAttribute="centerX" secondItem="NQH-eN-PQP" secondAttribute="centerX" id="aAO-Lb-LKt"/>
+                            <constraint firstItem="Jb8-Dz-qNN" firstAttribute="top" secondItem="i07-ZJ-UDA" secondAttribute="bottom" constant="27" id="e6B-MF-XB8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ojF-uk-aXl" secondAttribute="trailing" id="f6B-kl-BXS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pZK-s0-Ue9" secondAttribute="trailing" id="lBv-bi-0wL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Jb8-Dz-qNN" secondAttribute="leading" id="qAl-7K-Ywk"/>
+                            <constraint firstItem="pZK-s0-Ue9" firstAttribute="top" secondItem="ojF-uk-aXl" secondAttribute="bottom" constant="30" id="rFx-4l-CLE"/>
+                            <constraint firstItem="i07-ZJ-UDA" firstAttribute="centerX" secondItem="NQH-eN-PQP" secondAttribute="centerX" id="s7u-R3-fa2"/>
+                            <constraint firstItem="wOm-yK-Fih" firstAttribute="top" secondItem="DFz-bk-obU" secondAttribute="bottom" constant="8" id="tt8-6e-Zsr"/>
+                            <constraint firstItem="wOm-yK-Fih" firstAttribute="leading" secondItem="NQH-eN-PQP" secondAttribute="leadingMargin" id="uFw-ke-Kiy"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4VM-OO-75B" appends="YES" id="kbP-yh-x7I"/>
+                        </connections>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="debugTextLabel" destination="pZK-s0-Ue9" id="4Mk-lg-gMm"/>
+                        <outlet property="newPasswordField" destination="KhE-vX-N5g" id="WuU-CG-cqJ"/>
+                        <outlet property="okButton" destination="ojF-uk-aXl" id="Gab-2m-ViI"/>
+                        <outlet property="repeatPasswordField" destination="wOm-yK-Fih" id="XXu-kK-iCT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9M-kD-hNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4VM-OO-75B">
+                    <connections>
+                        <action selector="userDidTapView:" destination="LMS-ir-dOa" id="hfl-mE-iii"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="810" y="1636"/>
         </scene>
         <!--Settings-->
         <scene sceneID="cNj-6w-3LX">
