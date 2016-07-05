@@ -34,6 +34,7 @@ struct Constants {
     // TODO: Move to settings view controller viewDidLoad
     struct Settings {
         static var email = "jfajardo@mit.edu"
+        static var password = "yeet" // FOR DEBUG ONLY
         static var notificationsOn = true
         static var dutiesReminders = true
         static var dutyReminderTime = "08:00"
