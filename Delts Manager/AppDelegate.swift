@@ -27,7 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.DutyTime : "08:00",
             Constants.DefaultsKeys.PuntMakupPosted : true,
             Constants.DefaultsKeys.CheckoffNotification : true,
-            Constants.DefaultsKeys.PuntNotification : true
+            Constants.DefaultsKeys.PuntNotification : true,
+            Constants.DefaultsKeys.CheckoffEnabled : false,
+            Constants.DefaultsKeys.Punts : 0,
+            Constants.DefaultsKeys.ScheduleEnabled : false
         ]
 
         standardDefaults.registerDefaults(appDefaults)
