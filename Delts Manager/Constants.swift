@@ -52,6 +52,9 @@ struct Constants {
         static let PuntMakupPosted = "Punt Makeup Posted Notifications"
         static let CheckoffNotification = "Checkoff Notifications"
         static let PuntNotification = "Punt Notifications"
+        static let CheckoffEnabled = "Checkoff Enabled"
+        static let Punts = "Punts"
+        static let ScheduleEnabled = "Schedule Enabled"
     }
 
     
@@ -66,5 +69,12 @@ struct Constants {
     struct Fonts {
         static let systemThin = "HelveticaNeue-Thin"
         static let systemLight = "HelveticaNeue-Light"
+    }
+    
+    struct Photos {
+        static let Overview = "OverviewIcon"
+        static let Duty = "DutyIcon"
+        static let Punt = "PuntIcon"
+        static let Settings = "SettingsIcon"
     }
 }
