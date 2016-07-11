@@ -52,6 +52,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     func updatePassword() {
+        // TODO: Implement real functionality
         Constants.Settings.password = newPasswordField.text!
     }
     
