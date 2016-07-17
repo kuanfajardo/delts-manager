@@ -31,7 +31,7 @@ class DutiesTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let identifier = "DutyTableViewCell"
+        let identifier = Constants.Identifiers.TableViewCells.DutyTableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
         
         if indexPath.row % 2 == 0 {

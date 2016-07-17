@@ -533,13 +533,11 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhE-vX-N5g">
                                 <rect key="frame" x="20" y="120" width="560" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="New Password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wOm-yK-Fih">
                                 <rect key="frame" x="20" y="196" width="560" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="Repeat Password"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
@@ -656,13 +654,11 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAR-T6-lGC">
                                 <rect key="frame" x="20" y="198" width="560" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="Email Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Lz-HM-i7D">
                                 <rect key="frame" x="20" y="243" width="560" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="Password Field"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>

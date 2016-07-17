@@ -30,7 +30,7 @@ class PuntsTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let identifier = "PuntTableViewCell"
+        let identifier = Constants.Identifiers.TableViewCells.PuntTableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
         
         if indexPath.row % 2 == 0 {

@@ -59,7 +59,7 @@ class SettingsTableViewController: UITableViewController {
         
         switch settingType {
         case "Text":
-            let identifier = "SettingsText"
+            let identifier = Constants.Identifiers.TableViewCells.SettingsTextCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! SettingsTextTableViewCell
             
             cell.settingLabel.text = settingName
@@ -72,7 +72,7 @@ class SettingsTableViewController: UITableViewController {
             return cell
             
         case "Switch":
-            let identifier = "SettingsSwitch"
+            let identifier = Constants.Identifiers.TableViewCells.SettingsSwitchCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! SettingsSwitchTableViewCell
             
             cell.settingLabel.text = settingName
@@ -84,7 +84,7 @@ class SettingsTableViewController: UITableViewController {
             
             return cell
         default:
-            return tableView.dequeueReusableCellWithIdentifier("SettingsText")!
+            return tableView.dequeueReusableCellWithIdentifier(Constants.Identifiers.TableViewCells.SettingsTextCell)!
         }
         
     }
@@ -109,7 +109,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 && indexPath.row == 1 {
-            performSegueWithIdentifier("ChangePassword", sender: self)
+            performSegueWithIdentifier(Constants.Identifiers.Segues.ChangePasswordSegue, sender: self)
         } else {
             let alertController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))

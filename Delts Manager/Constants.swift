@@ -77,4 +77,29 @@ struct Constants {
         static let Punt = "PuntIcon"
         static let Settings = "SettingsIcon"
     }
+    
+    struct Identifiers {
+        
+        struct TableViewCells {
+            static let DutyTableViewCell = "DutyTableViewCell"
+            static let PuntTableViewCell = "PuntTableViewCell"
+            static let SettingsTextCell = "SettingsText"
+            static let SettingsSwitchCell = "SettingsSwitch"
+        }
+        
+        struct Controllers {
+            static let TabController = "TabController"
+        }
+        
+        struct Segues {
+            static let ChangePasswordSegue = "ChangePassword"
+        }
+        
+        struct TextFields {
+            static let EmailField = "Email Field"
+            static let PasswordField = "Password Field"
+            static let NewPasswordField = "New Password"
+            static let RepeatPasswordField = "Repeat Password"
+        }
+    }
 }

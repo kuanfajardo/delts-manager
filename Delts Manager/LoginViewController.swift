@@ -39,6 +39,9 @@ class LoginViewController: UIViewController {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         
+        self.emailTextField.accessibilityIdentifier = Constants.Identifiers.TextFields.EmailField
+        self.passwordTextField.accessibilityIdentifier = Constants.Identifiers.TextFields.PasswordField
+
         // TODO: make status bar white
         
         
@@ -88,10 +91,10 @@ extension LoginViewController: UITextFieldDelegate {
     // MARK: Text Field Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField.accessibilityIdentifier! {
-            case "Email Field":
+            case Constants.Identifiers.TextFields.EmailField:
                 textField.resignFirstResponder()
                 passwordTextField.becomeFirstResponder()
-            case "Password Field":
+            case Constants.Identifiers.TextFields.PasswordField:
                 textField.resignFirstResponder()
                 loginPressed()
             default:
