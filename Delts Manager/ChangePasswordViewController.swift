@@ -20,7 +20,7 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func buttonPressed(sender: UIButton) {
+    @IBAction func buttonPressed() {
         
         guard ((newPasswordField.text?.characters.count) > 8) else {
             displayError("Password too short")
@@ -45,7 +45,16 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
     
     // MARK: Life Cycle
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.newPasswordField.delegate = self
+        self.repeatPasswordField.delegate = self
+        
+        self.newPasswordField.accessibilityIdentifier = Constants.Identifiers.TextFields.NewPasswordField
+        self.repeatPasswordField.accessibilityIdentifier = Constants.Identifiers.TextFields.RepeatPasswordField
+        
+    }
     
     func displayError(error: String) {
         self.debugTextLabel.text = error
@@ -60,14 +69,14 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     // MARK: Text Field Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField.accessibilityIdentifier! {
-        case "New Password":
-            newPasswordField.resignFirstResponder()
-            repeatPasswordField.becomeFirstResponder()
-        case "Repeat Password":
-            repeatPasswordField.resignFirstResponder()
-            updatePassword()
-        default:
-            break
+            case Constants.Identifiers.TextFields.NewPasswordField:
+                textField.resignFirstResponder()
+                repeatPasswordField.becomeFirstResponder()
+            case Constants.Identifiers.TextFields.RepeatPasswordField:
+                textField.resignFirstResponder()
+                buttonPressed()
+            default:
+                break
         }
         return true
     }
