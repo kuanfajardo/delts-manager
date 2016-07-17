@@ -21,7 +21,7 @@ class DutyDetailViewController: UIViewController {
     @IBAction func statusImagePressed(sender: UIButton) {
         // TODO: complete when available
         // TODO: make button area smaller
-        print("status pressed")
+        print("duty status pressed")
     }
     
     // MARK: Life Cycle

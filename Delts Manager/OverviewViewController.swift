@@ -19,15 +19,15 @@ class OverviewViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func checkoffPressed() {
-        //
+        print("checkoff button pressed")
     }
     
     @IBAction func puntMakeupPressed() {
-        //
+        print("punt button pressed")
     }
     
     @IBAction func schedulePressed() {
-        //
+        print("schedule button pressed")
     }
     
     // MARK: Life Cycle
