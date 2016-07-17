@@ -1,5 +1,5 @@
 //
-//  NewDutiesViewController.swift
+//  DutiesTableViewController.swift
 //  Delts Manager
 //
 //  Created by Juan Diego Fajardo on 7/3/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewDutiesViewController: UITableViewController {
+class DutiesTableViewController: UITableViewController {
 
     // MARK: Life Cycle
     override func viewDidLoad() {
