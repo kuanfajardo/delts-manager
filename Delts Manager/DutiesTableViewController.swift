@@ -31,8 +31,8 @@ class DutiesTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let identifier = "NewDutyTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! NewDutiesTableViewCell
+        let identifier = "DutyTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
         
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = Constants.Colors.deltsLightPurple
@@ -76,7 +76,7 @@ class DutiesTableViewController: UITableViewController {
     // Go to detail duty view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let controller = segue.destinationViewController as! DutyDetailViewController
-        let cell = sender as! NewDutiesTableViewCell
+        let cell = sender as! DutiesTableViewCell
  
         controller.duty = cell.duty
     }
