@@ -19,13 +19,11 @@
 		564C96181D1E0A6A003EE50F /* Delts_ManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96171D1E0A6A003EE50F /* Delts_ManagerTests.swift */; };
 		564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96221D1E1753003EE50F /* LoginViewController.swift */; };
 		564C96251D1E230E003EE50F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96241D1E230E003EE50F /* Constants.swift */; };
-		564C96291D1E374F003EE50F /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */; };
 		564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962A1D1E3AA7003EE50F /* Duty.swift */; };
-		564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962C1D22C43D003EE50F /* DutiesViewController.swift */; };
 		564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962E1D243419003EE50F /* SettingsViewController.swift */; };
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
-		568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* NewDutiesViewController.swift */; };
-		5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */; };
+		568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* DutiesTableViewController.swift */; };
+		5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */; };
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
 		568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */; };
 		568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */; };
@@ -58,13 +56,11 @@
 		564C96191D1E0A6A003EE50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		564C96221D1E1753003EE50F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		564C96241D1E230E003EE50F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		564C962A1D1E3AA7003EE50F /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
-		564C962C1D22C43D003EE50F /* DutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesViewController.swift; sourceTree = "<group>"; };
 		564C962E1D243419003EE50F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
-		568720981D29B555001D9AF3 /* NewDutiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesViewController.swift; sourceTree = "<group>"; };
-		5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDutiesTableViewCell.swift; sourceTree = "<group>"; };
+		568720981D29B555001D9AF3 /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
+		5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 		568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewCell.swift; sourceTree = "<group>"; };
 		568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +84,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56487A401D3C3F6900825A0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				564C962A1D1E3AA7003EE50F /* Duty.swift */,
+				5687209E1D29C019001D9AF3 /* Punt.swift */,
+				564C96241D1E230E003EE50F /* Constants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		56487A411D3C3FF000825A0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56487A461D3C409E00825A0F /* Login */,
+				56487A421D3C400700825A0F /* Overview Tab */,
+				56487A431D3C405600825A0F /* Duties Tab */,
+				56487A441D3C407000825A0F /* Punts Tab */,
+				56487A451D3C408800825A0F /* Settings Tab */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		56487A421D3C400700825A0F /* Overview Tab */ = {
+			isa = PBXGroup;
+			children = (
+				560765751D2C059B008D3337 /* OverviewViewController.swift */,
+			);
+			name = "Overview Tab";
+			sourceTree = "<group>";
+		};
+		56487A431D3C405600825A0F /* Duties Tab */ = {
+			isa = PBXGroup;
+			children = (
+				568720981D29B555001D9AF3 /* DutiesTableViewController.swift */,
+				5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */,
+				5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */,
+			);
+			name = "Duties Tab";
+			sourceTree = "<group>";
+		};
+		56487A441D3C407000825A0F /* Punts Tab */ = {
+			isa = PBXGroup;
+			children = (
+				568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */,
+				568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */,
+				560765711D2A47F6008D3337 /* PuntDetailViewController.swift */,
+			);
+			name = "Punts Tab";
+			sourceTree = "<group>";
+		};
+		56487A451D3C408800825A0F /* Settings Tab */ = {
+			isa = PBXGroup;
+			children = (
+				564C962E1D243419003EE50F /* SettingsViewController.swift */,
+				564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */,
+				561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */,
+				560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */,
+			);
+			name = "Settings Tab";
+			sourceTree = "<group>";
+		};
+		56487A461D3C409E00825A0F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				564C96221D1E1753003EE50F /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		56487A471D3C40B300825A0F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				564C96061D1E0A6A003EE50F /* Main.storyboard */,
+				564C96091D1E0A6A003EE50F /* Assets.xcassets */,
+				564C960B1D1E0A6A003EE50F /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		56487A481D3C40C700825A0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				564C960E1D1E0A6A003EE50F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		56487A491D3C40DC00825A0F /* Delts Manager */ = {
+			isa = PBXGroup;
+			children = (
+				564C96001D1E0A6A003EE50F /* AppDelegate.swift */,
+			);
+			name = "Delts Manager";
+			sourceTree = "<group>";
+		};
 		564C95F41D1E0A6A003EE50F = {
 			isa = PBXGroup;
 			children = (
@@ -109,28 +200,11 @@
 		564C95FF1D1E0A6A003EE50F /* Delts Manager */ = {
 			isa = PBXGroup;
 			children = (
-				564C96001D1E0A6A003EE50F /* AppDelegate.swift */,
-				564C96061D1E0A6A003EE50F /* Main.storyboard */,
-				564C96091D1E0A6A003EE50F /* Assets.xcassets */,
-				564C960B1D1E0A6A003EE50F /* LaunchScreen.storyboard */,
-				564C960E1D1E0A6A003EE50F /* Info.plist */,
-				564C96221D1E1753003EE50F /* LoginViewController.swift */,
-				564C96241D1E230E003EE50F /* Constants.swift */,
-				564C96281D1E374F003EE50F /* DutiesTableViewCell.swift */,
-				564C962A1D1E3AA7003EE50F /* Duty.swift */,
-				564C962C1D22C43D003EE50F /* DutiesViewController.swift */,
-				564C962E1D243419003EE50F /* SettingsViewController.swift */,
-				564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */,
-				561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */,
-				568720981D29B555001D9AF3 /* NewDutiesViewController.swift */,
-				5687209A1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift */,
-				5687209E1D29C019001D9AF3 /* Punt.swift */,
-				568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */,
-				568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */,
-				5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */,
-				560765711D2A47F6008D3337 /* PuntDetailViewController.swift */,
-				560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */,
-				560765751D2C059B008D3337 /* OverviewViewController.swift */,
+				56487A491D3C40DC00825A0F /* Delts Manager */,
+				56487A411D3C3FF000825A0F /* Controller */,
+				56487A401D3C3F6900825A0F /* Model */,
+				56487A471D3C40B300825A0F /* Assets */,
+				56487A481D3C40C700825A0F /* Supporting Files */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -250,7 +324,6 @@
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
-				564C962D1D22C43D003EE50F /* DutiesViewController.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
@@ -258,10 +331,9 @@
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
-				568720991D29B555001D9AF3 /* NewDutiesViewController.swift in Sources */,
-				564C96291D1E374F003EE50F /* DutiesTableViewCell.swift in Sources */,
+				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
 				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
-				5687209B1D29B67E001D9AF3 /* NewDutiesTableViewCell.swift in Sources */,
+				5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
