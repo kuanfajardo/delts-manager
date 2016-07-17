@@ -43,6 +43,7 @@ class PuntsTableViewController: UITableViewController {
             cell.puntLabel.text = ""
             cell.dateLabel.text = ""
             cell.checkoffImageView?.image = nil
+            cell.userInteractionEnabled = false
             
             return cell
         }
