@@ -76,6 +76,7 @@ struct Constants {
         static let Duty = "DutyIcon"
         static let Punt = "PuntIcon"
         static let Settings = "SettingsIcon"
+        static let BlackCircle = "first"
     }
     
     struct Identifiers {
@@ -85,6 +86,8 @@ struct Constants {
             static let PuntTableViewCell = "PuntTableViewCell"
             static let SettingsTextCell = "SettingsText"
             static let SettingsSwitchCell = "SettingsSwitch"
+            static let DutySelectorCell = "DutySelector"
+            static let PlainCell = "Plain"
         }
         
         struct Controllers {

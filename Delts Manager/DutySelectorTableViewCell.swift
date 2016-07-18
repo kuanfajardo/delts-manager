@@ -6,8 +6,18 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class DutySelectorTableViewCell: UITableViewCell {
-
+    
+    // MARK: Properties
+    var duty: Duty?
+    
+    // MARK: Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var mondayButton: UIButton!
+    @IBOutlet weak var tuesdayButton: UIButton!
+    @IBOutlet weak var wednesdayButton: UIButton!
+    @IBOutlet weak var thursdayButton: UIButton!
+    @IBOutlet weak var fridayButton: UIButton!
 }
