@@ -13,6 +13,7 @@
 		560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765751D2C059B008D3337 /* OverviewViewController.swift */; };
 		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */; };
+		56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */; };
 		564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96001D1E0A6A003EE50F /* AppDelegate.swift */; };
 		564C96081D1E0A6A003EE50F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 564C96061D1E0A6A003EE50F /* Main.storyboard */; };
 		564C960A1D1E0A6A003EE50F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564C96091D1E0A6A003EE50F /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		560765751D2C059B008D3337 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewController.swift; sourceTree = "<group>"; };
+		56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewCell.swift; sourceTree = "<group>"; };
 		564C95FD1D1E0A6A003EE50F /* Delts Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Delts Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		564C96001D1E0A6A003EE50F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		564C96071D1E0A6A003EE50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				560765751D2C059B008D3337 /* OverviewViewController.swift */,
 				56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */,
+				56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */,
 			);
 			name = "Overview Tab";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
+				56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */,
 				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
 				5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,
