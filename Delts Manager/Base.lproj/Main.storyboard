@@ -51,6 +51,7 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_circle" translatesAutoresizingMaskIntoConstraints="NO" id="8pf-wW-HXb">
                                         <rect key="frame" x="20" y="8" width="100" height="100"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Punt Makeup"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Ju4-9Y-6Rf"/>
                                             <constraint firstAttribute="width" constant="100" id="iMg-eb-eWP"/>
@@ -80,6 +81,7 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_circle" translatesAutoresizingMaskIntoConstraints="NO" id="23o-vF-fe2">
                                         <rect key="frame" x="22" y="8" width="100" height="100"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Schedule"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="5eT-kr-X98"/>
                                             <constraint firstAttribute="width" constant="100" id="8kg-BD-p7f"/>
@@ -124,12 +126,14 @@
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_circle" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-d4-IHk">
                                         <rect key="frame" x="20" y="8" width="100" height="100"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="Checkoff"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="VV6-Fl-QNc"/>
                                             <constraint firstAttribute="height" constant="100" id="n0i-Lg-yVf"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <accessibility key="accessibilityConfiguration" identifier="View One"/>
                                 <constraints>
                                     <constraint firstItem="q3a-d4-IHk" firstAttribute="leading" secondItem="iU0-uy-ruB" secondAttribute="leading" constant="20" id="5QD-R0-ddZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Uc9-Oq-V9b" secondAttribute="trailing" id="5QM-8j-LIM"/>
@@ -144,6 +148,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Full"/>
                         <constraints>
                             <constraint firstItem="iU0-uy-ruB" firstAttribute="top" secondItem="Vdq-vl-vPc" secondAttribute="bottom" constant="15" id="7he-BL-sgj"/>
                             <constraint firstItem="jN6-r5-OtW" firstAttribute="leading" secondItem="Sdk-OW-kou" secondAttribute="leading" id="9ju-oH-gdQ"/>
