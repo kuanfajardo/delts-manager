@@ -6,8 +6,8 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class DutySelectorTableViewController: UITableViewController {
-
+    
 }
