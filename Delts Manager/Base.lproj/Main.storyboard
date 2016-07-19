@@ -9,7 +9,7 @@
         <!--Overview-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="OverviewViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Overview" id="9pv-A4-QxB" customClass="OverviewViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="-1650" y="1696"/>
         </scene>
-        <!--Overview-->
+        <!--Overview Navigation Controller-->
         <scene sceneID="0zD-0o-PkU">
             <objects>
-                <navigationController id="5Ge-JO-Izc" sceneMemberID="viewController">
+                <navigationController title="Overview Navigation Controller" id="5Ge-JO-Izc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Overview" image="OverviewIcon" id="Knz-YA-wBq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="XdV-ih-Lgx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -316,7 +316,7 @@
         <!--Duties-->
         <scene sceneID="0gv-AS-Rw5">
             <objects>
-                <tableViewController id="dV7-5l-kWc" customClass="DutiesTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Duties" id="dV7-5l-kWc" customClass="DutiesTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="a3w-xF-7ie">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -493,10 +493,10 @@
             </objects>
             <point key="canvasLocation" x="-804" y="1696"/>
         </scene>
-        <!--Duties-->
+        <!--Duties Navigation Controller-->
         <scene sceneID="PnH-9u-RQ3">
             <objects>
-                <navigationController id="p5H-Nq-k8w" sceneMemberID="viewController">
+                <navigationController title="Duties Navigation Controller" id="p5H-Nq-k8w" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Duties" image="DutyIcon" id="TTW-X3-dUE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="D0r-9A-gbe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -517,7 +517,7 @@
         <!--Settings-->
         <scene sceneID="koD-rc-f03">
             <objects>
-                <tableViewController id="ktz-fZ-AJZ" customClass="SettingsTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="ktz-fZ-AJZ" customClass="SettingsTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yg3-Av-2MV">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -614,10 +614,10 @@
             </objects>
             <point key="canvasLocation" x="810" y="934"/>
         </scene>
-        <!--Change Password View Controller-->
+        <!--Change Password-->
         <scene sceneID="QLz-Tc-y9s">
             <objects>
-                <viewController id="LMS-ir-dOa" customClass="ChangePasswordViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Change Password" id="LMS-ir-dOa" customClass="ChangePasswordViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4qr-ci-NjD"/>
                         <viewControllerLayoutGuide type="bottom" id="6Ek-vY-511"/>
@@ -733,10 +733,10 @@
             </objects>
             <point key="canvasLocation" x="810" y="1636"/>
         </scene>
-        <!--Settings-->
+        <!--Settings Navigation Controller-->
         <scene sceneID="cNj-6w-3LX">
             <objects>
-                <navigationController id="Qa1-lO-buZ" sceneMemberID="viewController">
+                <navigationController title="Settings Navigation Controller" id="Qa1-lO-buZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="SettingsIcon" id="Fan-Qh-k7q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="n5D-6A-8XO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -892,7 +892,7 @@
         <!--Punts-->
         <scene sceneID="U0c-ev-XKe">
             <objects>
-                <tableViewController id="WcB-vl-dop" customClass="PuntsTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Punts" id="WcB-vl-dop" customClass="PuntsTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f3u-er-f72">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -956,10 +956,10 @@
             </objects>
             <point key="canvasLocation" x="6" y="934"/>
         </scene>
-        <!--Punts-->
+        <!--Punts Navigation Controller-->
         <scene sceneID="NxO-cI-cyv">
             <objects>
-                <navigationController id="tcR-RU-JMG" sceneMemberID="viewController">
+                <navigationController title="Punts Navigation Controller" id="tcR-RU-JMG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Punts" image="PuntIcon" id="10D-62-8Ab"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="KSM-og-39T">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
