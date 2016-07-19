@@ -35,7 +35,7 @@ class DutyDetailViewController: UIViewController {
         
         // TODO: Implement status enum here
         //self.statusImageView.image = UIImage(named: duty?.status)
-        self.statusImageView.image = UIImage(named: "first")
+        self.statusImageView.image = UIImage(named: Constants.Photos.BlackCircle)
         
         guard let controller = self.navigationController else {
             return

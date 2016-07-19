@@ -57,11 +57,6 @@ class DutySelectorTableViewController: UITableViewController {
         
         cell.duty = duty
         cell.titleLabel.text = duty.name
-        cell.mondayButton.imageView?.image = UIImage(named: Constants.Photos.BlackCircle)
-        cell.tuesdayButton.imageView?.image = UIImage(named: Constants.Photos.BlackCircle)
-        cell.wednesdayButton.imageView?.image = UIImage(named: Constants.Photos.BlackCircle)
-        cell.thursdayButton.imageView?.image = UIImage(named: Constants.Photos.BlackCircle)
-        cell.fridayButton.imageView?.image = UIImage(named: Constants.Photos.BlackCircle)
         cell.selectionStyle = .Gray
         
         return cell

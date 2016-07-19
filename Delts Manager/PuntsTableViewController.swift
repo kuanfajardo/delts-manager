@@ -54,7 +54,7 @@ class PuntsTableViewController: UITableViewController {
         cell.puntLabel.text = punt.name
         cell.dateLabel.text = punt.dateString
         // TODO: Real
-        cell.checkoffImageView?.image = UIImage(named: "first")
+        cell.checkoffImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
         
         return cell
     }

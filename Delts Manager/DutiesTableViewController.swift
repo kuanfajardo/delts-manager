@@ -55,7 +55,7 @@ class DutiesTableViewController: UITableViewController {
         cell.dutyLabel.text = duty.name
         cell.dateLabel.text = duty.dateString
         // TODO: Real
-        cell.statusImageView?.image = UIImage(named: "first")
+        cell.statusImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
         cell.selectionStyle = .Gray
         
         return cell
