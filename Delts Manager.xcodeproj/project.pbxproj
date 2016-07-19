@@ -29,6 +29,8 @@
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
 		568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */; };
 		568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */; };
+		56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */; };
+		56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CF1D3E7EBE009D6F58 /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
 		568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewCell.swift; sourceTree = "<group>"; };
 		568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewController.swift; sourceTree = "<group>"; };
+		56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncingViewController.swift; sourceTree = "<group>"; };
+		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				564C962A1D1E3AA7003EE50F /* Duty.swift */,
 				5687209E1D29C019001D9AF3 /* Punt.swift */,
 				564C96241D1E230E003EE50F /* Constants.swift */,
+				56C5E4CF1D3E7EBE009D6F58 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 		56487A411D3C3FF000825A0F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				56C5E4CC1D3E7E60009D6F58 /* Bouncing Tab */,
 				56487A461D3C409E00825A0F /* Login */,
 				56487A421D3C400700825A0F /* Overview Tab */,
 				56487A431D3C405600825A0F /* Duties Tab */,
@@ -224,6 +230,14 @@
 			path = "Delts ManagerTests";
 			sourceTree = "<group>";
 		};
+		56C5E4CC1D3E7E60009D6F58 /* Bouncing Tab */ = {
+			isa = PBXGroup;
+			children = (
+				56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */,
+			);
+			name = "Bouncing Tab";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -327,7 +341,9 @@
 			files = (
 				564C96251D1E230E003EE50F /* Constants.swift in Sources */,
 				56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */,
+				56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */,
 				560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */,
+				56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */,
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
