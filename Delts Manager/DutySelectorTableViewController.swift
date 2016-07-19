@@ -13,12 +13,31 @@ class DutySelectorTableViewController: UITableViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Navigation items
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelPressed))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
+        
         loadSampleDuties()
+    }
+    
+    func cancelPressed() {
+        // TODO: Add functionality
+        print("cancel pressed")
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func donePressed() {
+        // TODO: Add functionality
+        print("done pressed")
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // MARK: Properties:
     var duties = [Duty]()
     
+    
+    // MARK: Helper Functions
     func loadSampleDuties() {
         let duty1 = Duty(name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Completed")
         let duty2 = Duty(name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Incomplete")

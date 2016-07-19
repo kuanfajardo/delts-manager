@@ -37,7 +37,7 @@ class OverviewViewController: UIViewController {
         setUI()
     }
     
-    
+    // MARK: Helper functions
     func setUI() {
         let checkoffEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.CheckoffEnabled)
         let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
