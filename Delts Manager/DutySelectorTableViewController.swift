@@ -20,9 +20,9 @@ class DutySelectorTableViewController: UITableViewController {
     var duties = [Duty]()
     
     func loadSampleDuties() {
-        let duty1 = Duty(name: "Pantry", date: NSDate(), status: "Completed")
-        let duty2 = Duty(name: "Pantry", date: NSDate(), status: "Incomplete")
-        let duty3 = Duty(name: "Kitchen", date: NSDate(), status: "Pending")
+        let duty1 = Duty(name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Completed")
+        let duty2 = Duty(name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Incomplete")
+        let duty3 = Duty(name: "Kitchen", type: Constants.DutyType.House, date: NSDate(), status: "Pending")
         
         duties += [duty1, duty2, duty3]
     }

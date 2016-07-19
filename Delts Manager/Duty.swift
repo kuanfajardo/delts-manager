@@ -20,21 +20,24 @@ class Duty: NSObject, NSCoding {
     }
     // TODO: implement as Const.Status (init all three methods below)
     var status: String
+    var type: Constants.DutyType
     
     
     // MARK: Types
     
     struct PropertyKey {
         static let nameKey = "name"
+        static let typeKey = "type"
         static let dateKey = "date"
         static let statusKey = "status"
     }
     
     // MARK: Init
-    init(name: String, date: NSDate, status: String) {
+    init(name: String, type: Constants.DutyType, date: NSDate, status: String) {
         self.name = name
         self.date = date
         self.status = status
+        self.type = type
         
         super.init()
     }
@@ -42,15 +45,18 @@ class Duty: NSObject, NSCoding {
     // MARK: NSCoding
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
+        aCoder.encodeObject(type.rawValue, forKey: PropertyKey.typeKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
         aCoder.encodeObject(status, forKey: PropertyKey.statusKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
+        let typeRaw = aDecoder.decodeObjectForKey(PropertyKey.typeKey) as! String
+        let type = Constants.DutyType(rawValue: typeRaw)!
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let status = aDecoder.decodeObjectForKey(PropertyKey.statusKey) as! String
         
-        self.init(name: name, date: date, status: status)
+        self.init(name: name, type: type, date: date, status: status)
     }
 }

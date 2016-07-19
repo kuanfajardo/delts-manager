@@ -105,4 +105,9 @@ struct Constants {
             static let RepeatPasswordField = "Repeat Password"
         }
     }
+    
+    enum DutyType: String {
+        case House = "House"
+        case Party = "Party"
+    }
 }
