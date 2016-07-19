@@ -6,8 +6,11 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class EventPropertyTableViewCell: UITableViewCell {
-
+    // MARK: Properties
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
 }
