@@ -37,12 +37,12 @@ class DutyDetailViewController: UIViewController {
         //self.statusImageView.image = UIImage(named: duty?.status)
         self.statusImageView.image = UIImage(named: Constants.Photos.BlackCircle)
         
-        guard let controller = self.navigationController else {
-            return
-        }
-        
-        // TODO: Fund key
-        controller.navigationBar.backItem?.backBarButtonItem?.setTitleTextAttributes(["key": Constants.Colors.deltsPurple], forState: UIControlState.Normal)
+        /*
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Duties", style: .Plain, target: self, action: #selector(backPressed))*/
+    }
+    
+    func backPressed() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
