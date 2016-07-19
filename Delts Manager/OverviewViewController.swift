@@ -27,6 +27,7 @@ class OverviewViewController: UIViewController {
     }
     
     @IBAction func schedulePressed() {
+        // TODO: Make check for type of schedule (party v house) one or both?
         print("schedule button pressed")
     }
     
