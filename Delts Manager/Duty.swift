@@ -11,16 +11,26 @@ import UIKit
 class Duty: NSObject, NSCoding {
     // MARK: Properties
     
+    // All Dutie
     var name: String
-    var date: NSDate
-    var dateString: String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "EEE, MM/dd"
-        return dateFormatter.stringFromDate(date)
-    }
-    // TODO: implement as Const.Status (init all three methods below)
-    var status: String
     var type: Constants.DutyType
+    var status: String // TODO: implement as Const.Status (init all three methods below)
+    
+    // House Duties
+    var date: NSDate?
+    var dateString: String? {
+        if let date = date {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
+    
+    // Party Duties
+    var startTime: NSDate?
+    var duration: Int?
     
     
     // MARK: Types
@@ -38,6 +48,16 @@ class Duty: NSObject, NSCoding {
         self.date = date
         self.status = status
         self.type = type
+        
+        super.init()
+    }
+    
+    init(name: String, type: Constants.DutyType, status: String, startTime: NSDate, duration: Int) {
+        self.name = name
+        self.startTime = startTime
+        self.status = status
+        self.type = type
+        self.duration = duration
         
         super.init()
     }
