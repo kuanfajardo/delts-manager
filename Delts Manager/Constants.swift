@@ -77,6 +77,7 @@ struct Constants {
         static let Punt = "PuntIcon"
         static let Settings = "SettingsIcon"
         static let BlackCircle = "first"
+        static let Manager = "ManagerIcon"
     }
     
     struct Identifiers {
@@ -92,6 +93,7 @@ struct Constants {
         
         struct Controllers {
             static let TabController = "TabController"
+            static let BouncingController = "Bouncing"
         }
         
         struct Segues {
