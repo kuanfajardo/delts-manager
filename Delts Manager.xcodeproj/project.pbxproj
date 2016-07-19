@@ -31,6 +31,7 @@
 		568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */; };
 		56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */; };
 		56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CF1D3E7EBE009D6F58 /* Event.swift */; };
+		56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewController.swift; sourceTree = "<group>"; };
 		56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncingViewController.swift; sourceTree = "<group>"; };
 		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlannerTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */,
+				56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
+				56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
