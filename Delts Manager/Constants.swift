@@ -89,6 +89,7 @@ struct Constants {
             static let SettingsSwitchCell = "SettingsSwitch"
             static let DutySelectorCell = "DutySelector"
             static let PlainCell = "Plain"
+            static let EventPropertyCell = "EventProperty"
         }
         
         struct Controllers {
