@@ -33,6 +33,12 @@
 		56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CF1D3E7EBE009D6F58 /* Event.swift */; };
 		56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */; };
 		56C5E4D41D3EC87C009D6F58 /* EventPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D31D3EC87C009D6F58 /* EventPropertyTableViewCell.swift */; };
+		56C5E4D61D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D51D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift */; };
+		56C5E4D81D3EE714009D6F58 /* EventDutyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D71D3EE714009D6F58 /* EventDutyTableCell.swift */; };
+		56C5E4DA1D3EF2BD009D6F58 /* PartyPlannerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D91D3EF2BD009D6F58 /* PartyPlannerDelegate.swift */; };
+		56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863241D3F991A00E5D850 /* EventNameViewController.swift */; };
+		56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */; };
+		56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,12 @@
 		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlannerTableViewController.swift; sourceTree = "<group>"; };
 		56C5E4D31D3EC87C009D6F58 /* EventPropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPropertyTableViewCell.swift; sourceTree = "<group>"; };
+		56C5E4D51D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutySelectorTableViewController.swift; sourceTree = "<group>"; };
+		56C5E4D71D3EE714009D6F58 /* EventDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTableCell.swift; sourceTree = "<group>"; };
+		56C5E4D91D3EF2BD009D6F58 /* PartyPlannerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyPlannerDelegate.swift; sourceTree = "<group>"; };
+		56F863241D3F991A00E5D850 /* EventNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNameViewController.swift; sourceTree = "<group>"; };
+		56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStartTimeViewController.swift; sourceTree = "<group>"; };
+		56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEndTimeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +252,12 @@
 				56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */,
 				56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */,
 				56C5E4D31D3EC87C009D6F58 /* EventPropertyTableViewCell.swift */,
+				56C5E4D51D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift */,
+				56C5E4D71D3EE714009D6F58 /* EventDutyTableCell.swift */,
+				56C5E4D91D3EF2BD009D6F58 /* PartyPlannerDelegate.swift */,
+				56F863241D3F991A00E5D850 /* EventNameViewController.swift */,
+				56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */,
+				56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -348,22 +366,28 @@
 				564C96251D1E230E003EE50F /* Constants.swift in Sources */,
 				56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */,
 				56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */,
+				56C5E4D81D3EE714009D6F58 /* EventDutyTableCell.swift in Sources */,
 				560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */,
 				56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */,
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
+				56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
 				56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
+				56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
 				56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */,
 				56C5E4D41D3EC87C009D6F58 /* EventPropertyTableViewCell.swift in Sources */,
+				56C5E4DA1D3EF2BD009D6F58 /* PartyPlannerDelegate.swift in Sources */,
+				56C5E4D61D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift in Sources */,
+				56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */,
 				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
 				5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,

@@ -8,14 +8,34 @@
 
 import UIKit
 
-class EventPlannerTableViewController: UITableViewController {
+class EventPlannerTableViewController: UITableViewController, PartyPlannerDelegate {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Navigation items
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelPressed))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
+        
+        self.tableView.scrollEnabled = false
+        
+        reloadData()
+    }
+    
+    func reloadData() {
+        self.data = [
+            "Info" : [
+                ("Event Name", "\(self.eventName)")
+            ],
+            "Times" : [
+                ("Start Time", "\(self.startTimeString ?? "None")"),
+                ("End Time", "\(self.endTimeString ?? "None")")
+            ],
+            "Duties" : [
+                ("Select Duties", "\(self.duties.count)")
+            ],
+            "" : []
+        ]
     }
     
     func cancelPressed() {
@@ -31,63 +51,104 @@ class EventPlannerTableViewController: UITableViewController {
     }
     
     // MARK: Properties:
-    var properties = ["Event Name",
-                      "Start Time",
-                      "End Time",
-                      "Duties"]
+    var sectionTitles = [
+        0 : "Info",
+        1 : "Times",
+        2 : "Duties",
+        3 : ""
+    ]
     
+    var data: [String : [(String, String)]] = [:]
+ 
+    var eventName = "None"
+    var startTime: NSDate?
+    var startTimeString: String? {
+        if let date = startTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
+    var endTime: NSDate?
+    var endTimeString: String? {
+        if let date = endTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
+    var duties = [String]()
     
     
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        guard indexPath.row < properties.count else {
-            let identifier = Constants.Identifiers.TableViewCells.PlainCell
-            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
-            
-            if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
-            } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
-            }
-            
-            return cell
-        }
+        let propertyData = data[sectionTitles[indexPath.section]!]![indexPath.row]
+        let propertyName = propertyData.0
+        let propertyDescription = propertyData.1
         
         
         let identifier = Constants.Identifiers.TableViewCells.EventPropertyCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventPropertyTableViewCell
         
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
-        } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
-        }
+        cell.backgroundColor = Constants.Colors.deltsLightPurple
         
-        cell.nameLabel.text = properties[indexPath.row]
-        cell.descriptionLabel.text = "Description"
+        cell.nameLabel.text = propertyName
+        cell.descriptionLabel.text = propertyDescription
         cell.selectionStyle = .Gray
-        
+        cell.accessoryType = .None
+        cell.accessoryView?.backgroundColor = Constants.Colors.deltsPurple
+
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(25, properties.count)
+        return data[sectionTitles[section]!]!.count
+            
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return data.count
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(35)
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if section == 3 {
+            return CGFloat(400)
+        }
+        
+        return CGFloat(0)
+    }
+   
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = Constants.Colors.deltsYellow
+        header.textLabel?.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = Constants.Colors.deltsYellow
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             editName()
         case 1:
-            editStartTime()
+            if indexPath.row == 0 {
+                editStartTime()
+            } else {
+                editEndTime()
+            }
         case 2:
-            editEndTime()
-        case 3:
             editDuties()
         default:
             return
@@ -95,18 +156,62 @@ class EventPlannerTableViewController: UITableViewController {
     }
 
     func editName() {
-        print("Edit Name")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.EventNameController) as! EventNameViewController
+
+        controller.delegate = self
+        if self.eventName != "None" {
+            controller.placeholderText = self.eventName
+        }
+
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func editStartTime() {
-        print("Edit ST")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.StartTimeController) as! EventStartTimeViewController
+        
+        controller.delegate = self
+
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func editEndTime() {
-        print("Edit ET")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.EndTimeController) as! EventEndTimeViewController
+        
+        controller.delegate = self
+
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func editDuties() {
-        print("Edit Duties")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.DutyChooserController) as! EventDutySelectorTableViewController
+        
+        controller.delegate = self
+
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: Party Planner
+    func passDutiesBack(value: [String]) {
+        self.duties = value
+        reloadData()
+        self.tableView.reloadData()
+    }
+    
+    func passNameBack(value: String) {
+        self.eventName = value
+        reloadData()
+        self.tableView.reloadData()
+    }
+    
+    func passStartTimeBack(value: NSDate) {
+        self.startTime = value
+        reloadData()
+        self.tableView.reloadData()
+    }
+    
+    func passEndTimeBack(value: NSDate) {
+        self.endTime = value
+        reloadData()
+        self.tableView.reloadData()
     }
 }
