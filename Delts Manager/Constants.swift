@@ -90,11 +90,16 @@ struct Constants {
             static let DutySelectorCell = "DutySelector"
             static let PlainCell = "Plain"
             static let EventPropertyCell = "EventProperty"
+            static let EventDutyCell = "EventDuty"
         }
         
         struct Controllers {
             static let TabController = "TabController"
             static let BouncingController = "Bouncing"
+            static let EventNameController = "EventName"
+            static let StartTimeController = "StartTime"
+            static let EndTimeController = "EndTime"
+            static let DutyChooserController = "DutyChooser"
         }
         
         struct Segues {
