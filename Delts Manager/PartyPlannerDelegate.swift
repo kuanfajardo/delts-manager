@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+@objc protocol PartyPlannerDelegate {
+    optional func passNameBack(value: String)
+    optional func passStartTimeBack(value: NSDate)
+    optional func passEndTimeBack(value: NSDate)
+    optional func passDutiesBack(value: [String])
+}
