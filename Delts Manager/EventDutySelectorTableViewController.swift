@@ -41,8 +41,12 @@ class EventDutySelectorTableViewController: UITableViewController {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
         cell.dutyName.text = duties[indexPath.row]
+        if selected.indexOf(duties[indexPath.row]) != nil {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
+        }
         cell.selectionStyle = .Gray
-        cell.accessoryType = .None
         cell.accessoryView?.backgroundColor = Constants.Colors.deltsYellow
         
         return cell

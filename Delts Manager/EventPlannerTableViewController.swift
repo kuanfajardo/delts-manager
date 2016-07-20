@@ -32,8 +32,10 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
                 ("End Time", "\(self.endTimeString ?? "None")")
             ],
             "Duties" : [
-                ("Select Duties", "\(self.duties.count)")
+                ("Select Duties", "\("\(self.duties.count)" ?? "No") Duties Selected")
             ],
+            "Duty Time Slots" : [
+                ("Select Duty Times", "\("\(self.duties.count)" ?? "No") Duties Selected")],
             "" : []
         ]
     }
@@ -47,6 +49,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     func donePressed() {
         // TODO: Add functionality
         print("done pressed")
+        let event = Event(name: self.eventName, startTime: self.startTime!, endTime: self.endTime!, duties: makeDuties(), times: self.times)
+        self.delegate?.passEventBack(event)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -55,7 +59,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         0 : "Info",
         1 : "Times",
         2 : "Duties",
-        3 : ""
+        3 : "Duty Time Slots",
+        4 : ""
     ]
     
     var data: [String : [(String, String)]] = [:]
@@ -82,6 +87,9 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         return nil
     }
     var duties = [String]()
+    var times = [String]()
+    var delegate: PartyPlannerExtendedDelegate?
+    
     
     
     // MARK: UITableViewDataSource
@@ -102,7 +110,14 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         cell.selectionStyle = .Gray
         cell.accessoryType = .None
         cell.accessoryView?.backgroundColor = Constants.Colors.deltsPurple
-
+        
+        if indexPath.section == 3 && self.duties.count <= 0 {
+            cell.userInteractionEnabled = false
+        } else {
+            cell.userInteractionEnabled = true
+        }
+        
+        
         return cell
     }
     
@@ -120,7 +135,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 3 {
+        if section == 4 {
             return CGFloat(400)
         }
         
@@ -150,6 +165,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             }
         case 2:
             editDuties()
+        case 3:
+            editDutyTimes()
         default:
             return
         }
@@ -186,13 +203,25 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.DutyChooserController) as! EventDutySelectorTableViewController
         
         controller.delegate = self
+        controller.selected = self.duties
 
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func editDutyTimes() {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.DutyTimeChooserController) as! EventDutyTimeSelectorTableViewController
+        
+        controller.delegate = self
+        controller.duties = self.duties
+        controller.times = self.times
+        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: Party Planner
     func passDutiesBack(value: [String]) {
         self.duties = value
+        self.times = [String](count: self.duties.count, repeatedValue: "Hour")
         reloadData()
         self.tableView.reloadData()
     }
@@ -213,5 +242,44 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.endTime = value
         reloadData()
         self.tableView.reloadData()
+    }
+    
+    func passDutyTimesBack(value: [String]) {
+        self.times = value
+        reloadData()
+        self.tableView.reloadData()
+    }
+    
+    func makeDuties() -> [Duty] {
+        let seconds = self.endTime!.timeIntervalSinceDate(self.startTime!)
+        let numHalfSlots = Int(ceil(seconds / (60 * 30)))
+        let numHourSlots = Int(ceil(seconds / (60 * 60)))
+        var allDuties = [Duty]()
+        
+        for i in 0..<self.duties.count {
+            let dutyName = self.duties[i]
+            let dutyTime = self.times[i]
+            var durationMin: Int
+            var durationSec: Double
+            
+            var numSlots: Int
+            if dutyTime == "Half Hour" {
+                numSlots = numHalfSlots
+                durationMin = 30
+                durationSec = 30 * 60
+            } else {
+                numSlots = numHourSlots
+                durationMin = 60
+                durationSec = 60 * 60
+            }
+            
+            for _ in 0..<numSlots {
+                let date = self.startTime?.dateByAddingTimeInterval(NSTimeInterval(durationSec))
+                let duty = Duty(name: dutyName, type: .Party, status: "Incomplete", startTime: date!, duration: durationMin)
+                allDuties.append(duty)
+            }
+        }
+
+        return allDuties
     }
 }

@@ -14,13 +14,13 @@ class Event {
     var startTime: NSDate
     var endTime: NSDate
     var duties: [Duty]
-    var people: [String]
+    var times: [String]
     
-    init(name: String, startTime: NSDate, endTime: NSDate, duties: [Duty], people: [String]) {
+    init(name: String, startTime: NSDate, endTime: NSDate, duties: [Duty], times: [String]) {
         self.name = name
         self.startTime = startTime
         self.endTime = endTime
         self.duties = duties
-        self.people = people
+        self.times = times
     }
 }

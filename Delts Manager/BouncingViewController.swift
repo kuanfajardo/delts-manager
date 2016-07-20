@@ -8,6 +8,14 @@
 
 import UIKit
 
-class BouncingViewController: UIViewController {
-
+class BouncingViewController: UIViewController, PartyPlannerExtendedDelegate {
+    func passEventBack(value: Event) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController.isKindOfClass(EventPlannerTableViewController) {
+            let controller = segue.destinationViewController as! EventPlannerTableViewController
+            controller.delegate = self
+        }
+    }
 }

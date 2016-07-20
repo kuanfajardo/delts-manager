@@ -39,6 +39,8 @@
 		56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863241D3F991A00E5D850 /* EventNameViewController.swift */; };
 		56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */; };
 		56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */; };
+		56F8632B1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */; };
+		56F8632D1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		56F863241D3F991A00E5D850 /* EventNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventNameViewController.swift; sourceTree = "<group>"; };
 		56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventStartTimeViewController.swift; sourceTree = "<group>"; };
 		56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEndTimeViewController.swift; sourceTree = "<group>"; };
+		56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorTableViewController.swift; sourceTree = "<group>"; };
+		56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,8 @@
 				56F863241D3F991A00E5D850 /* EventNameViewController.swift */,
 				56F863261D3FA0CA00E5D850 /* EventStartTimeViewController.swift */,
 				56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */,
+				56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */,
+				56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				564C96251D1E230E003EE50F /* Constants.swift in Sources */,
 				56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */,
 				56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */,
+				56F8632B1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift in Sources */,
 				56C5E4D81D3EE714009D6F58 /* EventDutyTableCell.swift in Sources */,
 				560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */,
 				56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */,
@@ -376,6 +383,7 @@
 				56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
+				56F8632D1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift in Sources */,
 				56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */,
 				564C96011D1E0A6A003EE50F /* AppDelegate.swift in Sources */,
 				56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */,
