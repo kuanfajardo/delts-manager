@@ -1491,9 +1491,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DutyName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V6-cm-8Fn">
-                                            <rect key="frame" x="23" y="10" width="150" height="23"/>
+                                            <rect key="frame" x="23" y="10" width="500" height="23"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="c13-2A-9NX"/>
+                                                <constraint firstAttribute="width" constant="500" id="c13-2A-9NX"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
