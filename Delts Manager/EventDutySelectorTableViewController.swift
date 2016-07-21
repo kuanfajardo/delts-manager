@@ -10,7 +10,8 @@ import UIKit
 
 class EventDutySelectorTableViewController: UITableViewController {
     // MARK: Properties
-    var duties = ["Bar", "Bar Helper", "Clicker", "Front Door", "DJ", "1st Floor", "Landing", "2nd Back Stairs", "3rd Back Stairs", "VIP"]
+    var duties = ["Outer Door", "Inner Door", "Check-In", "2nd Floor Back Stairs", "3rd Floor Back Stairs", "2nd-1st Landing", "2nd-3rd Landing", "VIP", "Bar", "2F Bar", "2M Bar", "Basement Bar", "DJ"]
+
     
     var selected = [String]()
     var delegate: PartyPlannerDelegate?
