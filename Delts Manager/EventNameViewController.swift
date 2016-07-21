@@ -41,7 +41,17 @@ class EventNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        self.navigationItem.rightBarButtonItem?.enabled = string.characters.count > 0
+        let previousTextLen = self.eventNameTextField.text?.characters.count
+        var replaceTextLen: Int
+        if string == "" {
+            replaceTextLen = -1
+        } else {
+            replaceTextLen = string.characters.count
+        }
+        
+        self.navigationItem.rightBarButtonItem?.enabled = (previousTextLen! + replaceTextLen) > 0
+        
+        
         return true
     }
     @IBAction func userDidTapView(sender: AnyObject) {
