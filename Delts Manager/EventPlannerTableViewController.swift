@@ -16,6 +16,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         // Navigation items
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelPressed))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
+        self.navigationItem.rightBarButtonItem?.enabled = false
         
         self.tableView.scrollEnabled = false
         
@@ -38,6 +39,10 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
                 ("Select Duty Times", "\("\(self.duties.count)" ?? "No") Duties Selected")],
             "" : []
         ]
+        
+        if isNameSet && isStartTimeSet && isEndTimeSet && isDutiesSet && isTimesSet {
+            self.navigationItem.rightBarButtonItem!.enabled = true
+        }
     }
     
     func cancelPressed() {
@@ -89,6 +94,13 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     var duties = [String]()
     var times = [String]()
     var delegate: PartyPlannerExtendedDelegate?
+    
+    var isNameSet = false
+    var isStartTimeSet = false
+    var isEndTimeSet = false
+    var isDutiesSet = false
+    var isTimesSet = false
+
     
     
     
@@ -222,30 +234,37 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     func passDutiesBack(value: [String]) {
         self.duties = value
         self.times = [String](count: self.duties.count, repeatedValue: "Hour")
+        if value.count > 0 {
+            self.isDutiesSet = true
+        }
         reloadData()
         self.tableView.reloadData()
     }
     
     func passNameBack(value: String) {
         self.eventName = value
+        self.isNameSet = true
         reloadData()
         self.tableView.reloadData()
     }
     
     func passStartTimeBack(value: NSDate) {
         self.startTime = value
+        self.isStartTimeSet = true
         reloadData()
         self.tableView.reloadData()
     }
     
     func passEndTimeBack(value: NSDate) {
         self.endTime = value
+        self.isEndTimeSet = true
         reloadData()
         self.tableView.reloadData()
     }
     
     func passDutyTimesBack(value: [String]) {
         self.times = value
+        self.isTimesSet = true
         reloadData()
         self.tableView.reloadData()
     }
