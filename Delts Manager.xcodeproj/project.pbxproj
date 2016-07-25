@@ -42,6 +42,8 @@
 		56F8632B1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */; };
 		56F8632D1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */; };
 		56F8632F1D411D4300E5D850 /* CustomEventDutyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */; };
+		56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863311D465F8600E5D850 /* PartiesTableViewController.swift */; };
+		56F863341D465F9A00E5D850 /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorTableViewController.swift; sourceTree = "<group>"; };
 		56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorCell.swift; sourceTree = "<group>"; };
 		56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEventDutyTableCell.swift; sourceTree = "<group>"; };
+		56F863311D465F8600E5D850 /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
+		56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		56487A411D3C3FF000825A0F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				56F863301D465F6A00E5D850 /* Parties Tab */,
 				56C5E4CC1D3E7E60009D6F58 /* Bouncing Tab */,
 				56487A461D3C409E00825A0F /* Login */,
 				56487A421D3C400700825A0F /* Overview Tab */,
@@ -271,6 +276,15 @@
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
 		};
+		56F863301D465F6A00E5D850 /* Parties Tab */ = {
+			isa = PBXGroup;
+			children = (
+				56F863311D465F8600E5D850 /* PartiesTableViewController.swift */,
+				56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */,
+			);
+			name = "Parties Tab";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -392,6 +406,7 @@
 				56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
+				56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
 				56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */,
@@ -399,6 +414,7 @@
 				56C5E4DA1D3EF2BD009D6F58 /* PartyPlannerDelegate.swift in Sources */,
 				56C5E4D61D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift in Sources */,
 				56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */,
+				56F863341D465F9A00E5D850 /* PartyTableViewCell.swift in Sources */,
 				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
 				56F8632F1D411D4300E5D850 /* CustomEventDutyTableCell.swift in Sources */,
 				5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */,
