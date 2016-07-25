@@ -24,6 +24,7 @@
 		564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962A1D1E3AA7003EE50F /* Duty.swift */; };
 		564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962E1D243419003EE50F /* SettingsViewController.swift */; };
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
+		565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544C81D4668B500DF9957 /* PartyDetailViewController.swift */; };
 		568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* DutiesTableViewController.swift */; };
 		5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */; };
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
@@ -78,6 +79,7 @@
 		564C962A1D1E3AA7003EE50F /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
 		564C962E1D243419003EE50F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
+		565544C81D4668B500DF9957 /* PartyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDetailViewController.swift; sourceTree = "<group>"; };
 		568720981D29B555001D9AF3 /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
 		5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 			children = (
 				56F863311D465F8600E5D850 /* PartiesTableViewController.swift */,
 				56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */,
+				565544C81D4668B500DF9957 /* PartyDetailViewController.swift */,
 			);
 			name = "Parties Tab";
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
+				565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */,
 				56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
