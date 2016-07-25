@@ -41,6 +41,7 @@
 		56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */; };
 		56F8632B1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */; };
 		56F8632D1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */; };
+		56F8632F1D411D4300E5D850 /* CustomEventDutyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEndTimeViewController.swift; sourceTree = "<group>"; };
 		56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorTableViewController.swift; sourceTree = "<group>"; };
 		56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDutyTimeSelectorCell.swift; sourceTree = "<group>"; };
+		56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEventDutyTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 				56F863281D3FC2E700E5D850 /* EventEndTimeViewController.swift */,
 				56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */,
 				56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */,
+				56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				56C5E4D61D3EE6E7009D6F58 /* EventDutySelectorTableViewController.swift in Sources */,
 				56F863291D3FC2E700E5D850 /* EventEndTimeViewController.swift in Sources */,
 				568720A11D29C033001D9AF3 /* PuntsTableViewCell.swift in Sources */,
+				56F8632F1D411D4300E5D850 /* CustomEventDutyTableCell.swift in Sources */,
 				5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */,
 				564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */,
 			);

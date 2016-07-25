@@ -8,23 +8,28 @@
 
 import UIKit
 
-class EventDutySelectorTableViewController: UITableViewController {
+class EventDutySelectorTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: Properties
-    var duties = ["Outer Door", "Inner Door", "Check-In", "2nd Floor Back Stairs", "3rd Floor Back Stairs", "2nd-1st Landing", "2nd-3rd Landing", "VIP", "Bar", "2F Bar", "2M Bar", "Basement Bar", "DJ"]
-
+    var defaultDuties = ["Outer Door", "Inner Door", "Check-In", "2nd Floor Back Stairs", "3rd Floor Back Stairs", "2nd-1st Landing", "2nd-3rd Landing", "VIP", "Bar", "2F Bar", "2M Bar", "Basement Bar", "DJ"]
     
-    var selected = [String]()
+    var customDuties = [String]()
+    var selectedDuties = [String]()
     var delegate: PartyPlannerDelegate?
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        for selectedDuty in selectedDuties {
+            if defaultDuties.indexOf(selectedDuty) == nil {
+                defaultDuties.append(selectedDuty)
+            }
+        }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
     }
     
     func donePressed() {
-        self.delegate?.passDutiesBack!(selected)
+        self.delegate?.passDutiesBack!(selectedDuties)
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -32,6 +37,50 @@ class EventDutySelectorTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        
+        guard indexPath.row < defaultDuties.count else {
+            guard indexPath.row < defaultDuties.count + customDuties.count else {
+                let identifier = Constants.Identifiers.TableViewCells.AddCustomDutyCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+                
+                if indexPath.row % 2 == 0 {
+                    cell.backgroundColor = Constants.Colors.deltsLightPurple
+                } else {
+                    cell.backgroundColor = Constants.Colors.deltsYellow
+                }
+                
+                return cell
+            }
+            
+            let identifier = Constants.Identifiers.TableViewCells.CustomEventDutyCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! CustomEventDutyTableCell
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsLightPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
+            let index = indexPath.row - defaultDuties.count
+            /*if index <= 0 {
+                cell.accessoryType = .None
+            } else if selectedDuties.indexOf(customDuties[indexPath.row - defaultDuties.count]) != nil {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }*/
+            cell.accessoryType = .Checkmark
+            
+            cell.selectionStyle = .Gray
+            cell.tag = index
+            cell.dutyTextField.delegate = self
+            cell.dutyTextField.tag = index
+            cell.dutyTextField.becomeFirstResponder()
+            return cell
+
+            
+        }
+        
         
         let identifier = Constants.Identifiers.TableViewCells.EventDutyCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventDutyTableCell
@@ -41,20 +90,20 @@ class EventDutySelectorTableViewController: UITableViewController {
         } else {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
-        cell.dutyName.text = duties[indexPath.row]
-        if selected.indexOf(duties[indexPath.row]) != nil {
+        
+        cell.dutyName.text = defaultDuties[indexPath.row]
+        if selectedDuties.indexOf(defaultDuties[indexPath.row]) != nil {
             cell.accessoryType = .Checkmark
         } else {
             cell.accessoryType = .None
         }
         cell.selectionStyle = .Gray
-        cell.accessoryView?.backgroundColor = Constants.Colors.deltsYellow
         
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return duties.count
+        return defaultDuties.count + customDuties.count + 1
         
     }
     
@@ -64,14 +113,59 @@ class EventDutySelectorTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        guard indexPath.row < defaultDuties.count else {
+            guard indexPath.row < defaultDuties.count + customDuties.count else {
+                addCustomDuty()
+                return
+            }
+            
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! CustomEventDutyTableCell
+            
+            if cell.accessoryType == UITableViewCellAccessoryType.None {
+                cell.accessoryType = .Checkmark
+                self.selectedDuties.append(cell.dutyTextField.text!)
+            } else {
+                cell.accessoryType = .None
+                self.selectedDuties.removeAtIndex(self.selectedDuties.indexOf(cell.dutyTextField.text!)!)
+            }
+            
+            return
+            
+        }
+        
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! EventDutyTableCell
 
         if cell.accessoryType == UITableViewCellAccessoryType.None {
             cell.accessoryType = .Checkmark
-            self.selected.append(cell.dutyName.text!)
+            self.selectedDuties.append(cell.dutyName.text!)
         } else {
             cell.accessoryType = .None
-            self.selected.removeAtIndex(self.selected.indexOf(cell.dutyName.text!)!)
+            self.selectedDuties.removeAtIndex(self.selectedDuties.indexOf(cell.dutyName.text!)!)
         }
     }
+    
+    func addCustomDuty() {
+        customDuties.append("")
+        self.tableView.reloadData()
+    }
+    
+    // MARK: Text Field Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.text?.characters.count > 0 {
+            textField.resignFirstResponder()
+            self.selectedDuties.append(textField.text!)
+            textField.userInteractionEnabled = false
+            //self.tableView.userInteractionEnabled = true
+            return true
+        } else {
+            return false
+        }
+        
+    }
+    /*
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.tableView.userInteractionEnabled = false
+    }*/
+    
 }

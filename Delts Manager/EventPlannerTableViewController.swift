@@ -215,7 +215,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.DutyChooserController) as! EventDutySelectorTableViewController
         
         controller.delegate = self
-        controller.selected = self.duties
+        controller.selectedDuties = self.duties
 
         self.navigationController?.pushViewController(controller, animated: true)
     }
