@@ -11,7 +11,16 @@ import UIKit
 class Event {
     // MARK: Properties
     var name: String
-    var startTime: NSDate
+    var startTime: NSDate?
+    var startTimeString: String? {
+        if let date = startTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
     var endTime: NSDate
     var duties: [Duty]
     var times: [String]
