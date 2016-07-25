@@ -118,6 +118,15 @@ struct Constants {
         }
     }
     
+    struct Roles {
+        static let User = 0
+        static let Checker = 1
+        static let HouseManager = 2
+        static let BouncingChair = 3
+        static let HonorBoard = 4
+        static let Admin = 5
+    }
+    
     enum DutyType: String {
         case House = "House"
         case Party = "Party"
