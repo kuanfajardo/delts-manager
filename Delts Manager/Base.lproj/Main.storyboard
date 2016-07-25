@@ -293,6 +293,86 @@
             </objects>
             <point key="canvasLocation" x="-1650" y="1696"/>
         </scene>
+        <!--Parties Navigation Controller-->
+        <scene sceneID="cLa-4V-Rp3">
+            <objects>
+                <navigationController title="Parties Navigation Controller" id="zUt-i5-bkK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Parties" image="PartyIcon" id="12j-3r-bqH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="gKM-uP-R5m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Tbg-2V-CWm" kind="relationship" relationship="rootViewController" id="mqH-Xl-NMd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hw-BX-0wa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3583" y="-734"/>
+        </scene>
+        <!--Parties-->
+        <scene sceneID="aVw-Ql-xZY">
+            <objects>
+                <tableViewController title="Parties" id="Tbg-2V-CWm" customClass="PartiesTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Haf-TR-f95">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" id="uYC-aL-Y4U" customClass="PartyTableViewCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uYC-aL-Y4U" id="0i5-Nr-nnD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PartyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70A-25-7U4">
+                                            <rect key="frame" x="23" y="10" width="150" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="M14-7j-1st"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1D-WU-9Im">
+                                            <rect key="frame" x="427" y="10" width="150" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="K2a-Ru-lOK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="70A-25-7U4" firstAttribute="leading" secondItem="0i5-Nr-nnD" secondAttribute="leadingMargin" constant="15" id="Qfs-0z-VLk"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="k1D-WU-9Im" secondAttribute="trailing" constant="15" id="eJp-dK-TuW"/>
+                                        <constraint firstItem="70A-25-7U4" firstAttribute="centerY" secondItem="0i5-Nr-nnD" secondAttribute="centerY" id="j0b-KI-eGs"/>
+                                        <constraint firstItem="k1D-WU-9Im" firstAttribute="centerY" secondItem="0i5-Nr-nnD" secondAttribute="centerY" id="pfi-5Y-1Fy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="k1D-WU-9Im" id="txp-r4-MCm"/>
+                                    <outlet property="partyLabel" destination="70A-25-7U4" id="vJ8-QH-KDD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Tbg-2V-CWm" id="TrR-rL-nTK"/>
+                            <outlet property="delegate" destination="Tbg-2V-CWm" id="iDm-lc-OL9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Parties" id="8Xg-H5-p2B"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgw-d7-IzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3583" y="52"/>
+        </scene>
         <!--Bouncing Navigation Controller-->
         <scene sceneID="E7k-tT-tp8">
             <objects>
@@ -1154,6 +1234,7 @@
                         <segue destination="p5H-Nq-k8w" kind="relationship" relationship="viewControllers" id="ZBm-gq-Tyu"/>
                         <segue destination="tcR-RU-JMG" kind="relationship" relationship="viewControllers" id="WgI-9Z-7eL"/>
                         <segue destination="Qa1-lO-buZ" kind="relationship" relationship="viewControllers" id="GrB-mg-lZm"/>
+                        <segue destination="zUt-i5-bkK" kind="relationship" relationship="viewControllers" id="BoB-B6-G5B"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -1576,6 +1657,7 @@
     <resources>
         <image name="DutyIcon" width="25" height="25"/>
         <image name="OverviewIcon" width="25" height="25"/>
+        <image name="PartyIcon" width="25" height="25"/>
         <image name="PuntIcon" width="25" height="25"/>
         <image name="SettingsIcon" width="25" height="25"/>
         <image name="first" width="30" height="30"/>

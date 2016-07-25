@@ -6,8 +6,13 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PartyTableViewCell: UITableViewCell {
-
+    // MARK: Outlets
+    @IBOutlet weak var partyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    // MARK: Properties
+    var event: Event?
 }

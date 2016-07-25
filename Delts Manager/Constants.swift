@@ -94,6 +94,7 @@ struct Constants {
             static let EventDutyTimeCell = "EventDutyTime"
             static let AddCustomDutyCell = "AddCustomDuty"
             static let CustomEventDutyCell = "CustomDuty"
+            static let PartyTableViewCell = "PartyCell"
         }
         
         struct Controllers {

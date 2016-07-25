@@ -78,7 +78,7 @@ class LoginViewController: UIViewController {
         
         viewControllers.insert(managerController, atIndex: 0)
         
-        controller.setViewControllers(viewControllers, animated: false)
+        //controller.setViewControllers(viewControllers, animated: false)
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
