@@ -61,6 +61,7 @@ struct Constants {
     struct Colors {
         static let deltsYellow = UIColor(red:1.0, green:0.87004060520000004, blue:0.50798801100000002, alpha:1.0)
         static let deltsLightYellow = UIColor(red:1.0, green:0.87004060520000004, blue:0.50798801100000002, alpha:0.5)
+        static let deltsDarkPurple = UIColor(red:0.52955204398288358, green:0.11682364710210935, blue:1, alpha:1)
         static let deltsPurple = UIColor(red:0.52955204398288358, green:0.11682364710210935, blue:1, alpha:0.64310344827586208)
         static let deltsLightPurple = UIColor(red:0.52955204398288358, green:0.11682364710210935, blue:1, alpha:0.32)
 
