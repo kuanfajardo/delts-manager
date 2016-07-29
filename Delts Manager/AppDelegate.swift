@@ -19,24 +19,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let standardDefaults = NSUserDefaults.standardUserDefaults()
         
         let appDefaults: [String : AnyObject] = [
-            Constants.DefaultsKeys.LoggedIn : false,
-            // TODO: Replace email with "" and implement way of updating when user logs in
+            // Log In
+            Constants.DefaultsKeys.LoggedIn : true,
+            
+            // User Info
+            Constants.DefaultsKeys.Name : "Juan",
+            Constants.DefaultsKeys.ID : 0,
             Constants.DefaultsKeys.Email : "jfajardo@mit.edu",
+            Constants.DefaultsKeys.Roles : [0],
+            
+            // Notifications
             Constants.DefaultsKeys.Notifications : true,
             Constants.DefaultsKeys.DutyReminders : true,
             Constants.DefaultsKeys.DutyTime : "08:00",
             Constants.DefaultsKeys.PuntMakupPosted : true,
             Constants.DefaultsKeys.CheckoffNotification : true,
             Constants.DefaultsKeys.PuntNotification : true,
+            
+            // Enabled
             Constants.DefaultsKeys.CheckoffEnabled : false,
-            Constants.DefaultsKeys.Punts : 0,
-            Constants.DefaultsKeys.ScheduleEnabled : false
+            Constants.DefaultsKeys.ScheduleEnabled : false,
+            
+            // Other
+            Constants.DefaultsKeys.Punts : 0
         ]
 
         standardDefaults.registerDefaults(appDefaults)
         
+        let loggedIn = Constants.defaults.boolForKey(Constants.DefaultsKeys.LoggedIn)
+        
+        if loggedIn {
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.TabController)
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+            return true
+
+        }
+        
         return true
     }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -108,13 +108,20 @@ class SettingsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         if indexPath.section == 0 && indexPath.row == 1 {
             performSegueWithIdentifier(Constants.Identifiers.Segues.ChangePasswordSegue, sender: self)
         } else {
             let alertController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Logout", style: .Default, handler: { (alert: UIAlertAction) in
+                
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                
+                let loginController = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.LoginController) as! LoginViewController
+                
+                self.presentViewController(loginController, animated: false, completion: nil)
                 return
             }))
             

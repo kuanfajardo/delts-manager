@@ -45,7 +45,10 @@ struct Constants {
     
     struct DefaultsKeys {
         static let LoggedIn = "Logged In"
+        static let Name = "Name"
+        static let ID = "ID"
         static let Email = "Email"
+        static let Roles = "Roles"
         static let Notifications = "Notifications"
         static let DutyReminders = "Duty Reminders"
         static let DutyTime = "Duty Reminder Time"
@@ -99,6 +102,7 @@ struct Constants {
         }
         
         struct Controllers {
+            static let LoginController = "Login"
             static let TabController = "TabController"
             static let BouncingController = "Bouncing"
             static let EventNameController = "EventName"
