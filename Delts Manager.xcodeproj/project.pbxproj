@@ -134,12 +134,12 @@
 		56487A411D3C3FF000825A0F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				56F863301D465F6A00E5D850 /* Parties Tab */,
 				56C5E4CC1D3E7E60009D6F58 /* Bouncing Tab */,
 				56487A461D3C409E00825A0F /* Login */,
 				56487A421D3C400700825A0F /* Overview Tab */,
 				56487A431D3C405600825A0F /* Duties Tab */,
 				56487A441D3C407000825A0F /* Punts Tab */,
+				56F863301D465F6A00E5D850 /* Parties Tab */,
 				56487A451D3C408800825A0F /* Settings Tab */,
 			);
 			name = Controller;
