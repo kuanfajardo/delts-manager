@@ -12,6 +12,16 @@ import UIKit
 
 struct Constants {
     
+    static func userAuthorized(role: Int) -> Bool {
+        let roles = Constants.defaults.arrayForKey(Constants.DefaultsKeys.Roles) as! [Int]
+        
+        if roles.indexOf(role) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     static var defaults: NSUserDefaults {
         get {
             return NSUserDefaults.standardUserDefaults()
