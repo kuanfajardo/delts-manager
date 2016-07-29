@@ -12,9 +12,24 @@ class PartiesTableViewController: UITableViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Check roles for user content
+        if Constants.userAuthorized(Constants.Roles.BouncingChair) || Constants.userAuthorized(Constants.Roles.Admin) {
+            
+            let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
+            rightAddButton.tintColor = Constants.Colors.deltsPurple
+            
+            self.navigationItem.rightBarButtonItem = rightAddButton
+        }
+
         loadSampleEvents()
     }
-
+    
+    func addPressed() {
+        print("add pressed")
+    }
+    
+    
     // MARK: Properties:
     var events = [Event]()
     
