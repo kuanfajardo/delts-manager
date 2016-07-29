@@ -14,7 +14,7 @@ class PartiesTableViewController: UITableViewController {
         super.viewDidLoad()
         loadSampleEvents()
     }
-    
+
     // MARK: Properties:
     var events = [Event]()
     
@@ -70,13 +70,13 @@ class PartiesTableViewController: UITableViewController {
     
     // MARK: - Navigation
     
-    /*
-    // Go to detail duty view
+    
+    // Go to detail event view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! DutyDetailViewController
-        let cell = sender as! DutiesTableViewCell
+        let controller = segue.destinationViewController as! PartyDetailViewController
+        let cell = sender as! PartyTableViewCell
         
-        controller.duty = cell.duty
-    }*/
+        controller.event = cell.event
+    }
 
 }

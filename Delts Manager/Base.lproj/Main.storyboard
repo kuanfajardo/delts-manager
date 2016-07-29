@@ -336,7 +336,7 @@
                                                 <constraint firstAttribute="width" constant="150" id="M14-7j-1st"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1D-WU-9Im">
@@ -345,7 +345,7 @@
                                                 <constraint firstAttribute="width" constant="150" id="K2a-Ru-lOK"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -359,6 +359,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="k1D-WU-9Im" id="txp-r4-MCm"/>
                                     <outlet property="partyLabel" destination="70A-25-7U4" id="vJ8-QH-KDD"/>
+                                    <segue destination="KDb-F4-v32" kind="show" id="Fjf-8A-aek"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -372,6 +373,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgw-d7-IzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3583" y="52"/>
+        </scene>
+        <!--Party Detail View Controller-->
+        <scene sceneID="CDV-st-5nL">
+            <objects>
+                <viewController id="KDb-F4-v32" customClass="PartyDetailViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gcX-0N-wOD"/>
+                        <viewControllerLayoutGuide type="bottom" id="um8-Cz-ekn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X27-IH-Gw5">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2c-qw-e3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3583" y="812"/>
         </scene>
         <!--Bouncing Navigation Controller-->
         <scene sceneID="E7k-tT-tp8">
@@ -591,7 +610,7 @@
                                                 <constraint firstAttribute="width" constant="369.5" id="yOK-SK-Nmu"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LKE-nU-ZQV">
@@ -600,13 +619,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hr" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-RS-FGc">
                                             <rect key="frame" x="559.5" y="11.5" width="27.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i6x-td-boo">
                                             <rect key="frame" x="404.5" y="11" width="52" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1109,7 +1128,7 @@
         <!--Login-->
         <scene sceneID="dZW-nH-4W1">
             <objects>
-                <viewController title="Login" id="P8K-Py-7dy" customClass="LoginViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="Login" id="P8K-Py-7dy" customClass="LoginViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N5p-wO-ziG"/>
                         <viewControllerLayoutGuide type="bottom" id="Wxn-XD-2km"/>
@@ -1233,8 +1252,8 @@
                         <segue destination="5Ge-JO-Izc" kind="relationship" relationship="viewControllers" id="qJk-iG-cc1"/>
                         <segue destination="p5H-Nq-k8w" kind="relationship" relationship="viewControllers" id="ZBm-gq-Tyu"/>
                         <segue destination="tcR-RU-JMG" kind="relationship" relationship="viewControllers" id="WgI-9Z-7eL"/>
-                        <segue destination="Qa1-lO-buZ" kind="relationship" relationship="viewControllers" id="GrB-mg-lZm"/>
                         <segue destination="zUt-i5-bkK" kind="relationship" relationship="viewControllers" id="BoB-B6-G5B"/>
+                        <segue destination="Qa1-lO-buZ" kind="relationship" relationship="viewControllers" id="GrB-mg-lZm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -1607,7 +1626,7 @@
                                                 <constraint firstAttribute="width" constant="169" id="1Ch-YY-xhr"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
