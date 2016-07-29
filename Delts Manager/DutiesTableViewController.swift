@@ -13,7 +13,29 @@ class DutiesTableViewController: UITableViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Check roles for user content
+        if Constants.userAuthorized(Constants.Roles.Checker) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
+            let segControl = UISegmentedControl(items: ["User", "Checker"])
+            
+            if Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
+                segControl.insertSegmentWithTitle("Admin", atIndex: 2, animated: false)
+            }
+            
+            segControl.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+            segControl.tintColor = Constants.Colors.deltsDarkPurple
+            segControl.selectedSegmentIndex = 0
+
+            
+            self.navigationItem.titleView = segControl
+        }
+        
+        // loadDuties()
         loadSampleDuties()
+    }
+    
+    func segmentChanged(sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
     }
     
     // MARK: Properties:
