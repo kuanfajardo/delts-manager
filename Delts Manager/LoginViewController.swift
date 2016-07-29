@@ -27,7 +27,21 @@ class LoginViewController: UIViewController {
             debugTextLabel.text = ""
             authenticateLogin()
         }*/
+        
+        // STEP 1: Authenticate
         authenticateLogin()
+        
+        // STEP 2: Get User Info
+        getLoginInfo()
+        
+        // STEP 3: Complete / UI Transition
+        completeLogin()
+    }
+    
+    // Get Login Stuff
+    private func getLoginInfo() {
+        // GET Const. NAME, ID, ROLES, EMAIL
+        // Set LOGGED IN
     }
     
     
@@ -53,6 +67,8 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: Authentication
+    
+    // HTTP method for auth
     private func authenticateLogin() {
         // TODO: Later, implement actual login procedure
         /*if emailTextField.text! == Constants.UserInfo.email && passwordTextField.text! == Constants.UserInfo.password {
@@ -62,7 +78,6 @@ class LoginViewController: UIViewController {
             displayError("Invalid email/password combination")
             setUIEnabled(true)
         }*/
-        completeLogin()
     }
     
     private func completeLogin() {
