@@ -15,13 +15,19 @@ class PuntsTableViewController: UITableViewController {
         
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-            let segControl = UISegmentedControl(items: ["User", "Admin"])
+            let segControl = UISegmentedControl(items: ["User", "Admin", "Makeups"])
             
             segControl.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
             segControl.tintColor = Constants.Colors.deltsDarkPurple
             segControl.selectedSegmentIndex = 0
             
             self.navigationItem.titleView = segControl
+            
+            let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
+            rightAddButton.tintColor = Constants.Colors.deltsPurple
+            
+            self.navigationItem.rightBarButtonItem = rightAddButton
+
         }
         
         //loadPunts()
@@ -29,16 +35,20 @@ class PuntsTableViewController: UITableViewController {
     }
     
     func segmentChanged(sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        //print(sender.selectedSegmentIndex)
+    }
+    
+    func addPressed() {
+        //
     }
     
     // MARK: Properties:
     var punts = [Punt]()
     
     func loadSamplePunts() {
-        let punt1 = Punt(name: "Pantry", date: NSDate(), givenBy: "Erick Friis", status: "Completed")
-        let punt2 = Punt(name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: "Incomplete")
-        let punt3 = Punt(name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: "Pending")
+        let punt1 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Erick Friis", status: "Completed")
+        let punt2 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: "Incomplete")
+        let punt3 = Punt(slave: "Juan", name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: "Pending")
         
         punts += [punt1, punt2, punt3]
     }
