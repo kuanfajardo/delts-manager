@@ -126,6 +126,8 @@ struct Constants {
         
         struct Segues {
             static let ChangePasswordSegue = "ChangePassword"
+            static let UserDutyDetailSegue = "UserDutyDetail"
+            static let CheckerDutyDetailSegue = "CheckerDutyDetail"
         }
         
         struct TextFields {
