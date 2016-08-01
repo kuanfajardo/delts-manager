@@ -15,13 +15,13 @@ class PuntsTableViewController: UITableViewController {
         
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-            let segControl = UISegmentedControl(items: ["User", "Admin", "Makeups"])
+            self.segControl = UISegmentedControl(items: ["User", "Admin", "Makeups"])
             
-            segControl.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-            segControl.tintColor = Constants.Colors.deltsDarkPurple
-            segControl.selectedSegmentIndex = 0
+            self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+            self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
+            self.segControl!.selectedSegmentIndex = 0
             
-            self.navigationItem.titleView = segControl
+            self.navigationItem.titleView = self.segControl
             
             let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
             rightAddButton.tintColor = Constants.Colors.deltsPurple
@@ -35,7 +35,7 @@ class PuntsTableViewController: UITableViewController {
     }
     
     func segmentChanged(sender: UISegmentedControl) {
-        //print(sender.selectedSegmentIndex)
+        self.tableView.reloadData()
     }
     
     func addPressed() {
@@ -54,36 +54,76 @@ class PuntsTableViewController: UITableViewController {
     }
     
     
+    var segControl: UISegmentedControl?
+    var segment: String {
+        if self.segControl == nil {
+            return "User"
+        } else {
+            return (self.segControl!.titleForSegmentAtIndex((self.segControl?.selectedSegmentIndex)!))!
+        }
+    }
+    
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let identifier = Constants.Identifiers.TableViewCells.PuntTableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
-        
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
-        } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
-        }
         
         guard indexPath.row < punts.count else {
-            cell.puntLabel.text = ""
-            cell.dateLabel.text = ""
-            cell.checkoffImageView?.image = nil
+            let identifier = Constants.Identifiers.TableViewCells.PlainCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsLightPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
             cell.userInteractionEnabled = false
             
             return cell
         }
         
-        let punt = punts[indexPath.row]
-        
-        cell.punt = punt
-        cell.puntLabel.text = punt.name
-        cell.dateLabel.text = punt.dateString
-        // TODO: Real
-        cell.checkoffImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
-        
-        return cell
+        if self.segment == "User" {
+            let identifier = Constants.Identifiers.TableViewCells.PuntTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsLightPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
+            let punt = punts[indexPath.row]
+            
+            cell.punt = punt
+            cell.puntLabel.text = punt.name
+            cell.dateLabel.text = punt.dateString
+            // TODO: Real
+            cell.checkoffImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            
+            return cell
+            
+        } else /*if self.segment == "Admin"*/ {
+            let identifier = Constants.Identifiers.TableViewCells.PuntAdminCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntAdminTableViewCell
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsLightPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
+            
+            let punt = punts[indexPath.row]
+            
+            cell.punt = punt
+            cell.puntLabel.text = punt.name
+            cell.dateLabel.text = punt.dateString
+            cell.slaveLabel.text = punt.slave
+            // TODO: Real
+            cell.statusImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            
+            return cell
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
