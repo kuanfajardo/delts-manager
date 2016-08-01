@@ -151,6 +151,7 @@ class DutiesTableViewController: UITableViewController {
             let cell = sender as! DutiesTableViewCell
             let controller = segue.destinationViewController as! DutyDetailViewController
             controller.duty = cell.duty
+            controller.role = 0
             
             break
         case Constants.Identifiers.Segues.CheckerDutyDetailSegue:

@@ -14,9 +14,12 @@ class DutyDetailViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var statusImageView: UIImageView!
+    @IBOutlet weak var slaveLabel: UILabel!
+    @IBOutlet weak var slaveTitleLabel: UILabel!
     
     // MARK: Properties
     var duty: Duty?
+    var role: Int?
     
     @IBAction func statusImagePressed(sender: UIButton) {
         // TODO: complete when available
@@ -32,6 +35,12 @@ class DutyDetailViewController: UIViewController {
         self.dutyLabel.text = duty?.name
         self.dateLabel.text = duty?.dateString
         self.descriptionLabel.text = ""
+        self.slaveLabel.text = duty?.slave
+        
+        if self.role == 0 {
+            self.slaveTitleLabel.hidden = true
+            self.slaveLabel.hidden = true
+        }
         
         // TODO: Implement status enum here
         //self.statusImageView.image = UIImage(named: duty?.status)
