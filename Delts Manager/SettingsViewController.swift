@@ -81,6 +81,7 @@ class SettingsTableViewController: UITableViewController {
             cell.settingSwitch.tag = indexPath.row
             cell.settingSwitch.addTarget(self, action: #selector(switchFlipped), forControlEvents: .ValueChanged)
             cell.selectionStyle = .None
+            cell.userInteractionEnabled = false
             
             return cell
         default:
