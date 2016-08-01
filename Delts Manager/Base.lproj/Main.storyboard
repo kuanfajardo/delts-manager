@@ -472,7 +472,7 @@
         <!--New Event-->
         <scene sceneID="f0r-fi-Dq5">
             <objects>
-                <tableViewController title="New Event" id="YAP-3I-epL" customClass="EventPlannerTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="New Party" title="New Event" id="YAP-3I-epL" customClass="EventPlannerTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MxV-ho-6NQ">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
