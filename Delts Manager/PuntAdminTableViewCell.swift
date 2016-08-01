@@ -6,8 +6,16 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PuntAdminTableViewCell: UITableViewCell {
-
+    
+    // MARK: Properties
+    var punt: Punt?
+    
+    // MARK: Outlets
+    @IBOutlet weak var puntLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var slaveLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
 }
