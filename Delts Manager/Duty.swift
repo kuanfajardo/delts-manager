@@ -11,7 +11,8 @@ import UIKit
 class Duty: NSObject, NSCoding {
     // MARK: Properties
     
-    // All Dutie
+    // All Duties
+    var slave: String
     var name: String
     var type: Constants.DutyType
     var status: String // TODO: implement as Const.Status (init all three methods below)
@@ -36,6 +37,7 @@ class Duty: NSObject, NSCoding {
     // MARK: Types
     
     struct PropertyKey {
+        static let slaveKey = "slave"
         static let nameKey = "name"
         static let typeKey = "type"
         static let dateKey = "date"
@@ -43,7 +45,8 @@ class Duty: NSObject, NSCoding {
     }
     
     // MARK: Init
-    init(name: String, type: Constants.DutyType, date: NSDate, status: String) {
+    init(slave: String, name: String, type: Constants.DutyType, date: NSDate, status: String) {
+        self.slave = slave
         self.name = name
         self.date = date
         self.status = status
@@ -52,7 +55,8 @@ class Duty: NSObject, NSCoding {
         super.init()
     }
     
-    init(name: String, type: Constants.DutyType, status: String, startTime: NSDate, duration: Int) {
+    init(slave: String, name: String, type: Constants.DutyType, status: String, startTime: NSDate, duration: Int) {
+        self.slave = slave
         self.name = name
         self.startTime = startTime
         self.status = status
@@ -64,6 +68,7 @@ class Duty: NSObject, NSCoding {
     
     // MARK: NSCoding
     func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(slave, forKey: PropertyKey.slaveKey)
         aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
         aCoder.encodeObject(type.rawValue, forKey: PropertyKey.typeKey)
         aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
@@ -71,12 +76,13 @@ class Duty: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
+        let slave = aDecoder.decodeObjectForKey(PropertyKey.slaveKey) as! String
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let typeRaw = aDecoder.decodeObjectForKey(PropertyKey.typeKey) as! String
         let type = Constants.DutyType(rawValue: typeRaw)!
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let status = aDecoder.decodeObjectForKey(PropertyKey.statusKey) as! String
         
-        self.init(name: name, type: type, date: date, status: status)
+        self.init(slave: slave, name: name, type: type, date: date, status: status)
     }
 }
