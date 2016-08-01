@@ -26,6 +26,7 @@
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
 		565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544C81D4668B500DF9957 /* PartyDetailViewController.swift */; };
 		565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */; };
+		565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */; };
 		568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* DutiesTableViewController.swift */; };
 		5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */; };
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
@@ -82,6 +83,7 @@
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
 		565544C81D4668B500DF9957 /* PartyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDetailViewController.swift; sourceTree = "<group>"; };
 		565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutyCheckoffTableViewCell.swift; sourceTree = "<group>"; };
+		565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntAdminTableViewCell.swift; sourceTree = "<group>"; };
 		568720981D29B555001D9AF3 /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
 		5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */,
 				568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */,
 				560765711D2A47F6008D3337 /* PuntDetailViewController.swift */,
+				565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */,
 			);
 			name = "Punts Tab";
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
+				565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
