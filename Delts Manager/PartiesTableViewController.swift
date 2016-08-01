@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PartiesTableViewController: UITableViewController {
+class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,16 @@ class PartiesTableViewController: UITableViewController {
             
             self.navigationItem.rightBarButtonItem = rightAddButton
         }
+        
 
         loadSampleEvents()
     }
     
     func addPressed() {
-        print("add pressed")
+        let identifier = Constants.Identifiers.Controllers.NewPartyController
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! EventPlannerTableViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     
