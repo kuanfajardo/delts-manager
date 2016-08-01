@@ -23,11 +23,13 @@ class Punt: NSObject, NSCoding {
     var givenBy: String
     // TODO: implement as Const.Status (init all three methods below)
     var status: String
+    var slave: String
     
     
     // MARK: Types
     
     struct PropertyKey {
+        static let slaveKey = "slave"
         static let nameKey = "name"
         static let dateKey = "date"
         static let givenByKey = "givenBy"
@@ -35,7 +37,8 @@ class Punt: NSObject, NSCoding {
     }
     
     // MARK: Init
-    init(name: String, date: NSDate, givenBy: String, status: String) {
+    init(slave: String, name: String, date: NSDate, givenBy: String, status: String) {
+        self.slave = slave
         self.name = name
         self.date = date
         self.givenBy = givenBy
@@ -53,12 +56,13 @@ class Punt: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
+        let slave = aDecoder.decodeObjectForKey(PropertyKey.slaveKey) as! String
         let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
         let givenBy = aDecoder.decodeObjectForKey(PropertyKey.givenByKey) as! String
         let status = aDecoder.decodeObjectForKey(PropertyKey.statusKey) as! String
         
-        self.init(name: name, date: date, givenBy: givenBy, status: status)
+        self.init(slave: slave, name: name, date: date, givenBy: givenBy, status: status)
     }
 
 }
