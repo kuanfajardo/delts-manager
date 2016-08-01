@@ -34,6 +34,9 @@ class OverviewViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        
         setUI()
     }
     
