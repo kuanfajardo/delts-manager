@@ -18,6 +18,9 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
         self.navigationItem.rightBarButtonItem?.enabled = false
         
+        self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        
         self.tableView.scrollEnabled = false
         
         reloadData()
