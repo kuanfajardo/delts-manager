@@ -146,10 +146,22 @@ class DutiesTableViewController: UITableViewController {
 
     // Go to detail duty view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! DutyDetailViewController
-        let cell = sender as! DutiesTableViewCell
- 
-        controller.duty = cell.duty
+        switch segue.identifier! {
+        case Constants.Identifiers.Segues.UserDutyDetailSegue:
+            let cell = sender as! DutiesTableViewCell
+            let controller = segue.destinationViewController as! DutyDetailViewController
+            controller.duty = cell.duty
+            
+            break
+        case Constants.Identifiers.Segues.CheckerDutyDetailSegue:
+            let cell = sender as! DutyCheckoffTableViewCell
+            let controller = segue.destinationViewController as! DutyDetailViewController
+            controller.duty = cell.duty
+            
+        default: break
+        }
+        
+        
     }
 
 }
