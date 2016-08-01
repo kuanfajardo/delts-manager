@@ -1407,7 +1407,7 @@
                                     <outlet property="checkoffImageView" destination="Exw-2r-vOv" id="GRe-CJ-B8Y"/>
                                     <outlet property="dateLabel" destination="N5v-Sg-9Z4" id="cDw-Wa-FEz"/>
                                     <outlet property="puntLabel" destination="gWd-6p-K28" id="P3t-Uk-XnJ"/>
-                                    <segue destination="WLP-uS-TEe" kind="show" id="WOa-pe-NmB"/>
+                                    <segue destination="WLP-uS-TEe" kind="show" identifier="UserPuntDetail" id="WOa-pe-NmB"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PuntAdminCell" rowHeight="45" id="Akh-Xn-6wa" customClass="PuntAdminTableViewCell" customModule="Delts_Manager" customModuleProvider="target">
@@ -1473,6 +1473,7 @@
                                     <outlet property="puntLabel" destination="9eY-TM-EyH" id="9y5-tS-71D"/>
                                     <outlet property="slaveLabel" destination="4rv-Nr-EUf" id="So3-nt-Gtp"/>
                                     <outlet property="statusImageView" destination="OlA-3a-XTz" id="HoV-Qe-6v8"/>
+                                    <segue destination="WLP-uS-TEe" kind="show" identifier="AdminPuntDetail" id="U5E-4F-9Nz"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="KVn-eh-Wat">
@@ -1546,8 +1547,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-dp-5yu">
+                                <rect key="frame" x="287" y="196" width="49" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PuntFill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrv-Db-BQz">
-                                <rect key="frame" x="20" y="228" width="560" height="21"/>
+                                <rect key="frame" x="20" y="228" width="259" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1597,6 +1604,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SlaveFill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC5-aG-erU">
+                                <rect key="frame" x="287" y="227" width="293" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1608,20 +1621,26 @@
                             <constraint firstItem="QXB-bo-myW" firstAttribute="top" secondItem="kHg-0G-KBK" secondAttribute="bottom" constant="8" id="8iG-Gm-fR5"/>
                             <constraint firstItem="83y-bF-7Ft" firstAttribute="centerY" secondItem="DeR-S1-zUw" secondAttribute="centerY" id="Avt-Jy-d7u"/>
                             <constraint firstItem="83y-bF-7Ft" firstAttribute="bottom" secondItem="DeR-S1-zUw" secondAttribute="bottom" id="BA1-DL-jZu"/>
+                            <constraint firstItem="Y0s-dp-5yu" firstAttribute="top" secondItem="83y-bF-7Ft" secondAttribute="bottom" constant="21" id="BCe-kt-RYY"/>
                             <constraint firstItem="wBr-vg-z7s" firstAttribute="top" secondItem="gJV-L8-6qd" secondAttribute="bottom" constant="8" id="FHl-tv-7yy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Qrv-Db-BQz" secondAttribute="leading" id="Ge7-9i-dnN"/>
                             <constraint firstItem="kHg-0G-KBK" firstAttribute="top" secondItem="Qrv-Db-BQz" secondAttribute="bottom" constant="18" id="ItS-Cy-EcO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qrv-Db-BQz" secondAttribute="trailing" id="KPi-Wv-TEn"/>
+                            <constraint firstItem="Qrv-Db-BQz" firstAttribute="trailing" secondItem="QXB-bo-myW" secondAttribute="trailing" id="Mky-st-COM"/>
                             <constraint firstItem="wWi-qz-irX" firstAttribute="centerX" secondItem="meM-gQ-UrQ" secondAttribute="centerX" id="PH5-XM-qTo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="crj-Aa-O7c" secondAttribute="leading" id="RDF-6h-vzS"/>
+                            <constraint firstItem="Y0s-dp-5yu" firstAttribute="leading" secondItem="wWi-qz-irX" secondAttribute="leading" id="RvE-UJ-lIZ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wBr-vg-z7s" secondAttribute="leading" id="V3m-sL-JMP"/>
                             <constraint firstItem="DeR-S1-zUw" firstAttribute="top" secondItem="g7P-5b-8im" secondAttribute="bottom" id="VMy-Mx-Rgj"/>
+                            <constraint firstItem="MC5-aG-erU" firstAttribute="leading" secondItem="Y0s-dp-5yu" secondAttribute="leading" id="Vkp-ar-QQS"/>
                             <constraint firstItem="wWi-qz-irX" firstAttribute="top" secondItem="Qrv-Db-BQz" secondAttribute="bottom" constant="18" id="WG6-jN-SQu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MC5-aG-erU" secondAttribute="trailing" id="ZyZ-oW-ktB"/>
                             <constraint firstItem="83y-bF-7Ft" firstAttribute="baseline" secondItem="DeR-S1-zUw" secondAttribute="baseline" id="ap2-Oj-koM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="gJV-L8-6qd" secondAttribute="leading" id="bVh-aa-xtd"/>
                             <constraint firstItem="Qrv-Db-BQz" firstAttribute="top" secondItem="crj-Aa-O7c" secondAttribute="bottom" constant="8" id="cIX-CC-sgq"/>
                             <constraint firstItem="crj-Aa-O7c" firstAttribute="top" secondItem="DeR-S1-zUw" secondAttribute="bottom" constant="21" id="cYy-qt-mog"/>
                             <constraint firstAttribute="leadingMargin" secondItem="kHg-0G-KBK" secondAttribute="leading" id="hrt-fS-gGL"/>
+                            <constraint firstItem="MC5-aG-erU" firstAttribute="top" secondItem="Y0s-dp-5yu" secondAttribute="bottom" constant="7" id="iJU-Qy-H0c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wBr-vg-z7s" secondAttribute="trailing" id="jCP-N8-two"/>
                             <constraint firstItem="cC7-oO-OhU" firstAttribute="top" secondItem="wWi-qz-irX" secondAttribute="bottom" constant="8" id="l4r-Zr-JJc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="cC7-oO-OhU" secondAttribute="leading" id="qy0-RA-2na"/>
@@ -1633,6 +1652,7 @@
                             <mask key="constraints">
                                 <exclude reference="Avt-Jy-d7u"/>
                                 <exclude reference="ap2-Oj-koM"/>
+                                <exclude reference="KPi-Wv-TEn"/>
                                 <exclude reference="qy0-RA-2na"/>
                             </mask>
                         </variation>
@@ -1642,6 +1662,8 @@
                         <outlet property="descriptionLabel" destination="wBr-vg-z7s" id="f26-nK-L7X"/>
                         <outlet property="givenByLabel" destination="QXB-bo-myW" id="KKG-P8-jxn"/>
                         <outlet property="puntLabel" destination="Qrv-Db-BQz" id="8t4-W5-Flp"/>
+                        <outlet property="slaveLabel" destination="MC5-aG-erU" id="AtF-Et-arf"/>
+                        <outlet property="slaveTitleLabel" destination="Y0s-dp-5yu" id="QET-o7-IYv"/>
                         <outlet property="statusImageView" destination="DeR-S1-zUw" id="hfw-Fc-RSu"/>
                     </connections>
                 </viewController>
@@ -1851,6 +1873,7 @@
         <image name="green_circle" width="418" height="417"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="U5E-4F-9Nz"/>
         <segue reference="0uf-ch-UbI"/>
     </inferredMetricsTieBreakers>
 </document>

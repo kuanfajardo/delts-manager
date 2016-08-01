@@ -134,14 +134,30 @@ class PuntsTableViewController: UITableViewController {
         return 1
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Navigation
     
     // Go to detail punt view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! PuntDetailViewController
-        let cell = sender as! PuntsTableViewCell
-        
-        controller.punt = cell.punt
+        switch segue.identifier! {
+        case Constants.Identifiers.Segues.UserPuntDetailSegue:
+            let cell = sender as! PuntsTableViewCell
+            let controller = segue.destinationViewController as! PuntDetailViewController
+            controller.punt = cell.punt
+            controller.role = 0
+            
+            break
+        case Constants.Identifiers.Segues.AdminPuntDetailSegue:
+            let cell = sender as! PuntAdminTableViewCell
+            let controller = segue.destinationViewController as! PuntDetailViewController
+            controller.punt = cell.punt
+            
+        default: break
+        }
+
     }
     
 

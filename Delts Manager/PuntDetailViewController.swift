@@ -15,9 +15,12 @@ class PuntDetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var givenByLabel: UILabel!
+    @IBOutlet weak var slaveLabel: UILabel!
+    @IBOutlet weak var slaveTitleLabel: UILabel!
     
     // MARK: Properties
     var punt: Punt?
+    var role: Int?
     
     @IBAction func statusImagePressed(sender: UIButton) {
         // TODO: complete when available
@@ -33,6 +36,12 @@ class PuntDetailViewController: UIViewController {
         self.dateLabel.text = punt?.dateString
         self.givenByLabel.text = punt?.givenBy
         self.descriptionLabel.text = ""
+        self.slaveLabel.text = punt?.slave
+        
+        if self.role == 0 {
+            self.slaveLabel.hidden = true
+            self.slaveTitleLabel.hidden = true
+        }
         
         // TODO: Implement status enum here
         //self.statusImageView.image = UIImage(named: duty?.status)
