@@ -128,6 +128,8 @@ struct Constants {
             static let ChangePasswordSegue = "ChangePassword"
             static let UserDutyDetailSegue = "UserDutyDetail"
             static let CheckerDutyDetailSegue = "CheckerDutyDetail"
+            static let UserPuntDetailSegue = "UserPuntDetail"
+            static let AdminPuntDetailSegue = "AdminPuntDetail"
         }
         
         struct TextFields {
