@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.Name : "Juan",
             Constants.DefaultsKeys.ID : 0,
             Constants.DefaultsKeys.Email : "jfajardo@mit.edu",
-            Constants.DefaultsKeys.Roles : [0],
+            Constants.DefaultsKeys.Roles : [0,1,2,5],
             
             // Notifications
             Constants.DefaultsKeys.Notifications : true,
@@ -57,9 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
-            
-            return true
-
         }
         
         return true
