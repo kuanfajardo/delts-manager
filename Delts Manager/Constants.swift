@@ -110,7 +110,7 @@ struct Constants {
             static let CustomEventDutyCell = "CustomDuty"
             static let PartyTableViewCell = "PartyCell"
             static let DutyCheckoffCell = "DutyCheckoffCell"
-            static let DutyAdminCell = "DutyAdminCell"
+            static let PuntAdminCell = "PuntAdminCell"
         }
         
         struct Controllers {
