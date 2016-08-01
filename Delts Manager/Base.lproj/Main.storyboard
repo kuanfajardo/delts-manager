@@ -735,7 +735,7 @@
                                     <outlet property="dateLabel" destination="x0h-PR-76q" id="GeQ-Ck-hdN"/>
                                     <outlet property="dutyLabel" destination="OAe-DF-Jef" id="aHI-5h-dhI"/>
                                     <outlet property="statusImageView" destination="iwF-rL-lhf" id="IVB-u6-LVo"/>
-                                    <segue destination="em0-Jz-xf3" kind="show" id="hIl-ZN-sbX"/>
+                                    <segue destination="em0-Jz-xf3" kind="show" identifier="UserDutyDetail" id="hIl-ZN-sbX"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DutyCheckoffCell" rowHeight="45" id="mmT-Ta-Wqh" customClass="DutyCheckoffTableViewCell" customModule="Delts_Manager" customModuleProvider="target">
@@ -801,6 +801,7 @@
                                     <outlet property="dutyLabel" destination="fId-bU-98i" id="kuq-GE-vww"/>
                                     <outlet property="slaveLabel" destination="ZF9-kr-tLO" id="TLp-kB-GnI"/>
                                     <outlet property="statusImageView" destination="3Dx-Gg-1jV" id="PJO-mD-AxQ"/>
+                                    <segue destination="em0-Jz-xf3" kind="show" identifier="CheckerDutyDetail" id="0uf-ch-UbI"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="zLc-Rb-gJS">
@@ -1763,4 +1764,7 @@
         <image name="first" width="30" height="30"/>
         <image name="green_circle" width="418" height="417"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0uf-ch-UbI"/>
+    </inferredMetricsTieBreakers>
 </document>
