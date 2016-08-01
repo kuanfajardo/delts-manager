@@ -1476,10 +1476,44 @@
                                     <segue destination="WLP-uS-TEe" kind="show" identifier="AdminPuntDetail" id="U5E-4F-9Nz"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="KVn-eh-Wat">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PuntMakeupCell" id="KVn-eh-Wat">
                                 <rect key="frame" x="0.0" y="118" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVn-eh-Wat" id="qe2-9W-URA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punt Makeup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUR-6V-Zkz">
+                                            <rect key="frame" x="23" y="13" width="150" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="9T3-M3-g5e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taken By" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Biv-lt-WRZ">
+                                            <rect key="frame" x="427" y="13" width="150" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="2Xv-p2-wat"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="tUR-6V-Zkz" firstAttribute="centerY" secondItem="qe2-9W-URA" secondAttribute="centerY" id="c8E-cr-p1R"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Biv-lt-WRZ" secondAttribute="trailing" constant="15" id="qh3-S1-gca"/>
+                                        <constraint firstItem="tUR-6V-Zkz" firstAttribute="leading" secondItem="qe2-9W-URA" secondAttribute="leadingMargin" constant="15" id="rwM-rk-07i"/>
+                                        <constraint firstItem="Biv-lt-WRZ" firstAttribute="centerY" secondItem="qe2-9W-URA" secondAttribute="centerY" id="u0g-RF-tJz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="VYq-RC-SVy">
+                                <rect key="frame" x="0.0" y="162" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VYq-RC-SVy" id="K0W-eR-YrW">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -1873,7 +1907,7 @@
         <image name="green_circle" width="418" height="417"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U5E-4F-9Nz"/>
+        <segue reference="WOa-pe-NmB"/>
         <segue reference="0uf-ch-UbI"/>
     </inferredMetricsTieBreakers>
 </document>
