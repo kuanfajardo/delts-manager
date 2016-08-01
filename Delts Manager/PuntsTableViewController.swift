@@ -15,7 +15,7 @@ class PuntsTableViewController: UITableViewController {
         
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-            self.segControl = UISegmentedControl(items: ["User", "Admin", "Makeups"])
+            self.segControl = UISegmentedControl(items: ["User", "Admin"/*, "Makeups"*/])
             
             self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
             self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
@@ -39,7 +39,29 @@ class PuntsTableViewController: UITableViewController {
     }
     
     func addPressed() {
-        //
+        let alertController = UIAlertController(title: "Add...", message: nil, preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            print("Cancel")
+        }
+        alertController.addAction(cancelAction)
+        
+        let puntAction = UIAlertAction(title: "New Punt", style: .Default) { (action) in
+            print("New Personal Punt")
+        }
+        alertController.addAction(puntAction)
+        
+        let massPuntAction = UIAlertAction(title: "New Mass Punt", style: .Default) { (action) in
+            print("New Mass Punt")
+        }
+        alertController.addAction(massPuntAction)
+        
+        let puntMakeupAction = UIAlertAction(title: "New Punt Makeup", style: .Default) { (action) in
+            print("New Punt Makeup")
+        }
+        //alertController.addAction(puntMakeupAction)
+        
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
     // MARK: Properties:
