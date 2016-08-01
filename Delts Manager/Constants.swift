@@ -122,6 +122,7 @@ struct Constants {
             static let EndTimeController = "EndTime"
             static let DutyChooserController = "DutyChooser"
             static let DutyTimeChooserController = "DutyTimeChooser"
+            static let NewPartyController = "New Party"
         }
         
         struct Segues {
