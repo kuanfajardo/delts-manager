@@ -81,7 +81,6 @@ class SettingsTableViewController: UITableViewController {
             cell.settingSwitch.tag = indexPath.row
             cell.settingSwitch.addTarget(self, action: #selector(switchFlipped), forControlEvents: .ValueChanged)
             cell.selectionStyle = .None
-            cell.userInteractionEnabled = false
             
             return cell
         default:
@@ -113,7 +112,7 @@ class SettingsTableViewController: UITableViewController {
         
         if indexPath.section == 0 && indexPath.row == 1 {
             performSegueWithIdentifier(Constants.Identifiers.Segues.ChangePasswordSegue, sender: self)
-        } else {
+        } else if indexPath.section == 2 {
             let alertController = UIAlertController(title: "Logout", message: "Are you sure?", preferredStyle: .Alert)
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             alertController.addAction(UIAlertAction(title: "Logout", style: .Default, handler: { (alert: UIAlertAction) in
