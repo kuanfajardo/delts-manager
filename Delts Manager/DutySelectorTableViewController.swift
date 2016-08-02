@@ -18,6 +18,9 @@ class DutySelectorTableViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelPressed))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
         
+        self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        
         loadSampleDuties()
     }
     
