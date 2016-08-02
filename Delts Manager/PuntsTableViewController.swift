@@ -13,6 +13,8 @@ class PuntsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.separatorStyle = .None
+        
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
             self.segControl = UISegmentedControl(items: ["User", "Admin"/*, "Makeups"*/])
@@ -24,7 +26,7 @@ class PuntsTableViewController: UITableViewController {
             self.navigationItem.titleView = self.segControl
             
             let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
-            rightAddButton.tintColor = Constants.Colors.deltsPurple
+            rightAddButton.tintColor = Constants.Colors.deltsDarkPurple
             
             self.navigationItem.rightBarButtonItem = rightAddButton
 
@@ -88,13 +90,21 @@ class PuntsTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        if punts.count == 0 && indexPath.row == 1 {
+            let identifier = Constants.Identifiers.TableViewCells.NoPuntsCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            
+            cell.backgroundColor = Constants.Colors.deltsYellow
+            
+            return cell
+        }
         
         guard indexPath.row < punts.count else {
             let identifier = Constants.Identifiers.TableViewCells.PlainCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
+                cell.backgroundColor = Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -109,7 +119,7 @@ class PuntsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
+                cell.backgroundColor = Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -129,7 +139,7 @@ class PuntsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntAdminTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
+                cell.backgroundColor = Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -149,7 +159,7 @@ class PuntsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(25, punts.count)
+        return max(15, punts.count)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

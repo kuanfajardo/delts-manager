@@ -363,6 +363,26 @@
                                     <segue destination="KDb-F4-v32" kind="show" id="Fjf-8A-aek"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoEventsCell" id="PdM-np-5eH">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PdM-np-5eH" id="K4f-5Z-v6A">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Events :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuC-BH-eaF">
+                                            <rect key="frame" x="254.5" y="11" width="91" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nuC-BH-eaF" firstAttribute="centerX" secondItem="K4f-5Z-v6A" secondAttribute="centerX" id="2Wu-cU-mvW"/>
+                                        <constraint firstItem="nuC-BH-eaF" firstAttribute="centerY" secondItem="K4f-5Z-v6A" secondAttribute="centerY" id="6XZ-TR-Z1N"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Tbg-2V-CWm" id="TrR-rL-nTK"/>
@@ -485,7 +505,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PropertyDesc" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-WE-p5h">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PropertyDesc" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwx-WE-p5h">
                                             <rect key="frame" x="427" y="11" width="150" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="150" id="nOR-LB-M2c"/>
@@ -813,6 +833,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDutiesCell" id="OY5-gs-VBM">
+                                <rect key="frame" x="0.0" y="162" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OY5-gs-VBM" id="x3x-YL-6Bh">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Have No Duties!! :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJy-Qd-z9g">
+                                            <rect key="frame" x="213.5" y="11" width="173" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cJy-Qd-z9g" firstAttribute="centerX" secondItem="x3x-YL-6Bh" secondAttribute="centerX" id="7Cl-Z3-wtA"/>
+                                        <constraint firstItem="cJy-Qd-z9g" firstAttribute="centerY" secondItem="x3x-YL-6Bh" secondAttribute="centerY" id="m2S-oC-Hcs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="dV7-5l-kWc" id="zuD-ej-bxb"/>
@@ -1103,7 +1143,7 @@
                                     <navigationItem title="Change Password" id="7tn-pS-mih">
                                         <barButtonItem key="backBarButtonItem" title="Cancel" id="vEe-tw-neP"/>
                                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="dvO-lJ-XpC">
-                                            <color key="tintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="cancel:" destination="LMS-ir-dOa" id="Aau-J5-2uf"/>
                                             </connections>
@@ -1518,6 +1558,26 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VYq-RC-SVy" id="K0W-eR-YrW">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoPuntsCell" id="WNd-1D-1ib">
+                                <rect key="frame" x="0.0" y="206" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WNd-1D-1ib" id="hC2-ls-fPG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Punts !! :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awi-DT-kiW">
+                                            <rect key="frame" x="251.5" y="11" width="97" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Awi-DT-kiW" firstAttribute="centerX" secondItem="hC2-ls-fPG" secondAttribute="centerX" id="nld-PB-SUE"/>
+                                        <constraint firstItem="Awi-DT-kiW" firstAttribute="centerY" secondItem="hC2-ls-fPG" secondAttribute="centerY" id="qiQ-mt-b5X"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

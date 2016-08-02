@@ -111,6 +111,9 @@ struct Constants {
             static let PartyTableViewCell = "PartyCell"
             static let DutyCheckoffCell = "DutyCheckoffCell"
             static let PuntAdminCell = "PuntAdminCell"
+            static let NoDutiesCell = "NoDutiesCell"
+            static let NoPuntsCell = "NoPuntsCell"
+            static let NoEventsCell = "NoEventsCell"
         }
         
         struct Controllers {

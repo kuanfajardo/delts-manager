@@ -17,7 +17,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
         if Constants.userAuthorized(Constants.Roles.BouncingChair) || Constants.userAuthorized(Constants.Roles.Admin) {
             
             let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
-            rightAddButton.tintColor = Constants.Colors.deltsPurple
+            rightAddButton.tintColor = Constants.Colors.deltsDarkPurple
             
             self.navigationItem.rightBarButtonItem = rightAddButton
         }
@@ -49,11 +49,20 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        if events.count == 0 && indexPath.row == 1 {
+            let identifier = Constants.Identifiers.TableViewCells.NoEventsCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            
+            cell.backgroundColor = Constants.Colors.deltsYellow
+            
+            return cell
+        }
+        
         let identifier = Constants.Identifiers.TableViewCells.PartyTableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PartyTableViewCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
+            cell.backgroundColor = Constants.Colors.deltsPurple
         } else {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }

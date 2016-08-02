@@ -118,10 +118,11 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         let identifier = Constants.Identifiers.TableViewCells.EventPropertyCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventPropertyTableViewCell
         
-        cell.backgroundColor = Constants.Colors.deltsLightPurple
+        cell.backgroundColor = Constants.Colors.deltsPurple
         
         cell.nameLabel.text = propertyName
         cell.descriptionLabel.text = propertyDescription
+        cell.descriptionLabel.textColor = UIColor.blackColor()
         cell.selectionStyle = .Gray
         cell.accessoryType = .None
         cell.accessoryView?.backgroundColor = Constants.Colors.deltsPurple
