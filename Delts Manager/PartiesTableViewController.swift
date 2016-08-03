@@ -22,7 +22,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
             self.navigationItem.rightBarButtonItem = rightAddButton
         }
         
-
+        // loadEvents()
         loadSampleEvents()
     }
     
@@ -44,6 +44,8 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
 
         self.events += [event1, event2, event3]
     }
+    
+    
     
     
     // MARK: UITableViewDataSource
@@ -109,6 +111,11 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
         let cell = sender as! PartyTableViewCell
         
         controller.event = cell.event
+    }
+    
+    // MARK: Load Events
+    func loadEvents() {
+        //
     }
 
 }
