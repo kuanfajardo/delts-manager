@@ -49,6 +49,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        print(indexPath.row)
         if events.count == 0 && indexPath.row == 1 {
             let identifier = Constants.Identifiers.TableViewCells.NoEventsCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
@@ -82,6 +83,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
         cell.dateLabel.text = event.startTimeString
         //cell.accessoryType = .DisclosureIndicator
         cell.selectionStyle = .Gray
+        cell.userInteractionEnabled = true
         
         return cell
     }
@@ -94,7 +96,9 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
         return 1
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath)
+    }
     
     // MARK: - Navigation
     
