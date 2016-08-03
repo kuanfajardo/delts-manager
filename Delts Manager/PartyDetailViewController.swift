@@ -11,25 +11,28 @@ import UIKit
 class PartyDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     // MARK: Properties
     var event: Event?
+    var segControl: UISegmentedControl?
+    var segment: String {
+        return (self.segControl!.titleForSegmentAtIndex((self.segControl?.selectedSegmentIndex)!))!
+    }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let segItem = UISegmentedControl(items: ["Invites", "Duties"])
-        segItem.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-        segItem.tintColor = Constants.Colors.deltsDarkPurple
-        segItem.selectedSegmentIndex = 0
-        self.navigationItem.titleView = segItem
+        self.segControl = UISegmentedControl(items: ["Invites", "Duties"])
+        self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+        self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
+        self.segControl!.selectedSegmentIndex = 0
+        self.navigationItem.titleView = self.segControl
     }
     
     func segmentChanged(sender: UISegmentedControl) {
-        let segItem = self.navigationItem.titleView as! UISegmentedControl
-        reloadViews(segItem.titleForSegmentAtIndex(segItem.selectedSegmentIndex)!)
+        reloadViews()
     }
     
-    func reloadViews(tab: String) {
-        switch tab {
+    func reloadViews() {
+        switch self.segment {
         case "Duties":
             let tableView = UITableView()
             tableView.delegate = self
