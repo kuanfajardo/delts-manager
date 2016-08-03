@@ -28,6 +28,17 @@ class PartyDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func segmentChanged(sender: UISegmentedControl) {
+        switch self.segment {
+        case "Invites":
+            loadInvites()
+            break
+        case "Duties":
+            loadDuties()
+            break
+        default:
+            break
+        }
+        
         reloadViews()
     }
     
@@ -94,4 +105,12 @@ class PartyDetailViewController: UIViewController, UITableViewDelegate, UITableV
         controller.event = cell.event
     }
 
+    // MARK: Data Loading
+    func loadInvites() {
+        //
+    }
+    
+    func loadDuties() {
+        //
+    }
 }
