@@ -6,8 +6,13 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PartyInviteTableViewCell: UITableViewCell {
-
+    // MARK: Outlets
+    @IBOutlet weak var inviteTextField: UITextField!
+    @IBOutlet weak var deltTextField: UITextField!
+    
+    // MARK: Properties
+    var invite: Invite?
 }
