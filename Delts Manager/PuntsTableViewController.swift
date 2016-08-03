@@ -37,8 +37,22 @@ class PuntsTableViewController: UITableViewController {
     }
     
     func segmentChanged(sender: UISegmentedControl) {
+        // Reload correct set of punts
+        switch self.segment {
+        case "User":
+            loadUserPunts()
+            break
+        case "Admin":
+            loadAdminPunts()
+            break
+        default:
+            loadSamplePunts()
+        }
+        
+        // Reload table view
         self.tableView.reloadData()
     }
+    
     
     func addPressed() {
         let alertController = UIAlertController(title: "Add...", message: nil, preferredStyle: .ActionSheet)
@@ -191,6 +205,16 @@ class PuntsTableViewController: UITableViewController {
         }
 
     }
+    
+    // MARK: Punt Loading
+    func loadUserPunts() {
+        //
+    }
+    
+    func loadAdminPunts() {
+        //
+    }
+    
     
 
 }

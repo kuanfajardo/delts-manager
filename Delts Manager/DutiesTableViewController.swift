@@ -32,11 +32,26 @@ class DutiesTableViewController: UITableViewController {
             self.navigationItem.titleView = self.segControl
         }
         
-        // loadDuties()
+        // loadUserDuties()
         loadSampleDuties()
     }
     
     func segmentChanged(sender: UISegmentedControl) {
+        // Reload correct set of duties
+        switch self.segment {
+        case "User":
+            loadUserDuties()
+            break
+        case "Checker":
+            loadCheckerDuties()
+            break
+        case "Admin":
+            loadAdminDuties()
+        default:
+            loadSampleDuties()
+        }
+        
+        // Reload data onto table view
         self.tableView.reloadData()
     }
     
@@ -173,6 +188,19 @@ class DutiesTableViewController: UITableViewController {
         }
         
         
+    }
+    
+    // MARK: Duty Loading
+    func loadUserDuties() {
+        //
+    }
+    
+    func loadCheckerDuties() {
+        //
+    }
+    
+    func loadAdminDuties() {
+        //
     }
 
 }
