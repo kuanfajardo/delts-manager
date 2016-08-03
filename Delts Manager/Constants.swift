@@ -114,6 +114,8 @@ struct Constants {
             static let NoDutiesCell = "NoDutiesCell"
             static let NoPuntsCell = "NoPuntsCell"
             static let NoEventsCell = "NoEventsCell"
+            static let InviteCell = "InviteCell"
+            static let NewInviteCell = "NewInviteCell"
         }
         
         struct Controllers {
