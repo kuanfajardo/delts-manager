@@ -28,6 +28,7 @@
 		565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */; };
 		565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */; };
 		565544D11D52578800DF9957 /* PartyInviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544D01D52578800DF9957 /* PartyInviteTableViewCell.swift */; };
+		565544D31D52581500DF9957 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544D21D52581500DF9957 /* Invite.swift */; };
 		568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* DutiesTableViewController.swift */; };
 		5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */; };
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
@@ -86,6 +87,7 @@
 		565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutyCheckoffTableViewCell.swift; sourceTree = "<group>"; };
 		565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntAdminTableViewCell.swift; sourceTree = "<group>"; };
 		565544D01D52578800DF9957 /* PartyInviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyInviteTableViewCell.swift; sourceTree = "<group>"; };
+		565544D21D52581500DF9957 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		568720981D29B555001D9AF3 /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
 		5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				5687209E1D29C019001D9AF3 /* Punt.swift */,
 				564C96241D1E230E003EE50F /* Constants.swift */,
 				56C5E4CF1D3E7EBE009D6F58 /* Event.swift */,
+				565544D21D52581500DF9957 /* Invite.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */,
+				565544D31D52581500DF9957 /* Invite.swift in Sources */,
 				56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
