@@ -24,7 +24,6 @@
 		564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962A1D1E3AA7003EE50F /* Duty.swift */; };
 		564C962F1D243419003EE50F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C962E1D243419003EE50F /* SettingsViewController.swift */; };
 		564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */; };
-		565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544C81D4668B500DF9957 /* PartyDetailViewController.swift */; };
 		565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */; };
 		565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */; };
 		565544D11D52578800DF9957 /* PartyInviteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544D01D52578800DF9957 /* PartyInviteTableViewCell.swift */; };
@@ -84,7 +83,6 @@
 		564C962A1D1E3AA7003EE50F /* Duty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duty.swift; sourceTree = "<group>"; };
 		564C962E1D243419003EE50F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		564C96301D24688C003EE50F /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
-		565544C81D4668B500DF9957 /* PartyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDetailViewController.swift; sourceTree = "<group>"; };
 		565544CC1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutyCheckoffTableViewCell.swift; sourceTree = "<group>"; };
 		565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntAdminTableViewCell.swift; sourceTree = "<group>"; };
 		565544D01D52578800DF9957 /* PartyInviteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyInviteTableViewCell.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 			children = (
 				56F863311D465F8600E5D850 /* PartiesTableViewController.swift */,
 				56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */,
-				565544C81D4668B500DF9957 /* PartyDetailViewController.swift */,
 				565544D01D52578800DF9957 /* PartyInviteTableViewCell.swift */,
 				565544D41D52944600DF9957 /* PartyDetailTableViewController.swift */,
 			);
@@ -428,7 +425,6 @@
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
-				565544C91D4668B500DF9957 /* PartyDetailViewController.swift in Sources */,
 				565544D31D52581500DF9957 /* Invite.swift in Sources */,
 				56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,

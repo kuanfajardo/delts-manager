@@ -401,24 +401,6 @@
             </objects>
             <point key="canvasLocation" x="-3583" y="52"/>
         </scene>
-        <!--Party Detail View Controller-->
-        <scene sceneID="CDV-st-5nL">
-            <objects>
-                <viewController id="KDb-F4-v32" customClass="PartyDetailViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gcX-0N-wOD"/>
-                        <viewControllerLayoutGuide type="bottom" id="um8-Cz-ekn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="X27-IH-Gw5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2c-qw-e3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3583" y="812"/>
-        </scene>
         <!--Bouncing Navigation Controller-->
         <scene sceneID="E7k-tT-tp8">
             <objects>
@@ -2050,7 +2032,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29l-gB-G6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4271" y="820"/>
+            <point key="canvasLocation" x="-3583" y="922"/>
         </scene>
     </scenes>
     <resources>
