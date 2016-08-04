@@ -107,7 +107,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
     
     // Go to detail event view
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let controller = segue.destinationViewController as! PartyDetailViewController
+        let controller = segue.destinationViewController as! PartyDetailTableViewController
         let cell = sender as! PartyTableViewCell
         
         controller.event = cell.event
