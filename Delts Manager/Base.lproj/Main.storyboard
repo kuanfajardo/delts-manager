@@ -366,7 +366,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="k1D-WU-9Im" id="txp-r4-MCm"/>
                                     <outlet property="partyLabel" destination="70A-25-7U4" id="vJ8-QH-KDD"/>
-                                    <segue destination="KDb-F4-v32" kind="show" id="Fjf-8A-aek"/>
+                                    <segue destination="hDS-c1-UNb" kind="show" id="Wbe-Zb-4RB"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoEventsCell" id="PdM-np-5eH">
@@ -410,7 +410,7 @@
                         <viewControllerLayoutGuide type="bottom" id="um8-Cz-ekn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X27-IH-Gw5">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1964,6 +1964,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PnM-YO-x8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-43" y="2478"/>
+        </scene>
+        <!--Party Detail Table View Controller-->
+        <scene sceneID="161-bI-L2l">
+            <objects>
+                <tableViewController id="hDS-c1-UNb" customClass="PartyDetailTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jHd-jE-gsp">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InviteCell" id="IXs-Iu-E59" customClass="PartyInviteTableViewCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IXs-Iu-E59" id="hzV-5y-smk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Invite Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fs2-j4-wyc">
+                                            <rect key="frame" x="23" y="12" width="88.5" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                                        </textField>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Delt Name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8By-rc-Wa1">
+                                            <rect key="frame" x="497.5" y="12" width="79.5" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert" returnKeyType="done"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fs2-j4-wyc" firstAttribute="centerY" secondItem="hzV-5y-smk" secondAttribute="centerY" id="MKC-2R-2Pz"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="8By-rc-Wa1" secondAttribute="trailing" constant="15" id="a1h-3X-mXA"/>
+                                        <constraint firstItem="Fs2-j4-wyc" firstAttribute="leading" secondItem="hzV-5y-smk" secondAttribute="leadingMargin" constant="15" id="qVp-kv-9sT"/>
+                                        <constraint firstItem="8By-rc-Wa1" firstAttribute="centerY" secondItem="hzV-5y-smk" secondAttribute="centerY" id="xpc-uE-YR3"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deltTextField" destination="8By-rc-Wa1" id="9z2-GW-5UI"/>
+                                    <outlet property="inviteTextField" destination="Fs2-j4-wyc" id="4lr-fv-49t"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewInviteCell" id="aJy-Xc-Ufz">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aJy-Xc-Ufz" id="BQl-hY-QrV">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvc-cg-yJy">
+                                            <rect key="frame" x="553" y="10" width="22" height="22"/>
+                                            <color key="tintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Invite..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oou-3p-peU">
+                                            <rect key="frame" x="23" y="12" width="169" height="19.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="169" id="Rae-5m-Ysy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oou-3p-peU" firstAttribute="centerY" secondItem="BQl-hY-QrV" secondAttribute="centerY" id="0QT-YS-Nqe"/>
+                                        <constraint firstItem="dvc-cg-yJy" firstAttribute="centerY" secondItem="BQl-hY-QrV" secondAttribute="centerY" id="8ZN-px-QSC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dvc-cg-yJy" secondAttribute="trailing" constant="17" id="DI8-sY-wzO"/>
+                                        <constraint firstItem="oou-3p-peU" firstAttribute="leading" secondItem="BQl-hY-QrV" secondAttribute="leadingMargin" constant="15" id="yoR-dJ-lL4"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="PMm-bs-grv">
+                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PMm-bs-grv" id="m4M-Xm-3wv">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hDS-c1-UNb" id="fPz-XP-h6W"/>
+                            <outlet property="delegate" destination="hDS-c1-UNb" id="l56-DZ-XdG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="29l-gB-G6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4271" y="820"/>
         </scene>
     </scenes>
     <resources>
