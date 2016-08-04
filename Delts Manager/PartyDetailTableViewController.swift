@@ -124,7 +124,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
             if invite.inviteName == "" {
                 cell.inviteTextField.becomeFirstResponder()
             }
-            print("dos")
+
             cell.selectionStyle = .None
             
             return cell
@@ -147,7 +147,6 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         
         guard isKeyboardShowing == false else {
             tableView.becomeFirstResponder()
-            print("ytw")
             return
         }
         
@@ -168,13 +167,12 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.text?.characters.count > 0 {
             textField.resignFirstResponder()
-            print("tre")
             self.event!.invites.removeLast()
             self.event!.invites.append(Invite(invite: textField.text!))
             //textField.userInteractionEnabled = false
             //self.tableView.reloadData()
             //self.tableView.userInteractionEnabled = true
-            print(invites)
+            //print(invites)
             return true
         } else {
             //textField.text = "Loser"
