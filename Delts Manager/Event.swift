@@ -24,7 +24,7 @@ class Event {
     var endTime: NSDate
     var duties: [Duty]
     var times: [String]
-    var invites: [Invite]?
+    var invites: [Invite]
     
     init(name: String, startTime: NSDate, endTime: NSDate, duties: [Duty], times: [String]) {
         self.name = name
@@ -32,5 +32,6 @@ class Event {
         self.endTime = endTime
         self.duties = duties
         self.times = times
+        self.invites = [Invite]()
     }
 }
