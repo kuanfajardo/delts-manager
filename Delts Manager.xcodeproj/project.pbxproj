@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		508423D385A085A7D1085151 /* Pods_Delts_ManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 199888F529276EBB855DBF22 /* Pods_Delts_ManagerTests.framework */; };
 		560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */; };
 		560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765711D2A47F6008D3337 /* PuntDetailViewController.swift */; };
 		560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */; };
@@ -49,6 +50,7 @@
 		56F8632F1D411D4300E5D850 /* CustomEventDutyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */; };
 		56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863311D465F8600E5D850 /* PartiesTableViewController.swift */; };
 		56F863341D465F9A00E5D850 /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */; };
+		7C6F40AA9708364A2D16FEFB /* Pods_Delts_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6856F6CF4EA61EF745B398 /* Pods_Delts_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		199888F529276EBB855DBF22 /* Pods_Delts_ManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_ManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20132E077BAB3819BFE3EA04 /* Pods-Delts ManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts ManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts ManagerTests/Pods-Delts ManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5607656F1D29CEBD008D3337 /* DutyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutyDetailViewController.swift; sourceTree = "<group>"; };
 		560765711D2A47F6008D3337 /* PuntDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntDetailViewController.swift; sourceTree = "<group>"; };
 		560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,10 @@
 		56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEventDutyTableCell.swift; sourceTree = "<group>"; };
 		56F863311D465F8600E5D850 /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
 		56F863331D465F9A00E5D850 /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
+		883CDFA0B79A96D81903F00A /* Pods-Delts Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.release.xcconfig"; sourceTree = "<group>"; };
+		99E4A6EB7F8930F3DC2A2706 /* Pods-Delts Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		9C445CE33072E68AB3A8D5D3 /* Pods-Delts ManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Delts ManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Delts ManagerTests/Pods-Delts ManagerTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF6856F6CF4EA61EF745B398 /* Pods_Delts_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Delts_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C6F40AA9708364A2D16FEFB /* Pods_Delts_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508423D385A085A7D1085151 /* Pods_Delts_ManagerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +247,8 @@
 				564C95FF1D1E0A6A003EE50F /* Delts Manager */,
 				564C96161D1E0A6A003EE50F /* Delts ManagerTests */,
 				564C95FE1D1E0A6A003EE50F /* Products */,
+				AEE7FC4A3025D6EAC25D6F6B /* Pods */,
+				D45FE9B5D4AE3943102EC3BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +312,26 @@
 			name = "Parties Tab";
 			sourceTree = "<group>";
 		};
+		AEE7FC4A3025D6EAC25D6F6B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99E4A6EB7F8930F3DC2A2706 /* Pods-Delts Manager.debug.xcconfig */,
+				883CDFA0B79A96D81903F00A /* Pods-Delts Manager.release.xcconfig */,
+				20132E077BAB3819BFE3EA04 /* Pods-Delts ManagerTests.debug.xcconfig */,
+				9C445CE33072E68AB3A8D5D3 /* Pods-Delts ManagerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D45FE9B5D4AE3943102EC3BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF6856F6CF4EA61EF745B398 /* Pods_Delts_Manager.framework */,
+				199888F529276EBB855DBF22 /* Pods_Delts_ManagerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +339,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 564C961C1D1E0A6A003EE50F /* Build configuration list for PBXNativeTarget "Delts Manager" */;
 			buildPhases = (
+				674B45C06611B5132854C13E /* [CP] Check Pods Manifest.lock */,
 				564C95F91D1E0A6A003EE50F /* Sources */,
 				564C95FA1D1E0A6A003EE50F /* Frameworks */,
 				564C95FB1D1E0A6A003EE50F /* Resources */,
+				C7C04020B681FCAF86F57AB1 /* [CP] Embed Pods Frameworks */,
+				0894F4C3CCFE37B7B586A495 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,9 +359,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 564C961F1D1E0A6A003EE50F /* Build configuration list for PBXNativeTarget "Delts ManagerTests" */;
 			buildPhases = (
+				803B2BAFB980571B0B3A0677 /* [CP] Check Pods Manifest.lock */,
 				564C960F1D1E0A6A003EE50F /* Sources */,
 				564C96101D1E0A6A003EE50F /* Frameworks */,
 				564C96111D1E0A6A003EE50F /* Resources */,
+				279A7A65F9EB0210FD2BCBA6 /* [CP] Embed Pods Frameworks */,
+				548BC31D91AFB2A5754955A6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -395,6 +433,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0894F4C3CCFE37B7B586A495 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		279A7A65F9EB0210FD2BCBA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts ManagerTests/Pods-Delts ManagerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		548BC31D91AFB2A5754955A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts ManagerTests/Pods-Delts ManagerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		674B45C06611B5132854C13E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		803B2BAFB980571B0B3A0677 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C7C04020B681FCAF86F57AB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Delts Manager/Pods-Delts Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		564C95F91D1E0A6A003EE50F /* Sources */ = {
@@ -567,6 +698,7 @@
 		};
 		564C961D1D1E0A6A003EE50F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E4A6EB7F8930F3DC2A2706 /* Pods-Delts Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
@@ -578,6 +710,7 @@
 		};
 		564C961E1D1E0A6A003EE50F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883CDFA0B79A96D81903F00A /* Pods-Delts Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
@@ -589,6 +722,7 @@
 		};
 		564C96201D1E0A6A003EE50F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20132E077BAB3819BFE3EA04 /* Pods-Delts ManagerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Delts ManagerTests/Info.plist";
@@ -601,6 +735,7 @@
 		};
 		564C96211D1E0A6A003EE50F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C445CE33072E68AB3A8D5D3 /* Pods-Delts ManagerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Delts ManagerTests/Info.plist";

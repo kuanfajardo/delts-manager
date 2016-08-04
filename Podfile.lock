@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (3.4.1)
+  - DatePickerCell (1.0.4)
+  - ExpandingTableView (1.0.1)
+  - Freddy (2.1.0)
+  - MGSwipeTableCell (1.5.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - DatePickerCell
+  - ExpandingTableView
+  - Freddy
+  - MGSwipeTableCell
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
+  ExpandingTableView: 0f50e5f764c18fd3a1659b6c823738764fd3775b
+  Freddy: bbdca013977db29638b24baf6572ce94452bec29
+  MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+
+PODFILE CHECKSUM: 5220868a9b7bab0e572096180e4459879be08526
+
+COCOAPODS: 1.0.1

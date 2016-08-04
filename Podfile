@@ -6,11 +6,12 @@ target 'Delts Manager' do
   use_frameworks!
 
   # Pods for Delts Manager
-  pod 'ExpandingTableView'
   pod 'MGSwipeTableCell'
   pod 'DatePickerCell'
   pod 'Alamofire', '~> 3.4'
   pod 'Freddy'
+
+  pod 'ExpandingTableView'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
