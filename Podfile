@@ -9,6 +9,7 @@ target 'Delts Manager' do
   pod 'Alamofire', '~> 3.4'
   pod 'Freddy'
   pod 'DatePickerCell'
+  pod 'ExpandingTableView'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
