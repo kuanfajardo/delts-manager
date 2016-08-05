@@ -10,6 +10,7 @@ target 'Delts Manager' do
   pod 'Freddy'
   pod 'DatePickerCell'
   pod 'ExpandingTableView'
+  pod 'MGSwipeTableCell'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
