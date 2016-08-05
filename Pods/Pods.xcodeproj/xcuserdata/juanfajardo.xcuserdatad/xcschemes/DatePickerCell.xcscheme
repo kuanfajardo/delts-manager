@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1E7CF6958296B6BD333689E2F2791D39'
-               BlueprintName = 'Pods-Delts Manager'
+               BlueprintIdentifier = '733206DFBBCC49D3502AE07C330E98E6'
+               BlueprintName = 'DatePickerCell'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Delts Manager.framework'>
+               BuildableName = 'DatePickerCell.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

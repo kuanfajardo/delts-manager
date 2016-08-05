@@ -1,15 +1,18 @@
 PODS:
   - Alamofire (3.4.1)
+  - DatePickerCell (1.0.4)
   - Freddy (2.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - DatePickerCell
   - Freddy
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   Freddy: bbdca013977db29638b24baf6572ce94452bec29
 
-PODFILE CHECKSUM: 063e4e5ffe68eac637479c614c9d2b338c95fe92
+PODFILE CHECKSUM: c211f46d069fe3522873edf0f19bdabd8112ee51
 
 COCOAPODS: 1.0.1
