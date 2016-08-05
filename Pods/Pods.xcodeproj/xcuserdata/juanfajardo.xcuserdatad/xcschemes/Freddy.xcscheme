@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8BAB0152E0E516E3254536EE9F64A91F'
-               BlueprintName = 'Pods-Delts Manager'
+               BlueprintIdentifier = 'EEE4BFE3AC283ECEA2CF60A4C399216A'
+               BlueprintName = 'Freddy'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Delts Manager.framework'>
+               BuildableName = 'Freddy.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
