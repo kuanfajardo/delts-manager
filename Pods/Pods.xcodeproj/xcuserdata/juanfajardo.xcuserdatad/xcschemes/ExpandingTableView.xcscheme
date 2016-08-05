@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'E53C6CE54EFA6B7639270AE2DDD9CE9B'
-               BlueprintName = 'Pods-Delts Manager'
+               BlueprintIdentifier = 'A2FD3C3A84924F74D4BCD84731640B8F'
+               BlueprintName = 'ExpandingTableView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Delts Manager.framework'>
+               BuildableName = 'ExpandingTableView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
