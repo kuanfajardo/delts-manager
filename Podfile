@@ -6,7 +6,7 @@ target 'Delts Manager' do
   use_frameworks!
 
   # Pods for Delts Manager
-
+  pod 'Alamofire', '~> 3.4'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
