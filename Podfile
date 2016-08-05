@@ -7,6 +7,7 @@ target 'Delts Manager' do
 
   # Pods for Delts Manager
   pod 'Alamofire', '~> 3.4'
+  pod 'Freddy'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
