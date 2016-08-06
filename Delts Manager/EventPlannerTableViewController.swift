@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DatePickerCell
 
 class EventPlannerTableViewController: UITableViewController, PartyPlannerDelegate {
     // MARK: Properties
@@ -51,7 +52,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     var isDutiesSet = false
     var isTimesSet = false
     
-    
+    var startTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
+    var endTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
     
 
     // MARK: Life Cycle
@@ -66,7 +68,24 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
         self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
         
-        self.tableView.scrollEnabled = false
+        self.tableView.scrollEnabled = true
+        self.tableView.bounces = false
+        
+        self.startTimeTableCell.backgroundColor = Constants.Colors.deltsPurple
+        self.startTimeTableCell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.startTimeTableCell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.startTimeTableCell.rightLabelTextColor = UIColor.blackColor()
+        self.startTimeTableCell.tintColor = UIColor.blackColor()
+        self.startTimeTableCell.leftLabel.text = "Start Time"
+        self.startTimeTableCell.datePicker.minuteInterval = 30
+        
+        self.endTimeTableCell.backgroundColor = Constants.Colors.deltsPurple
+        self.endTimeTableCell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.endTimeTableCell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.endTimeTableCell.rightLabelTextColor = UIColor.blackColor()
+        self.endTimeTableCell.tintColor = UIColor.blackColor()
+        self.endTimeTableCell.leftLabel.text = "End Time"
+        self.endTimeTableCell.datePicker.minuteInterval = 30
         
         reloadData()
     }
@@ -100,6 +119,25 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         let propertyName = propertyData.0
         let propertyDescription = propertyData.1
         
+        guard indexPath.section != 1 else {
+            /*let cell = DatePickerCell(style: .Default, reuseIdentifier: "Plain")
+            cell.backgroundColor = Constants.Colors.deltsPurple
+            cell.rightLabelTextColor = UIColor.blackColor()
+            cell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+            cell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+            cell.leftLabel.text = propertyName
+            cell.tintColor = UIColor.blackColor()
+ 
+            return cell*/
+            switch indexPath.row {
+            case 0:
+                return self.startTimeTableCell
+            case 1:
+                return self.endTimeTableCell
+            default:
+                return UITableViewCell()
+            }
+        }
         
         let identifier = Constants.Identifiers.TableViewCells.EventPropertyCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventPropertyTableViewCell
@@ -143,6 +181,16 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         
         return CGFloat(0)
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        guard indexPath.section != 1 else {
+            let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! DatePickerCell
+            return cell.datePickerHeight()
+        }
+        
+        return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        
+    }
    
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
@@ -156,15 +204,21 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
         switch indexPath.section {
         case 0:
             editName()
         case 1:
-            if indexPath.row == 0 {
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as! DatePickerCell
+            cell.selectedInTableView(tableView)
+            validateTimes()
+            /*if indexPath.row == 0 {
                 editStartTime()
             } else {
                 editEndTime()
-            }
+            }*/
+            break
         case 2:
             editDuties()
         case 3:
@@ -237,6 +291,24 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         controller.times = self.times
         
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func validateTimes() {
+        guard self.startTimeTableCell.date.compare(NSDate()).rawValue == 1 else {
+            return
+        }
+        
+        guard self.startTimeTableCell.date.compare(self.endTimeTableCell.date).rawValue == -1 else {
+            return
+        }
+        
+        self.startTime = self.startTimeTableCell.date
+        self.endTime = self.endTimeTableCell.date
+        
+        self.isStartTimeSet = true
+        self.isEndTimeSet = true
+        
+        reloadData()
     }
     
     // MARK: Party Planner Delegate
