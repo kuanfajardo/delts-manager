@@ -82,18 +82,6 @@ class LoginViewController: UIViewController {
     
     private func completeLogin() {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.TabController) as! UITabBarController
-        // Code for manager!
-        
-        var viewControllers = controller.viewControllers!
-        
-        let managerController = (self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.BouncingController)) as! UINavigationController
-        
-        managerController.tabBarItem.title = "Manager"
-        managerController.tabBarItem.image = Constants.Photos.Manager
-        
-        viewControllers.insert(managerController, atIndex: 0)
-        
-        //controller.setViewControllers(viewControllers, animated: false)
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
