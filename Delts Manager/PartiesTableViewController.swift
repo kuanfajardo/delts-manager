@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
+class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, MGSwipeTableCellDelegate {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,12 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
             return cell
         }
         
+        // right buttons
+        let deleteButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Punt), backgroundColor: UIColor.redColor())
+        cell.rightButtons = [deleteButton]
+        cell.rightSwipeSettings.transition = .Rotate3D
+        cell.delegate = self
+        
         let event = events[indexPath.row]
         
         cell.event = event
@@ -110,6 +117,19 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate {
     
     // MARK: Load Events
     func loadEvents() {
+        //
+    }
+    
+    // MARK: MGSwipeTableCellDelegate
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        print("delete party")
+        deleteParty()
+        return true
+    }
+    
+    
+    // Actions
+    func deleteParty() {
         //
     }
 

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate {
+class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate, MGSwipeTableCellDelegate {
     // MARK: Properties
     var event: Event?
     var segControl: UISegmentedControl?
@@ -58,6 +59,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         }
         
         reloadViews()
+        self.tableView.reloadData()
     }
     
     func reloadViews() {
@@ -113,6 +115,12 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
+            
+            // right buttons
+            let deleteButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Punt), backgroundColor: UIColor.redColor())
+            cell.rightButtons = [deleteButton]
+            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.delegate = self
             
             let invite = self.invites[indexPath.row]
             
@@ -200,4 +208,23 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         //
     }
 
+    // MARK: MGSwipeTableCellDelegate
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch self.segment {
+        case "Invites":
+            print("delete invite")
+            deleteInvite()
+            break
+        default:
+            break
+        }
+        
+        return true
+    }
+    
+    
+    // Actions
+    func deleteInvite() {
+        //
+    }
 }

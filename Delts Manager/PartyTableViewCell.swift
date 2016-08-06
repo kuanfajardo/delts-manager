@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PartyTableViewCell: UITableViewCell {
+class PartyTableViewCell: MGSwipeTableCell {
     // MARK: Outlets
     @IBOutlet weak var partyLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

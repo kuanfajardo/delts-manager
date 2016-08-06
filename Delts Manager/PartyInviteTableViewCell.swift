@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PartyInviteTableViewCell: UITableViewCell {
+class PartyInviteTableViewCell: MGSwipeTableCell {
     // MARK: Outlets
     @IBOutlet weak var inviteTextField: UITextField!
     @IBOutlet weak var deltTextField: UITextField!
