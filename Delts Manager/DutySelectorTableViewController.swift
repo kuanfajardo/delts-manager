@@ -57,7 +57,7 @@ class DutySelectorTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
+                cell.backgroundColor = Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -70,7 +70,7 @@ class DutySelectorTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutySelectorTableViewCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
+            cell.backgroundColor = Constants.Colors.deltsPurple
         } else {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
