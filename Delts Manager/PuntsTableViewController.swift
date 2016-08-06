@@ -140,7 +140,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             }
             
             // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
             cell.rightButtons = [makeupButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -151,7 +151,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.puntLabel.text = punt.name
             cell.dateLabel.text = punt.dateString
             // TODO: Real
-            cell.checkoffImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            cell.checkoffImageView?.image = Constants.Photos.BlackCircle
             
             return cell
             
@@ -166,8 +166,8 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             }
             
             // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.cyanColor())
-            let deleteButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Punt), backgroundColor: UIColor.redColor())
+            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.cyanColor())
+            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.redColor())
             cell.rightButtons = [deleteButton, makeupButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -180,7 +180,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.dateLabel.text = punt.dateString
             cell.slaveLabel.text = punt.slave
             // TODO: Real
-            cell.statusImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            cell.statusImageView?.image = Constants.Photos.BlackCircle
             
             return cell
         }

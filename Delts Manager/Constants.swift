@@ -86,12 +86,33 @@ struct Constants {
     }
     
     struct Photos {
-        static let Overview = "OverviewIcon"
-        static let Duty = "DutyIcon"
-        static let Punt = "PuntIcon"
-        static let Settings = "SettingsIcon"
-        static let BlackCircle = "first"
-        static let Manager = "ManagerIcon"
+        static var Overview: UIImage {
+            return UIImage(named: "OverviewIcon")!
+        }
+        
+        static var Duty: UIImage {
+            return UIImage(named: "DutyIcon")!
+        }
+        
+        static var Punt: UIImage {
+            return UIImage(named: "PuntIcon")!
+        }
+        
+        static var Settings: UIImage {
+            return UIImage(named: "SettingsIcon")!
+        }
+        
+        static var BlackCircle: UIImage {
+            return UIImage(named: "first")!
+        }
+        
+        static var Manager: UIImage {
+            return UIImage(named: "ManagerIcon")!
+        }
+        
+        static var Party: UIImage {
+            return UIImage(named: "PartyIcon")!
+        }
     }
     
     struct Identifiers {

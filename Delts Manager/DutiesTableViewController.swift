@@ -115,7 +115,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             }
 
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
             cell.rightButtons = [checkButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -126,7 +126,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             cell.dateLabel.text = duty.dateString
             cell.slaveLabel.text = duty.slave
             // TODO: Real
-            cell.statusImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            cell.statusImageView?.image = Constants.Photos.BlackCircle
             cell.selectionStyle = .Gray
             return cell
 
@@ -141,7 +141,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             }
             
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
             cell.rightButtons = [checkButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -152,7 +152,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             cell.dutyLabel.text = duty.name
             cell.dateLabel.text = duty.dateString
             // TODO: Real
-            cell.statusImageView?.image = UIImage(named: Constants.Photos.BlackCircle)
+            cell.statusImageView?.image = Constants.Photos.BlackCircle
             cell.selectionStyle = .Gray
             
             return cell

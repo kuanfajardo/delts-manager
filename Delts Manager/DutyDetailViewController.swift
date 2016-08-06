@@ -44,7 +44,7 @@ class DutyDetailViewController: UIViewController {
         
         // TODO: Implement status enum here
         //self.statusImageView.image = UIImage(named: duty?.status)
-        self.statusImageView.image = UIImage(named: Constants.Photos.BlackCircle)
+        self.statusImageView.image = Constants.Photos.BlackCircle
         
         /*
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Duties", style: .Plain, target: self, action: #selector(backPressed))*/

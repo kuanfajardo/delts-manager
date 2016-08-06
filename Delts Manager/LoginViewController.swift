@@ -89,7 +89,7 @@ class LoginViewController: UIViewController {
         let managerController = (self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.BouncingController)) as! UINavigationController
         
         managerController.tabBarItem.title = "Manager"
-        managerController.tabBarItem.image = UIImage(named: Constants.Photos.Manager)
+        managerController.tabBarItem.image = Constants.Photos.Manager
         
         viewControllers.insert(managerController, atIndex: 0)
         
