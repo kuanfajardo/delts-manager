@@ -12,7 +12,7 @@ import ExpandingTableView
 class ExpandingDutySelectorCell: ExpandingTableViewCell {
     // MARK: Properties
     var duty: Duty?
-    //var reuseId = "ExpandingDutySelector"
+    //var enabled = [Bool]()
     
     // MARK: Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -21,5 +21,27 @@ class ExpandingDutySelectorCell: ExpandingTableViewCell {
     @IBOutlet weak var wednesdayButton: UIButton!
     @IBOutlet weak var thursdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
-
+    
+    // MARK: Actions
+    // IB
+    @IBAction func mondayButtonPressed() {
+        print("monday")
+        print(mondayButton.tag)
+    }
+    
+    @IBAction func tuesdayButtonPressed() {
+        print("tuesday")
+    }
+    
+    @IBAction func wednesdayButtonPressed() {
+        print("wednesday")
+    }
+    
+    @IBAction func thursdayButtonPressed() {
+        print("thursday")
+    }
+    
+    @IBAction func fridayButtonPressed() {
+        print("friday")
+    }
 }

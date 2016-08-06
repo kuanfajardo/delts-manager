@@ -84,6 +84,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
         
         cell.duty = duty
         cell.titleLabel.text = duty.name
+        // do for all
+        cell.mondayButton.tag = indexPath.row
         cell.selectionStyle = .Gray
         
         return cell

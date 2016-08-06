@@ -324,6 +324,9 @@
                                                             <state key="normal" title="Mon">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="mondayButtonPressed" destination="kUf-v8-hrF" eventType="touchUpInside" id="LwG-tN-pfl"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXg-pR-zDa">
                                                             <rect key="frame" x="120" y="0.0" width="120" height="43"/>
@@ -332,6 +335,9 @@
                                                             <state key="normal" title="Tue">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="tuesdayButtonPressed" destination="kUf-v8-hrF" eventType="touchUpInside" id="hGY-ax-hEr"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCk-0T-koQ">
                                                             <rect key="frame" x="240" y="0.0" width="120" height="43"/>
@@ -340,6 +346,9 @@
                                                             <state key="normal" title="Wed">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="wednesdayButtonPressed" destination="kUf-v8-hrF" eventType="touchUpInside" id="j7K-Og-fqg"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnW-DA-Brb">
                                                             <rect key="frame" x="360" y="0.0" width="120" height="43"/>
@@ -348,6 +357,9 @@
                                                             <state key="normal" title="Thurs">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="thursdayButtonPressed" destination="kUf-v8-hrF" eventType="touchUpInside" id="RA9-jr-SWv"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fo3-3O-Gdv">
                                                             <rect key="frame" x="480" y="0.0" width="120" height="43"/>
@@ -356,6 +368,9 @@
                                                             <state key="normal" title="Fri">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="fridayButtonPressed" destination="kUf-v8-hrF" eventType="touchUpInside" id="frp-Rk-TzK"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
