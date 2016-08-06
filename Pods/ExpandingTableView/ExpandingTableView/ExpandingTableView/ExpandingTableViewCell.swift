@@ -16,7 +16,7 @@ public class ExpandingTableViewCell: UITableViewCell, ExpandingCellType {
     
     /// Reuse identifier for the given class. 
     /// Override for custom id.
-    public static var reuseId = "ExpandingCell"
+    public static var reuseId = "ExpandingDutySelector"
     
     /// Primary view in the cell. Be sure to connect the outlet.
     @IBOutlet public weak var mainContainerView: UIView!
