@@ -18,7 +18,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-            self.segControl = UISegmentedControl(items: ["User", "Admin"/*, "Makeups"*/])
+            self.segControl = UISegmentedControl(items: [Segment.User, Segment.Admin/*, "Makeups"*/])
             
             self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
             self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
@@ -40,10 +40,10 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     func segmentChanged(sender: UISegmentedControl) {
         // Reload correct set of punts
         switch self.segment {
-        case "User":
+        case Segment.User:
             loadUserPunts()
             break
-        case "Admin":
+        case Segment.Admin:
             loadAdminPunts()
             break
         default:
@@ -96,10 +96,15 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     var segControl: UISegmentedControl?
     var segment: String {
         if self.segControl == nil {
-            return "User"
+            return Segment.User
         } else {
             return (self.segControl!.titleForSegmentAtIndex((self.segControl?.selectedSegmentIndex)!))!
         }
+    }
+    
+    struct Segment {
+        static let User = "User"
+        static let Admin = "Admin"
     }
     
     // MARK: UITableViewDataSource
@@ -129,7 +134,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             return cell
         }
         
-        if self.segment == "User" {
+        if self.segment == Segment.User {
             let identifier = Constants.Identifiers.TableViewCells.PuntTableViewCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
             
@@ -155,7 +160,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             
             return cell
             
-        } else /*if self.segment == "Admin"*/ {
+        } else /*if self.segment == Segment.Admin*/ {
             let identifier = Constants.Identifiers.TableViewCells.PuntAdminCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntAdminTableViewCell
             
@@ -232,11 +237,11 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     // MARK: MGSwipeTableCellDelegate
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch self.segment {
-        case "User":
+        case Segment.User:
             print("User request punt makeup")
             userRequestMakeup()
             break
-        case "Admin":
+        case Segment.Admin:
             switch index {
             case 0:
                 print("Admin delete punt")

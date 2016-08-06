@@ -24,11 +24,16 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     }
     var isKeyboardShowing = false
     
+    struct Segment {
+        static let Invites = "Invites"
+        static let Duties = "Duties"
+    }
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.segControl = UISegmentedControl(items: ["Invites", "Duties"])
+        self.segControl = UISegmentedControl(items: [Segment.Invites, Segment.Duties])
         self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
         self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
         self.segControl!.selectedSegmentIndex = 0
@@ -48,10 +53,10 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     
     func segmentChanged(sender: UISegmentedControl) {
         switch self.segment {
-        case "Invites":
+        case Segment.Invites:
             loadInvites()
             break
-        case "Duties":
+        case Segment.Duties:
             loadDuties()
             break
         default:
@@ -64,11 +69,11 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     
     func reloadViews() {
         /*switch self.segment {
-         case "Duties":
+         case Segment.Duties:
          let tableView = UITableView()
          tableView.delegate = self
          self.view = tableView
-         case "Invites": break
+         case Segment.Invites: break
          //
          default:
          return
@@ -78,7 +83,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        if self.segment == "Invites" {
+        if self.segment == Segment.Invites {
             guard indexPath.row < self.numInvites else {
                 guard indexPath.row < self.numInvites + 1 else {
                     let identifier = Constants.Identifiers.TableViewCells.PlainCell
@@ -211,7 +216,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     // MARK: MGSwipeTableCellDelegate
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch self.segment {
-        case "Invites":
+        case Segment.Invites:
             print("delete invite")
             deleteInvite()
             break

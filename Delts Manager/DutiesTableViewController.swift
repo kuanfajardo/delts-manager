@@ -19,10 +19,10 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
         
         // Check roles for user content
         if Constants.userAuthorized(Constants.Roles.Checker) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-            self.segControl = UISegmentedControl(items: ["User", "Checker"])
+            self.segControl = UISegmentedControl(items: [Segment.User, Segment.Checker])
             
             if Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
-                self.segControl!.insertSegmentWithTitle("Admin", atIndex: 2, animated: false)
+                self.segControl!.insertSegmentWithTitle(Segment.Admin, atIndex: 2, animated: false)
             }
             
             self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
@@ -40,13 +40,13 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     func segmentChanged(sender: UISegmentedControl) {
         // Reload correct set of duties
         switch self.segment {
-        case "User":
+        case Segment.User:
             loadUserDuties()
             break
-        case "Checker":
+        case Segment.Checker:
             loadCheckerDuties()
             break
-        case "Admin":
+        case Segment.Admin:
             loadAdminDuties()
         default:
             loadSampleDuties()
@@ -70,10 +70,16 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     var segControl: UISegmentedControl?
     var segment: String {
         if self.segControl == nil {
-            return "User"
+            return Segment.User
         } else {
             return (self.segControl!.titleForSegmentAtIndex((self.segControl?.selectedSegmentIndex)!))!
         }
+    }
+    
+    struct Segment {
+        static let User = "User"
+        static let Checker = "Checker"
+        static let Admin = "Admin"
     }
     
     
@@ -104,7 +110,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             return cell
         }
         
-        if self.segment == "Checker" || self.segment == "Admin" {
+        if self.segment == Segment.Checker || self.segment == Segment.Admin {
             let identifier = Constants.Identifiers.TableViewCells.DutyCheckoffCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutyCheckoffTableViewCell
 
@@ -210,11 +216,11 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     // MGSwipeTableCellDelegate
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch self.segment {
-        case "User":
+        case Segment.User:
             print("User request checkoff")
             userRequestCheckoff()
             break
-        case "Admin", "Checker":
+        case Segment.Admin, Segment.Checker:
             print("Checker/Admin grant checkoff")
             adminGrantCheckoff()
         default:
