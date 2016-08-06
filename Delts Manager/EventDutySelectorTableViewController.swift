@@ -15,7 +15,9 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
     var customDuties = [String]()
     var selectedDuties = [String]()
     var delegate: PartyPlannerDelegate?
-    
+    var isKeyboardShowing = false
+
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,17 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
             }
         }
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardDidShow), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardDidHide), name: UIKeyboardDidHideNotification, object: nil)
+    }
+    
+    func keyboardDidShow() {
+        self.isKeyboardShowing = true
+    }
+    
+    func keyboardDidHide() {
+        self.isKeyboardShowing = false
     }
     
     func donePressed() {
@@ -114,6 +127,10 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
+        guard isKeyboardShowing == false else {
+            return
+        }
+        
         guard indexPath.row < defaultDuties.count else {
             guard indexPath.row < defaultDuties.count + customDuties.count else {
                 addCustomDuty()
@@ -159,7 +176,8 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
             //self.tableView.userInteractionEnabled = true
             return true
         } else {
-            return false
+            textField.resignFirstResponder()
+            return true
         }
         
     }
