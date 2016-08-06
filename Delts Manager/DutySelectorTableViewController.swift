@@ -63,6 +63,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
             
+            cell.userInteractionEnabled = false
+            
             return cell
         }
         

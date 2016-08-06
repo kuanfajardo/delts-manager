@@ -61,6 +61,22 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
             return cell
         }
         
+        
+        guard indexPath.row < events.count else {
+            let identifier = Constants.Identifiers.TableViewCells.PlainCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
+            cell.userInteractionEnabled = false
+            
+            return cell
+        }
+        
         let identifier = Constants.Identifiers.TableViewCells.PartyTableViewCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PartyTableViewCell
         
@@ -70,13 +86,6 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
         
-        guard indexPath.row < events.count else {
-            cell.partyLabel.text = ""
-            cell.dateLabel.text = ""
-            cell.userInteractionEnabled = false
-            
-            return cell
-        }
         
         // right buttons
         let deleteButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Punt), backgroundColor: UIColor.redColor())
