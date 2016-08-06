@@ -22,6 +22,10 @@ class DutySelectorTableViewController: ExpandingTableViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
         self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
         
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 88
+
         loadSampleDuties()
     }
     
@@ -68,10 +72,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
             return cell
         }
         
-        
-        let identifier = Constants.Identifiers.TableViewCells.ExpandingDutySelectorCell
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath) as! ExpandingDutySelectorCell
-
+        
         if indexPath.row % 2 == 0 {
             cell.mainContainerView.backgroundColor = Constants.Colors.deltsPurple
         } else {
