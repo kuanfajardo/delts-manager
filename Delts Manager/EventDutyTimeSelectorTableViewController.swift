@@ -31,11 +31,27 @@ class EventDutyTimeSelectorTableViewController: UITableViewController {
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        guard indexPath.row < self.duties.count else {
+            let identifier = Constants.Identifiers.TableViewCells.PlainCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
+            
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = Constants.Colors.deltsPurple
+            } else {
+                cell.backgroundColor = Constants.Colors.deltsYellow
+            }
+            
+            cell.userInteractionEnabled = false
+            
+            return cell
+            
+        }
+        
         let identifier = Constants.Identifiers.TableViewCells.EventDutyTimeCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventDutyTimeSelectorCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
+            cell.backgroundColor = Constants.Colors.deltsPurple
         } else {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
@@ -44,9 +60,9 @@ class EventDutyTimeSelectorTableViewController: UITableViewController {
         let tag = Int("\(indexPath.section)\(indexPath.row)")!
         self.indices.append(tag)
         cell.timeSwitch.tag = tag
-        cell.timeSwitch.onTintColor = Constants.Colors.deltsPurple
+        cell.timeSwitch.onTintColor = Constants.Colors.deltsDarkPurple
         cell.timeSwitch.backgroundColor = Constants.Colors.deltsYellow
-        cell.timeSwitch.tintColor = Constants.Colors.deltsPurple
+        cell.timeSwitch.tintColor = Constants.Colors.deltsDarkPurple
         cell.timeSwitch.layer.cornerRadius = 16
         cell.timeSwitch.addTarget(self, action: #selector(switchFlipped), forControlEvents: .ValueChanged)
         cell.selectionStyle = .None
@@ -62,7 +78,7 @@ class EventDutyTimeSelectorTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return duties.count
+        return max(15,duties.count)
         
     }
     
