@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PuntAdminTableViewCell: UITableViewCell {
+class PuntAdminTableViewCell: MGSwipeTableCell {
     
     // MARK: Properties
     var punt: Punt?

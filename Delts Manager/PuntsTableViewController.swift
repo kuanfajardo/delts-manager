@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class PuntsTableViewController: UITableViewController {
+class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +139,12 @@ class PuntsTableViewController: UITableViewController {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
             
+            // right buttons
+            let makeupButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            cell.rightButtons = [makeupButton]
+            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.delegate = self
+            
             let punt = punts[indexPath.row]
             
             cell.punt = punt
@@ -157,6 +164,13 @@ class PuntsTableViewController: UITableViewController {
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
+            
+            // right buttons
+            let makeupButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.cyanColor())
+            let deleteButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Punt), backgroundColor: UIColor.redColor())
+            cell.rightButtons = [deleteButton, makeupButton]
+            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.delegate = self
             
             
             let punt = punts[indexPath.row]
@@ -215,6 +229,42 @@ class PuntsTableViewController: UITableViewController {
         //
     }
     
-    
+    // MARK: MGSwipeTableCellDelegate
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch self.segment {
+        case "User":
+            print("User request punt makeup")
+            userRequestMakeup()
+            break
+        case "Admin":
+            switch index {
+            case 0:
+                print("Admin delete punt")
+                adminDeletePunt()
+                break
+            case 1:
+                print("Admin makeup punt")
+                adminMakeupPunt()
+                break
+            default:
+                break
+            }
+        default:
+            break
+        }
+        return true
+    }
 
+    // Actions
+    func userRequestMakeup() {
+        //
+    }
+    
+    func adminDeletePunt() {
+        //
+    }
+    
+    func adminMakeupPunt() {
+        //
+    }
 }
