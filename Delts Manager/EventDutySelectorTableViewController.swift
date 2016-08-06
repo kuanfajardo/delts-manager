@@ -44,7 +44,7 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
                 let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
                 
                 if indexPath.row % 2 == 0 {
-                    cell.backgroundColor = Constants.Colors.deltsLightPurple
+                    cell.backgroundColor = Constants.Colors.deltsPurple
                 } else {
                     cell.backgroundColor = Constants.Colors.deltsYellow
                 }
@@ -56,7 +56,7 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! CustomEventDutyTableCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsLightPurple
+                cell.backgroundColor = Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -86,7 +86,7 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventDutyTableCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsLightPurple
+            cell.backgroundColor = Constants.Colors.deltsPurple
         } else {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }
