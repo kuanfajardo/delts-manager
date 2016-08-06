@@ -12,6 +12,7 @@
 		560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */; };
 		560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765751D2C059B008D3337 /* OverviewViewController.swift */; };
 		5617A6881D55DA97004478DD /* ExpandingDutySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */; };
+		5617A68A1D56300A004478DD /* Guides.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5617A6891D56300A004478DD /* Guides.txt */; };
 		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */; };
 		56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */; };
@@ -74,6 +75,7 @@
 		560765731D2A84C7008D3337 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		560765751D2C059B008D3337 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingDutySelectorCell.swift; sourceTree = "<group>"; };
+		5617A6891D56300A004478DD /* Guides.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Guides.txt; sourceTree = "<group>"; };
 		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewController.swift; sourceTree = "<group>"; };
 		56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewCell.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				56487A401D3C3F6900825A0F /* Model */,
 				56487A471D3C40B300825A0F /* Assets */,
 				56487A481D3C40C700825A0F /* Supporting Files */,
+				5617A6891D56300A004478DD /* Guides.txt */,
 			);
 			path = "Delts Manager";
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				564C960D1D1E0A6A003EE50F /* LaunchScreen.storyboard in Resources */,
+				5617A68A1D56300A004478DD /* Guides.txt in Resources */,
 				564C960A1D1E0A6A003EE50F /* Assets.xcassets in Resources */,
 				564C96081D1E0A6A003EE50F /* Main.storyboard in Resources */,
 			);

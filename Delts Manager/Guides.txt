@@ -1,0 +1,11 @@
+ORDER FOR CLASSES MARK::
+Properties
+Outlets
+Life Cycle
+Data Source
+Delegates
+Actions
+- IB
+- User
+HTTP
+Helper

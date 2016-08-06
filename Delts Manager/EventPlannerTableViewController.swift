@@ -9,6 +9,51 @@
 import UIKit
 
 class EventPlannerTableViewController: UITableViewController, PartyPlannerDelegate {
+    // MARK: Properties
+    var sectionTitles = [
+        0 : "Info",
+        1 : "Times",
+        2 : "Duties",
+        3 : "Duty Time Slots",
+        4 : ""
+    ]
+    
+    var data: [String : [(String, String)]] = [:]
+    
+    var eventName = "None"
+    var startTime: NSDate?
+    var startTimeString: String? {
+        if let date = startTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
+    var endTime: NSDate?
+    var endTimeString: String? {
+        if let date = endTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
+    var duties = [String]()
+    var times = [String]()
+    var delegate: PartyPlannerExtendedDelegate?
+    
+    var isNameSet = false
+    var isStartTimeSet = false
+    var isEndTimeSet = false
+    var isDutiesSet = false
+    var isTimesSet = false
+    
+    
+    
+
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,65 +92,6 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             self.navigationItem.rightBarButtonItem!.enabled = true
         }
     }
-    
-    func cancelPressed() {
-        // TODO: Add functionality
-        print("cancel pressed")
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    func donePressed() {
-        // TODO: Add functionality
-        print("done pressed")
-        let event = Event(name: self.eventName, startTime: self.startTime!, endTime: self.endTime!, duties: makeDuties(), times: self.times)
-        self.delegate?.passEventBack(event)
-        self.navigationController?.popViewControllerAnimated(true)
-    }
-    
-    // MARK: Properties:
-    var sectionTitles = [
-        0 : "Info",
-        1 : "Times",
-        2 : "Duties",
-        3 : "Duty Time Slots",
-        4 : ""
-    ]
-    
-    var data: [String : [(String, String)]] = [:]
- 
-    var eventName = "None"
-    var startTime: NSDate?
-    var startTimeString: String? {
-        if let date = startTime {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
-            return dateFormatter.stringFromDate(date)
-        }
-        
-        return nil
-    }
-    var endTime: NSDate?
-    var endTimeString: String? {
-        if let date = endTime {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
-            return dateFormatter.stringFromDate(date)
-        }
-        
-        return nil
-    }
-    var duties = [String]()
-    var times = [String]()
-    var delegate: PartyPlannerExtendedDelegate?
-    
-    var isNameSet = false
-    var isStartTimeSet = false
-    var isEndTimeSet = false
-    var isDutiesSet = false
-    var isTimesSet = false
-
-    
-    
     
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -187,7 +173,26 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             return
         }
     }
+    
+    
+    // MARK: Actions
+    // User Defined
+    func cancelPressed() {
+        // TODO: Add functionality
+        print("cancel pressed")
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func donePressed() {
+        // TODO: Add functionality
+        print("done pressed")
+        let event = Event(name: self.eventName, startTime: self.startTime!, endTime: self.endTime!, duties: makeDuties(), times: self.times)
+        self.delegate?.passEventBack(event)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
 
+    // MARK: Helper Functions
     func editName() {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.EventNameController) as! EventNameViewController
 
@@ -234,7 +239,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    // MARK: Party Planner
+    // MARK: Party Planner Delegate
     func passDutiesBack(value: [String]) {
         self.duties = value
         self.times = [String](count: self.duties.count, repeatedValue: "Hour")
