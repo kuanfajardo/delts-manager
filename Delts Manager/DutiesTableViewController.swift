@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class DutiesTableViewController: UITableViewController {
+class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate {
 
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -113,6 +114,12 @@ class DutiesTableViewController: UITableViewController {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
 
+            // right buttons
+            let checkButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            cell.rightButtons = [checkButton]
+            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.delegate = self
+            
             let duty = duties[indexPath.row]
             cell.duty = duty
             cell.dutyLabel.text = duty.name
@@ -133,14 +140,11 @@ class DutiesTableViewController: UITableViewController {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
             
-            guard indexPath.row < duties.count else {
-                cell.dutyLabel.text = ""
-                cell.dateLabel.text = ""
-                cell.statusImageView?.image = nil
-                cell.userInteractionEnabled = false
-                
-                return cell
-            }
+            // right buttons
+            let checkButton = MGSwipeButton(title: "", icon: UIImage(named: Constants.Photos.Duty), backgroundColor: UIColor.redColor())
+            cell.rightButtons = [checkButton]
+            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.delegate = self
             
             let duty = duties[indexPath.row]
             
@@ -200,6 +204,31 @@ class DutiesTableViewController: UITableViewController {
     }
     
     func loadAdminDuties() {
+        //
+    }
+    
+    // MGSwipeTableCellDelegate
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch self.segment {
+        case "User":
+            print("User request checkoff")
+            userRequestCheckoff()
+            break
+        case "Admin", "Checker":
+            print("Checker/Admin grant checkoff")
+            adminGrantCheckoff()
+        default:
+            break
+        }
+        return true
+    }
+    
+    // Actions
+    func userRequestCheckoff() {
+        //
+    }
+    
+    func adminGrantCheckoff() {
         //
     }
 

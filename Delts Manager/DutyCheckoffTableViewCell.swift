@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MGSwipeTableCell
 
-class DutyCheckoffTableViewCell: UITableViewCell {
+class DutyCheckoffTableViewCell: MGSwipeTableCell {
     
     // MARK: Properties
     var duty: Duty?
