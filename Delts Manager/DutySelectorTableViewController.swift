@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ExpandingTableView
 
-class DutySelectorTableViewController: UITableViewController {
+class DutySelectorTableViewController: ExpandingTableViewController {
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -66,13 +67,13 @@ class DutySelectorTableViewController: UITableViewController {
         }
         
         
-        let identifier = Constants.Identifiers.TableViewCells.DutySelectorCell
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutySelectorTableViewCell
-        
+        let identifier = Constants.Identifiers.TableViewCells.ExpandingDutySelectorCell
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath) as! ExpandingDutySelectorCell
+
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsPurple
+            cell.mainContainerView.backgroundColor = Constants.Colors.deltsPurple
         } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.mainContainerView.backgroundColor = Constants.Colors.deltsYellow
         }
         
         let duty = duties[indexPath.row]
@@ -91,4 +92,5 @@ class DutySelectorTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+
 }
