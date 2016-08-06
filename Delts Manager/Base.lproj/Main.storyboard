@@ -287,6 +287,87 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExpandingDutySelector" rowHeight="90" id="pPj-Xj-Ot2" customClass="ExpandingDutySelectorCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pPj-Xj-Ot2" id="kXL-hH-F6D">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDG-LH-dfn">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DutyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-YG-I2h">
+                                                    <rect key="frame" x="262" y="12" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="WI7-YG-I2h" firstAttribute="centerX" secondItem="UDG-LH-dfn" secondAttribute="centerX" id="9Ub-rH-Cp2"/>
+                                                <constraint firstItem="WI7-YG-I2h" firstAttribute="centerY" secondItem="UDG-LH-dfn" secondAttribute="centerY" id="fRO-gg-Mta"/>
+                                                <constraint firstAttribute="height" constant="45" id="mwX-BB-tGQ"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-6c-k1z">
+                                            <rect key="frame" x="0.0" y="44" width="600" height="45"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqB-mh-10n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="45"/>
+                                                    <state key="normal" title="Monday"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTN-O1-mMX">
+                                                    <rect key="frame" x="120" y="0.0" width="120" height="45"/>
+                                                    <state key="normal" title="Tuesday"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r9-20-guE">
+                                                    <rect key="frame" x="240" y="0.0" width="120" height="45"/>
+                                                    <state key="normal" title="Wednesday"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-xy-7fY">
+                                                    <rect key="frame" x="360" y="0.0" width="120" height="45"/>
+                                                    <state key="normal" title="Thursday"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-5S-f7l">
+                                                    <rect key="frame" x="480" y="0.0" width="120" height="45"/>
+                                                    <state key="normal" title="Friday"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="hgA-Zl-bA2"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="UDG-LH-dfn" firstAttribute="leading" secondItem="kXL-hH-F6D" secondAttribute="leading" id="6Ja-aQ-JVP"/>
+                                        <constraint firstItem="UDG-LH-dfn" firstAttribute="top" secondItem="kXL-hH-F6D" secondAttribute="top" id="7Hm-K3-nnn"/>
+                                        <constraint firstAttribute="trailing" secondItem="CuZ-6c-k1z" secondAttribute="trailing" id="IaX-Zd-JcH"/>
+                                        <constraint firstAttribute="bottom" secondItem="CuZ-6c-k1z" secondAttribute="bottom" id="KHc-6e-08Z"/>
+                                        <constraint firstItem="CuZ-6c-k1z" firstAttribute="leading" secondItem="kXL-hH-F6D" secondAttribute="leading" id="WOV-nY-kR5"/>
+                                        <constraint firstAttribute="trailing" secondItem="UDG-LH-dfn" secondAttribute="trailing" id="eFq-bR-e7Y"/>
+                                        <constraint firstItem="UDG-LH-dfn" firstAttribute="top" secondItem="kXL-hH-F6D" secondAttribute="topMargin" id="qB8-UG-0G3"/>
+                                        <constraint firstItem="UDG-LH-dfn" firstAttribute="centerX" secondItem="kXL-hH-F6D" secondAttribute="centerX" id="vsP-8t-rNI"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="qB8-UG-0G3"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailContainerView" destination="CuZ-6c-k1z" id="8Wb-pU-s3q"/>
+                                    <outlet property="detailViewHeightConstraint" destination="hgA-Zl-bA2" id="o7l-FH-SAE"/>
+                                    <outlet property="fridayButton" destination="V8a-5S-f7l" id="3PS-jF-kAZ"/>
+                                    <outlet property="mainContainerView" destination="UDG-LH-dfn" id="BIB-qc-fsp"/>
+                                    <outlet property="mondayButton" destination="rqB-mh-10n" id="MUE-yP-rKh"/>
+                                    <outlet property="thursdayButton" destination="Aea-xy-7fY" id="yEL-eA-mSS"/>
+                                    <outlet property="titleLabel" destination="WI7-YG-I2h" id="mSK-bW-DEL"/>
+                                    <outlet property="tuesdayButton" destination="XTN-O1-mMX" id="GcE-7h-AYi"/>
+                                    <outlet property="wednesdayButton" destination="5r9-20-guE" id="8u3-ch-VAU"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="R9h-MS-zaC" id="V4b-Er-1Tr"/>
