@@ -113,6 +113,10 @@ struct Constants {
         static var Party: UIImage {
             return UIImage(named: "PartyIcon")!
         }
+        
+        static var GreenCheck: UIImage {
+            return UIImage(named: "Green Check")
+        }
     }
     
     struct Identifiers {
