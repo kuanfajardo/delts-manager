@@ -19,8 +19,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancelPressed))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
         
-        self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
-        self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.flatWhiteColor()
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.flatWhiteColor()
         
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -61,8 +61,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
             let identifier = Constants.Identifiers.TableViewCells.PlainCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
-            if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+            if indexPath.row % 2 == 1 {
+                cell.backgroundColor = Constants.Colors.deltsYellow//UIColor.flatMagentaColor()//Constants.Colors.deltsPurple
             } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
@@ -74,8 +74,8 @@ class DutySelectorTableViewController: ExpandingTableViewController {
         
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath) as! ExpandingDutySelectorCell
         
-        if indexPath.row % 2 == 0 {
-            cell.mainContainerView.backgroundColor = Constants.Colors.deltsPurple
+        if indexPath.row % 2 == 1 {
+            cell.mainContainerView.backgroundColor = Constants.Colors.deltsYellow//UIColor.flatMagentaColor()//Constants.Colors.deltsPurple
         } else {
             cell.mainContainerView.backgroundColor = Constants.Colors.deltsYellow
         }
