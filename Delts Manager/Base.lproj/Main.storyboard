@@ -2192,7 +2192,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvc-cg-yJy">
                                             <rect key="frame" x="553" y="10" width="22" height="22"/>
-                                            <color key="tintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Invite..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oou-3p-peU">
                                             <rect key="frame" x="23" y="12" width="169" height="19.5"/>
