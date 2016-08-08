@@ -18,7 +18,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
         if Constants.userAuthorized(Constants.Roles.BouncingChair) || Constants.userAuthorized(Constants.Roles.Admin) {
             
             let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
-            rightAddButton.tintColor = Constants.Colors.deltsDarkPurple
+            rightAddButton.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
             
             self.navigationItem.rightBarButtonItem = rightAddButton
         }
@@ -67,9 +67,9 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
             }
             
             cell.userInteractionEnabled = false
@@ -81,14 +81,17 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PartyTableViewCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsPurple
+            cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
         } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
         }
+        
+        cell.partyLabel.textColor = UIColor.flatWhiteColor()
+        cell.dateLabel.textColor = UIColor.flatWhiteColor()
         
         
         // right buttons
-        let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.redColor())
+        let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
         cell.rightButtons = [deleteButton]
         cell.rightSwipeSettings.transition = .Rotate3D
         cell.delegate = self
