@@ -36,9 +36,9 @@ class EventDutyTimeSelectorTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
             }
             
             cell.userInteractionEnabled = false
@@ -51,18 +51,19 @@ class EventDutyTimeSelectorTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventDutyTimeSelectorCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsPurple
+            cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
         } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
         }
+        
         cell.dutyLabel.text = duties[indexPath.row]
         cell.timeSwitch.on = true
         let tag = Int("\(indexPath.section)\(indexPath.row)")!
         self.indices.append(tag)
         cell.timeSwitch.tag = tag
-        cell.timeSwitch.onTintColor = Constants.Colors.deltsDarkPurple
+        cell.timeSwitch.onTintColor = UIColor.flatMagentaColor()//Constants.Colors.deltsDarkPurple
         cell.timeSwitch.backgroundColor = Constants.Colors.deltsYellow
-        cell.timeSwitch.tintColor = Constants.Colors.deltsDarkPurple
+        cell.timeSwitch.tintColor = UIColor.flatMagentaColor()//Constants.Colors.deltsDarkPurple
         cell.timeSwitch.layer.cornerRadius = 16
         cell.timeSwitch.addTarget(self, action: #selector(switchFlipped), forControlEvents: .ValueChanged)
         cell.selectionStyle = .None

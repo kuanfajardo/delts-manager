@@ -57,9 +57,9 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
                 let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
                 
                 if indexPath.row % 2 == 0 {
-                    cell.backgroundColor = Constants.Colors.deltsPurple
+                    cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
                 } else {
-                    cell.backgroundColor = Constants.Colors.deltsYellow
+                    cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
                 }
                 
                 return cell
@@ -69,9 +69,9 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! CustomEventDutyTableCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
             }
             
             let index = indexPath.row - defaultDuties.count
@@ -99,9 +99,9 @@ class EventDutySelectorTableViewController: UITableViewController, UITextFieldDe
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventDutyTableCell
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = Constants.Colors.deltsPurple
+            cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsPurple
         } else {
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsYellow
         }
         
         cell.dutyName.text = defaultDuties[indexPath.row]

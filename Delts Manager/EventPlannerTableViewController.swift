@@ -65,25 +65,27 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
         self.navigationItem.rightBarButtonItem?.enabled = false
         
-        self.navigationItem.leftBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
-        self.navigationItem.rightBarButtonItem?.tintColor = Constants.Colors.deltsDarkPurple
+        self.navigationItem.leftBarButtonItem?.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
         
         self.tableView.scrollEnabled = true
         self.tableView.bounces = false
         
-        self.startTimeTableCell.backgroundColor = Constants.Colors.deltsPurple
+        self.startTimeTableCell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
         self.startTimeTableCell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
         self.startTimeTableCell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
-        self.startTimeTableCell.rightLabelTextColor = UIColor.blackColor()
-        self.startTimeTableCell.tintColor = UIColor.blackColor()
+        self.startTimeTableCell.rightLabelTextColor = UIColor.flatWhiteColor()
+        self.startTimeTableCell.tintColor = UIColor.flatWhiteColor()
+        self.startTimeTableCell.leftLabel.textColor = UIColor.flatWhiteColor()
         self.startTimeTableCell.leftLabel.text = "Start Time"
         self.startTimeTableCell.datePicker.minuteInterval = 30
         
-        self.endTimeTableCell.backgroundColor = Constants.Colors.deltsPurple
+        self.endTimeTableCell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
         self.endTimeTableCell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
         self.endTimeTableCell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
-        self.endTimeTableCell.rightLabelTextColor = UIColor.blackColor()
-        self.endTimeTableCell.tintColor = UIColor.blackColor()
+        self.endTimeTableCell.rightLabelTextColor = UIColor.flatWhiteColor()
+        self.endTimeTableCell.tintColor = UIColor.flatWhiteColor()
+        self.endTimeTableCell.leftLabel.textColor = UIColor.flatWhiteColor()
         self.endTimeTableCell.leftLabel.text = "End Time"
         self.endTimeTableCell.datePicker.minuteInterval = 30
         
@@ -142,11 +144,12 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         let identifier = Constants.Identifiers.TableViewCells.EventPropertyCell
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventPropertyTableViewCell
         
-        cell.backgroundColor = Constants.Colors.deltsPurple
+        cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
         
         cell.nameLabel.text = propertyName
         cell.descriptionLabel.text = propertyDescription
-        cell.descriptionLabel.textColor = UIColor.blackColor()
+        cell.descriptionLabel.textColor = UIColor.flatWhiteColor()
+        cell.nameLabel.textColor = UIColor.flatWhiteColor()
         cell.selectionStyle = .Gray
         cell.accessoryType = .None
         cell.accessoryView?.backgroundColor = Constants.Colors.deltsPurple
@@ -194,13 +197,13 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
    
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = Constants.Colors.deltsYellow
+        header.contentView.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsYellow
         header.textLabel?.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
     }
     
     override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let header = view as! UITableViewHeaderFooterView
-        header.contentView.backgroundColor = Constants.Colors.deltsYellow
+        let footer = view as! UITableViewHeaderFooterView
+        footer.contentView.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsYellow
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
