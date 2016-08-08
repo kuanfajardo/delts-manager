@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77E21D07B80547FFDB624A157130F324"
-               BuildableName = "Pods_Delts_Manager.framework"
-               BlueprintName = "Pods-Delts Manager"
+               BlueprintIdentifier = "4E0C43B6BD7C526E87868ACBD5FF68F9"
+               BuildableName = "UIImage_Additions.framework"
+               BlueprintName = "UIImage+Additions"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "77E21D07B80547FFDB624A157130F324"
-            BuildableName = "Pods_Delts_Manager.framework"
-            BlueprintName = "Pods-Delts Manager"
+            BlueprintIdentifier = "4E0C43B6BD7C526E87868ACBD5FF68F9"
+            BuildableName = "UIImage_Additions.framework"
+            BlueprintName = "UIImage+Additions"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

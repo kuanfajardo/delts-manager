@@ -44,9 +44,19 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIImage+Additions.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4E0C43B6BD7C526E87868ACBD5FF68F9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4E1263BFF45F6446CF3DE29AE234C893</key>
 		<dict>
 			<key>primary</key>
@@ -62,6 +72,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>77E21D07B80547FFDB624A157130F324</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
@@ -73,11 +88,6 @@
 			<true/>
 		</dict>
 		<key>CD6596E0EBF39664AC82D0B0013EC144</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DB3F454A0550F663FAD56F6A60A378E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

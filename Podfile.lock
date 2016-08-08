@@ -7,6 +7,7 @@ PODS:
   - ExpandingTableView (1.0.1)
   - Freddy (2.1.0)
   - MGSwipeTableCell (1.5.5)
+  - UIImage+Additions (2.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - ExpandingTableView
   - Freddy
   - MGSwipeTableCell
+  - UIImage+Additions
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
@@ -23,7 +25,8 @@ SPEC CHECKSUMS:
   ExpandingTableView: 0f50e5f764c18fd3a1659b6c823738764fd3775b
   Freddy: bbdca013977db29638b24baf6572ce94452bec29
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  UIImage+Additions: 0857fe36fc04d3f21862867931e39cf4914bace5
 
-PODFILE CHECKSUM: 988dd832c22522344646730bb8d704138384eea8
+PODFILE CHECKSUM: 8718176aa63b17b94eef5426f07ee933a066f0ee
 
 COCOAPODS: 1.0.1
