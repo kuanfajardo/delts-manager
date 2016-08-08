@@ -101,7 +101,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatPurpleColor()
             }
             
             cell.userInteractionEnabled = false
@@ -114,12 +114,12 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutyCheckoffTableViewCell
 
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsYellow
-            } else {
-                cell.dutyLabel.textColor = UIColor.whiteColor()
-                cell.dateLabel.textColor = UIColor.whiteColor()
-                cell.slaveLabel.textColor = UIColor.whiteColor()
+                cell.backgroundColor = UIColor.flatPurpleColor()
             }
+            
+            cell.dutyLabel.textColor = UIColor.whiteColor()
+            cell.dateLabel.textColor = UIColor.whiteColor()
+            cell.slaveLabel.textColor = UIColor.whiteColor()
 
             // right buttons
             let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
@@ -142,12 +142,13 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsYellow
-            } else {
-                cell.dutyLabel.textColor = UIColor.whiteColor()
-                cell.dateLabel.textColor = UIColor.whiteColor()
+                cell.backgroundColor = UIColor.flatPurpleColor()
             }
-                        
+            
+            cell.dutyLabel.textColor = UIColor.whiteColor()
+            cell.dateLabel.textColor = UIColor.whiteColor()
+
+            
             // right buttons
             let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [checkButton]
