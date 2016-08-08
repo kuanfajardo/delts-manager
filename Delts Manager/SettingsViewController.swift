@@ -77,8 +77,8 @@ class SettingsTableViewController: UITableViewController {
             
             cell.settingLabel.text = settingName
             cell.settingSwitch.on = (settingDescription as! Bool)
-            cell.settingSwitch.tintColor = Constants.Colors.deltsDarkPurple
-            cell.settingSwitch.onTintColor = Constants.Colors.deltsDarkPurple
+            cell.settingSwitch.tintColor = UIColor.flatMagentaColor()//Constants.Colors.deltsDarkPurple
+            cell.settingSwitch.onTintColor = UIColor.flatMagentaColor()//Constants.Colors.deltsDarkPurple
             cell.settingSwitch.tag = indexPath.row
             cell.settingSwitch.addTarget(self, action: #selector(switchFlipped), forControlEvents: .ValueChanged)
             cell.selectionStyle = .None
