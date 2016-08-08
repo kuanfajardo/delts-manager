@@ -12,6 +12,7 @@ target 'Delts Manager' do
   pod 'ExpandingTableView'
   pod 'MGSwipeTableCell'
   pod 'ChameleonFramework/Swift'
+  pod 'UIImage+Additions'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
