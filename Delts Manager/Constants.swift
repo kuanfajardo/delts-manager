@@ -117,6 +117,10 @@ struct Constants {
         static var GreenCheck: UIImage {
             return UIImage(named: "Green Check")!
         }
+        
+        static var RedAttention: UIImage {
+            return UIImage(named: "Red Attention")!
+        }
     }
     
     struct Identifiers {
