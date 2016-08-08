@@ -65,7 +65,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
         let duty2 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Incomplete")
         let duty3 = Duty(slave: "Juan", name: "Kitchen", type: Constants.DutyType.House, date: NSDate(), status: "Pending")
         
-        //duties += [duty1, duty2, duty3]
+        duties += [duty1, duty2, duty3]
     }
     
     var segControl: UISegmentedControl?

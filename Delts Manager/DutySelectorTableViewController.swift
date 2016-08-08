@@ -139,6 +139,8 @@ class DutySelectorTableViewController: UITableViewController {
     func colorFromAvailability(availability: DutyAvailability) -> UIColor {
         switch availability {
         case .Open:
+            return UIColor.flatWhiteColor()
+        case .Selected:
             return UIColor.flatGreenColor()
         case .Taken:
             return UIColor.flatWatermelonColor()

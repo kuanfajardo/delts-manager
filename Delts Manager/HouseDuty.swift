@@ -18,6 +18,7 @@ struct HouseDuty {
 
 enum DutyAvailability: String {
     case Open = "O"
+    case Selected = "S"
     case Taken = "T"
     case Unavailable = "U"
 }
