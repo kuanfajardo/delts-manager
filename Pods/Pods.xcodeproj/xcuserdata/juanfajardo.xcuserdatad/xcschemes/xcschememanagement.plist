@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ChameleonFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DatePickerCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,6 +52,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5172ACAB7FEA22813859DC97CA0AA16F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>733206DFBBCC49D3502AE07C330E98E6</key>
 		<dict>
 			<key>primary</key>
@@ -62,12 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A69EB891A931FF553256B7EB45F62BFF</key>
+		<key>CD6596E0EBF39664AC82D0B0013EC144</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD6596E0EBF39664AC82D0B0013EC144</key>
+		<key>DB3F454A0550F663FAD56F6A60A378E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
