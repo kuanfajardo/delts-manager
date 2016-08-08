@@ -43,7 +43,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
         let event2 = Event(name: "St. Patty's Day", startTime: NSDate(), endTime: NSDate().dateByAddingTimeInterval(NSTimeInterval(1000)), duties: [], times: [])
         let event3 = Event(name: "Around le World", startTime: NSDate(), endTime: NSDate().dateByAddingTimeInterval(NSTimeInterval(1000)), duties: [], times: [])
 
-        self.events += [event1, event2, event3]
+        //self.events += [event1, event2, event3]
     }
     
     
@@ -56,7 +56,7 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
             let identifier = Constants.Identifiers.TableViewCells.NoEventsCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.backgroundColor = UIColor.flatBlackColorDark()
             
             return cell
         }

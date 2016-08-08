@@ -89,7 +89,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         let punt2 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: "Incomplete")
         let punt3 = Punt(slave: "Juan", name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: "Pending")
         
-        punts += [punt1, punt2, punt3]
+        //punts += [punt1, punt2, punt3]
     }
     
     
@@ -114,7 +114,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let identifier = Constants.Identifiers.TableViewCells.NoPuntsCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
-            cell.backgroundColor = Constants.Colors.deltsYellow
+            cell.backgroundColor = UIColor.flatWatermelonColorDark()
             
             return cell
         }
