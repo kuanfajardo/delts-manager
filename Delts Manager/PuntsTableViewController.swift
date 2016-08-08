@@ -27,7 +27,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             self.navigationItem.titleView = self.segControl
             
             let rightAddButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(addPressed))
-            rightAddButton.tintColor = Constants.Colors.deltsDarkPurple
+            rightAddButton.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
             
             self.navigationItem.rightBarButtonItem = rightAddButton
 
@@ -77,7 +77,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             print("New Punt Makeup")
         }
         //alertController.addAction(puntMakeupAction)
-        
+
         self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -123,10 +123,10 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let identifier = Constants.Identifiers.TableViewCells.PlainCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
-            if indexPath.row % 2 == 1 {
-                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsYellow
+            if indexPath.row % 2 == 0 {
+                cell.backgroundColor = UIColor.flatWatermelonColor()//Constants.Colors.deltsYellow
             } else {
-                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatWatermelonColorDark()//Constants.Colors.deltsYellow
             }
             
             cell.userInteractionEnabled = false
@@ -139,13 +139,16 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatWatermelonColor()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatWatermelonColorDark()//Constants.Colors.deltsYellow
             }
             
+            cell.puntLabel.textColor = UIColor.flatWhiteColor()
+            cell.dateLabel.textColor = UIColor.flatWhiteColor()
+            
             // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
+            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
             cell.rightButtons = [makeupButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -165,10 +168,14 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntAdminTableViewCell
             
             if indexPath.row % 2 == 1 {
-                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatWatermelonColorDark()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatWatermelonColor()//Constants.Colors.deltsYellow
             }
+            
+            cell.puntLabel.textColor = UIColor.flatWhiteColor()
+            cell.dateLabel.textColor = UIColor.flatWhiteColor()
+            cell.slaveLabel.textColor = UIColor.flatWhiteColor()
             
             // right buttons
             let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatMintColor())
