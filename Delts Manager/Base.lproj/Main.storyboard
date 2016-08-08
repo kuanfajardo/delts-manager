@@ -1384,7 +1384,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.52955204398288358" green="0.11682364710210935" blue="1" alpha="0.64310344827586208" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.52106726169999995" green="0.24050712590000001" blue="0.68248951440000005" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Wxn-XD-2km" firstAttribute="top" secondItem="dwI-4e-5xI" secondAttribute="bottom" constant="8" symbolic="YES" id="3XF-Cn-nXG"/>
