@@ -11,6 +11,7 @@ target 'Delts Manager' do
   pod 'DatePickerCell'
   pod 'ExpandingTableView'
   pod 'MGSwipeTableCell'
+  pod 'ChameleonFramework/Swift'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
