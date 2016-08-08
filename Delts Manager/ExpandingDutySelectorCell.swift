@@ -31,17 +31,21 @@ class ExpandingDutySelectorCell: ExpandingTableViewCell {
     
     @IBAction func tuesdayButtonPressed() {
         print("tuesday")
+        print(tuesdayButton.tag)
     }
     
     @IBAction func wednesdayButtonPressed() {
         print("wednesday")
+        print(wednesdayButton.tag)
     }
     
     @IBAction func thursdayButtonPressed() {
         print("thursday")
+        print(thursdayButton.tag)
     }
     
     @IBAction func fridayButtonPressed() {
         print("friday")
+        print(fridayButton.tag)
     }
 }
