@@ -25,8 +25,11 @@ class DutySelectorTableViewController: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 88
+        self.tableView.bounces = false
 
         loadSampleDuties()
+        loadSampleDutyNames()
+        loadSampleHouseDuties()
     }
     
     func cancelPressed() {
@@ -43,7 +46,8 @@ class DutySelectorTableViewController: UITableViewController {
     
     // MARK: Properties:
     var duties = [Duty]()
-    
+    var dutyNames = [String]()
+    var houseDuties = [HouseDuty]()
     
     // MARK: Helper Functions
     func loadSampleDuties() {
@@ -54,10 +58,25 @@ class DutySelectorTableViewController: UITableViewController {
         duties += [duty1, duty2, duty3]
     }
     
+    func loadSampleDutyNames() {
+        self.dutyNames = ["Pantry One", "Pantry Two", "Kitchen", "Basement", "1st / Foyer", "2nd Big / Trash", "2nd Little / Vacuum", "3rd Big / Trash", "3rd Little / Vacuum", "4th Big / Trash", "4th Little/ Vacuum"]
+    }
+    
+    func loadSampleHouseDuties() {
+        let duty1 = HouseDuty(name: "Pantry One", days: [.Open,.Open,.Taken,.Taken,.Open])
+        let duty2 = HouseDuty(name: "Pantry Two", days: [.Taken,.Open,.Taken,.Taken,.Open])
+        let duty3 = HouseDuty(name: "Kitchen", days: [.Open,.Unavailable,.Taken,.Unavailable,.Open])
+        let duty4 = HouseDuty(name: "Basement", days: [.Taken,.Unavailable,.Taken,.Unavailable,.Taken])
+        let duty5 = HouseDuty(name: "1st / Foyer", days: [.Open,.Unavailable,.Open,.Unavailable,.Open])
+        let duty6 = HouseDuty(name: "2nd Little / Vacuum", days: [.Taken,.Unavailable,.Open,.Unavailable,.Open])
+        
+        self.houseDuties += [duty1, duty2, duty3, duty4, duty5, duty6]
+    }
+    
     // MARK: UITableViewDataSource
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        guard indexPath.row < duties.count else {
+        guard indexPath.row < houseDuties.count else {
             let identifier = Constants.Identifiers.TableViewCells.PlainCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
@@ -82,10 +101,14 @@ class DutySelectorTableViewController: UITableViewController {
             cell.backgroundColor = Constants.Colors.deltsYellow
         }*/
         
-        let duty = duties[indexPath.row]
+        /*let duty = duties[indexPath.row]
         
         cell.duty = duty
-        cell.titleLabel.text = duty.name
+        cell.titleLabel.text = duty.name*/
+        
+        let houseDuty = houseDuties[indexPath.row]
+        cell.houseDuty = houseDuty
+        cell.titleLabel.text = houseDuty.name
 
         cell.mondayButton.tag = indexPath.row
         cell.tuesdayButton.tag = indexPath.row
@@ -93,17 +116,34 @@ class DutySelectorTableViewController: UITableViewController {
         cell.thursdayButton.tag = indexPath.row
         cell.fridayButton.tag = indexPath.row
         
+        cell.mondayButton.backgroundColor = colorFromAvailability(houseDuty.days[0])
+        cell.tuesdayButton.backgroundColor = colorFromAvailability(houseDuty.days[1])
+        cell.wednesdayButton.backgroundColor = colorFromAvailability(houseDuty.days[2])
+        cell.thursdayButton.backgroundColor = colorFromAvailability(houseDuty.days[3])
+        cell.fridayButton.backgroundColor = colorFromAvailability(houseDuty.days[4])
+        
         cell.selectionStyle = .None
         
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(25, duties.count)
+        return max(((7 - houseDuties.count)*2) + houseDuties.count, houseDuties.count)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
+    // MARK: Helper
+    func colorFromAvailability(availability: DutyAvailability) -> UIColor {
+        switch availability {
+        case .Open:
+            return UIColor.flatGreenColor()
+        case .Taken:
+            return UIColor.flatWatermelonColor()
+        case .Unavailable:
+            return UIColor.flatGrayColorDark()
+        }
+    }
 }

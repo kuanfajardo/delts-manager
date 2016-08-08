@@ -11,6 +11,7 @@ import UIKit
 class DutySelectorCell: UITableViewCell {
     // MARK: Properties
     var duty: Duty?
+    var houseDuty: HouseDuty?
     //var enabled = [Bool]()
     
     // MARK: Outlets

@@ -14,6 +14,7 @@
 		5617A6881D55DA97004478DD /* ExpandingDutySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */; };
 		5617A68A1D56300A004478DD /* Guides.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5617A6891D56300A004478DD /* Guides.txt */; };
 		5617A68C1D5904B5004478DD /* DutySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A68B1D5904B5004478DD /* DutySelectorCell.swift */; };
+		5617A68E1D591DD0004478DD /* HouseDuty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A68D1D591DD0004478DD /* HouseDuty.swift */; };
 		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */; };
 		56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingDutySelectorCell.swift; sourceTree = "<group>"; };
 		5617A6891D56300A004478DD /* Guides.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Guides.txt; sourceTree = "<group>"; };
 		5617A68B1D5904B5004478DD /* DutySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorCell.swift; sourceTree = "<group>"; };
+		5617A68D1D591DD0004478DD /* HouseDuty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseDuty.swift; sourceTree = "<group>"; };
 		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewController.swift; sourceTree = "<group>"; };
 		56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewCell.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				564C96241D1E230E003EE50F /* Constants.swift */,
 				56C5E4CF1D3E7EBE009D6F58 /* Event.swift */,
 				565544D21D52581500DF9957 /* Invite.swift */,
+				5617A68D1D591DD0004478DD /* HouseDuty.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				56F863271D3FA0CA00E5D850 /* EventStartTimeViewController.swift in Sources */,
 				568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */,
 				565544CD1D4B724300DF9957 /* DutyCheckoffTableViewCell.swift in Sources */,
+				5617A68E1D591DD0004478DD /* HouseDuty.swift in Sources */,
 				5617A6881D55DA97004478DD /* ExpandingDutySelectorCell.swift in Sources */,
 				564C96311D24688C003EE50F /* SettingsTextTableViewCell.swift in Sources */,
 				565544D31D52581500DF9957 /* Invite.swift in Sources */,
