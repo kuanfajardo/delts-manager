@@ -8,6 +8,7 @@
 
 import UIKit
 import MGSwipeTableCell
+import ChameleonFramework
 
 class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate {
 
@@ -26,7 +27,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             }
             
             self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-            self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
+            self.segControl!.tintColor = UIColor.whiteColor()//Constants.Colors.deltsDarkPurple
             self.segControl!.selectedSegmentIndex = 0
 
             
@@ -100,8 +101,6 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
-            } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
             }
             
@@ -115,13 +114,15 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutyCheckoffTableViewCell
 
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
-            } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
+            } else {
+                cell.dutyLabel.textColor = UIColor.whiteColor()
+                cell.dateLabel.textColor = UIColor.whiteColor()
+                cell.slaveLabel.textColor = UIColor.whiteColor()
             }
 
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
+            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [checkButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -141,13 +142,14 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutiesTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
-            } else {
                 cell.backgroundColor = Constants.Colors.deltsYellow
+            } else {
+                cell.dutyLabel.textColor = UIColor.whiteColor()
+                cell.dateLabel.textColor = UIColor.whiteColor()
             }
-            
+                        
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
+            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [checkButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
