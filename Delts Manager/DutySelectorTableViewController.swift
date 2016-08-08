@@ -9,7 +9,7 @@
 import UIKit
 import ExpandingTableView
 
-class DutySelectorTableViewController: ExpandingTableViewController {
+class DutySelectorTableViewController: UITableViewController {
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -72,13 +72,15 @@ class DutySelectorTableViewController: ExpandingTableViewController {
             return cell
         }
         
-        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath) as! ExpandingDutySelectorCell
-        
+        //let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath) as! ExpandingDutySelectorCell
+        let identifier = Constants.Identifiers.TableViewCells.NewDutySelectorCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! DutySelectorCell
+        /*
         if indexPath.row % 2 == 1 {
-            cell.mainContainerView.backgroundColor = Constants.Colors.deltsYellow//UIColor.flatMagentaColor()//Constants.Colors.deltsPurple
+            cell.backgroundColor = Constants.Colors.deltsYellow//UIColor.flatMagentaColor()//Constants.Colors.deltsPurple
         } else {
-            cell.mainContainerView.backgroundColor = Constants.Colors.deltsYellow
-        }
+            cell.backgroundColor = Constants.Colors.deltsYellow
+        }*/
         
         let duty = duties[indexPath.row]
         
@@ -91,7 +93,7 @@ class DutySelectorTableViewController: ExpandingTableViewController {
         cell.thursdayButton.tag = indexPath.row
         cell.fridayButton.tag = indexPath.row
         
-        cell.selectionStyle = .Gray
+        cell.selectionStyle = .None
         
         return cell
     }

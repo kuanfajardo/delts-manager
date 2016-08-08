@@ -409,6 +409,125 @@
                                     <outlet property="wednesdayButton" destination="uCk-0T-koQ" id="r8e-9r-cZb"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewDutySelector" rowHeight="88" id="Xh2-9q-WWm" customClass="DutySelectorCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="204" width="600" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xh2-9q-WWm" id="CiA-dt-mY8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="bbE-WA-zZv">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DutyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMk-cN-Jkk">
+                                                    <rect key="frame" x="261.5" y="11" width="77" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.87004060520000004" blue="0.50798801100000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="FMJ-vU-Es8"/>
+                                                <constraint firstItem="AMk-cN-Jkk" firstAttribute="centerX" secondItem="bbE-WA-zZv" secondAttribute="centerX" id="SlV-E0-hQ3"/>
+                                                <constraint firstItem="AMk-cN-Jkk" firstAttribute="centerY" secondItem="bbE-WA-zZv" secondAttribute="centerY" id="tEG-2F-22z"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dm1-wr-bxO">
+                                            <rect key="frame" x="0.0" y="44" width="600" height="43.5"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OAf-qQ-tiX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqk-Xb-X9E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="120" height="43"/>
+                                                            <color key="backgroundColor" red="0.46666666670000001" green="0.90980392160000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <state key="normal" title="Mon">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="mondayButtonPressed" destination="Xh2-9q-WWm" eventType="touchUpInside" id="6J0-Dk-jcs"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBk-Ra-16U">
+                                                            <rect key="frame" x="120" y="0.0" width="120" height="43"/>
+                                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <state key="normal" title="Tue">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="tuesdayButtonPressed" destination="Xh2-9q-WWm" eventType="touchUpInside" id="09U-8p-Nap"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzS-Na-Z5w">
+                                                            <rect key="frame" x="240" y="0.0" width="120" height="43"/>
+                                                            <color key="backgroundColor" red="0.94719551280000003" green="0.40221400870000001" blue="0.3967755194" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <state key="normal" title="Wed">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="wednesdayButtonPressed" destination="Xh2-9q-WWm" eventType="touchUpInside" id="REH-IV-m5O"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvn-mc-ZID">
+                                                            <rect key="frame" x="360" y="0.0" width="120" height="43"/>
+                                                            <color key="backgroundColor" red="0.46666666670000001" green="0.90980392160000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <state key="normal" title="Thurs">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="thursdayButtonPressed" destination="Xh2-9q-WWm" eventType="touchUpInside" id="vP8-AQ-r7R"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNJ-KM-RoV">
+                                                            <rect key="frame" x="480" y="0.0" width="120" height="43"/>
+                                                            <color key="backgroundColor" red="0.94719551280000003" green="0.40221400870000001" blue="0.3967755194" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                            <state key="normal" title="Fri">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="fridayButtonPressed" destination="Xh2-9q-WWm" eventType="touchUpInside" id="3iE-d6-nlh"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="998" constant="44" id="3Dy-J0-iKs"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="OAf-qQ-tiX" secondAttribute="bottom" priority="998" id="Bxr-kb-Rog"/>
+                                                <constraint firstAttribute="height" priority="999" constant="44" id="DH5-EJ-3Hk"/>
+                                                <constraint firstAttribute="trailing" secondItem="OAf-qQ-tiX" secondAttribute="trailing" id="t6W-vA-l15"/>
+                                                <constraint firstItem="OAf-qQ-tiX" firstAttribute="leading" secondItem="Dm1-wr-bxO" secondAttribute="leading" id="tQf-gb-iDl"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="bbE-WA-zZv" secondAttribute="trailing" id="Cza-pK-WeA"/>
+                                        <constraint firstItem="bbE-WA-zZv" firstAttribute="leading" secondItem="CiA-dt-mY8" secondAttribute="leading" id="EVD-lX-Mcd"/>
+                                        <constraint firstItem="OAf-qQ-tiX" firstAttribute="top" secondItem="CiA-dt-mY8" secondAttribute="top" constant="44" id="Lvl-HS-c4T"/>
+                                        <constraint firstItem="Dm1-wr-bxO" firstAttribute="top" secondItem="bbE-WA-zZv" secondAttribute="bottom" id="Rfd-BA-Ks5"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dm1-wr-bxO" secondAttribute="trailing" id="UY4-TJ-DvY"/>
+                                        <constraint firstItem="Dm1-wr-bxO" firstAttribute="leading" secondItem="CiA-dt-mY8" secondAttribute="leading" id="ffO-ht-oj3"/>
+                                        <constraint firstItem="bbE-WA-zZv" firstAttribute="top" secondItem="CiA-dt-mY8" secondAttribute="top" id="uXD-ln-z3J"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dm1-wr-bxO" secondAttribute="bottom" id="yZA-2D-prc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fridayButton" destination="cNJ-KM-RoV" id="8hW-db-I55"/>
+                                    <outlet property="mondayButton" destination="wqk-Xb-X9E" id="zfY-Y1-IfU"/>
+                                    <outlet property="thursdayButton" destination="uvn-mc-ZID" id="dPq-9L-qvv"/>
+                                    <outlet property="titleLabel" destination="AMk-cN-Jkk" id="JOh-TN-mlh"/>
+                                    <outlet property="tuesdayButton" destination="HBk-Ra-16U" id="BCx-dY-bo6"/>
+                                    <outlet property="wednesdayButton" destination="fzS-Na-Z5w" id="luR-Ro-HMZ"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="R9h-MS-zaC" id="V4b-Er-1Tr"/>

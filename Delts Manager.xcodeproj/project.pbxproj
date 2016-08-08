@@ -13,6 +13,7 @@
 		560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560765751D2C059B008D3337 /* OverviewViewController.swift */; };
 		5617A6881D55DA97004478DD /* ExpandingDutySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */; };
 		5617A68A1D56300A004478DD /* Guides.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5617A6891D56300A004478DD /* Guides.txt */; };
+		5617A68C1D5904B5004478DD /* DutySelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617A68B1D5904B5004478DD /* DutySelectorCell.swift */; };
 		561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */; };
 		56487A4B1D3CBE6000825A0F /* DutySelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */; };
 		56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */; };
@@ -76,6 +77,7 @@
 		560765751D2C059B008D3337 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingDutySelectorCell.swift; sourceTree = "<group>"; };
 		5617A6891D56300A004478DD /* Guides.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Guides.txt; sourceTree = "<group>"; };
+		5617A68B1D5904B5004478DD /* DutySelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorCell.swift; sourceTree = "<group>"; };
 		561AF3481D2584370097B1F3 /* SettingsSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewController.swift; sourceTree = "<group>"; };
 		56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutySelectorTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				56487A4A1D3CBE6000825A0F /* DutySelectorTableViewController.swift */,
 				56487A4C1D3D288800825A0F /* DutySelectorTableViewCell.swift */,
 				5617A6871D55DA97004478DD /* ExpandingDutySelectorCell.swift */,
+				5617A68B1D5904B5004478DD /* DutySelectorCell.swift */,
 			);
 			name = "Overview Tab";
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
+				5617A68C1D5904B5004478DD /* DutySelectorCell.swift in Sources */,
 				56F8632D1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift in Sources */,
 				565544D51D52944600DF9957 /* PartyDetailTableViewController.swift in Sources */,
 				56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */,
