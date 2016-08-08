@@ -35,7 +35,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         
         self.segControl = UISegmentedControl(items: [Segment.Invites, Segment.Duties])
         self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-        self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
+        self.segControl!.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
         self.segControl!.selectedSegmentIndex = 0
         self.navigationItem.titleView = self.segControl
         
@@ -90,9 +90,9 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
                     let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
                     
                     if indexPath.row % 2 == 0 {
-                        cell.backgroundColor = Constants.Colors.deltsPurple
+                        cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
                     } else {
-                        cell.backgroundColor = Constants.Colors.deltsYellow
+                        cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsYellow
                     }
                     
                     cell.userInteractionEnabled = false
@@ -104,9 +104,9 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
                 let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
                 
                 if indexPath.row % 2 == 0 {
-                    cell.backgroundColor = Constants.Colors.deltsPurple
+                    cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
                 } else {
-                    cell.backgroundColor = Constants.Colors.deltsYellow
+                    cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsYellow
                 }
                 
                 return cell
@@ -116,13 +116,13 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PartyInviteTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatBlackColorDark()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatBlackColor()//Constants.Colors.deltsYellow
             }
             
             // right buttons
-            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.redColor())
+            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [deleteButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
