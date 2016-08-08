@@ -21,7 +21,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             self.segControl = UISegmentedControl(items: [Segment.User, Segment.Admin/*, "Makeups"*/])
             
             self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
-            self.segControl!.tintColor = Constants.Colors.deltsDarkPurple
+            self.segControl!.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
             self.segControl!.selectedSegmentIndex = 0
             
             self.navigationItem.titleView = self.segControl
@@ -123,10 +123,10 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let identifier = Constants.Identifiers.TableViewCells.PlainCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath)
             
-            if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+            if indexPath.row % 2 == 1 {
+                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsYellow
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsYellow
             }
             
             cell.userInteractionEnabled = false
@@ -139,13 +139,13 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntsTableViewCell
             
             if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsYellow
             }
             
             // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.redColor())
+            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [makeupButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
@@ -164,15 +164,15 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             let identifier = Constants.Identifiers.TableViewCells.PuntAdminCell
             let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! PuntAdminTableViewCell
             
-            if indexPath.row % 2 == 0 {
-                cell.backgroundColor = Constants.Colors.deltsPurple
+            if indexPath.row % 2 == 1 {
+                cell.backgroundColor = UIColor.flatYellowColorDark()//Constants.Colors.deltsPurple
             } else {
-                cell.backgroundColor = Constants.Colors.deltsYellow
+                cell.backgroundColor = UIColor.flatYellowColor()//Constants.Colors.deltsYellow
             }
             
             // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.cyanColor())
-            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.redColor())
+            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatMintColor())
+            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [deleteButton, makeupButton]
             cell.rightSwipeSettings.transition = .Rotate3D
             cell.delegate = self
