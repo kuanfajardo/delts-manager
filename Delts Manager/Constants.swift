@@ -115,7 +115,7 @@ struct Constants {
         }
         
         static var GreenCheck: UIImage {
-            return UIImage(named: "Green Check")
+            return UIImage(named: "Green Check")!
         }
     }
     
