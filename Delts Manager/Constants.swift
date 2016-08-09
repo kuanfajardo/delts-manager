@@ -68,6 +68,7 @@ struct Constants {
         static let CheckoffEnabled = "Checkoff Enabled"
         static let Punts = "Punts"
         static let ScheduleEnabled = "Schedule Enabled"
+        static let Duties = "Duties"
     }
 
     
