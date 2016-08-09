@@ -86,3 +86,10 @@ class Duty: NSObject, NSCoding {
         self.init(slave: slave, name: name, type: type, date: date, status: status)
     }
 }
+
+enum DutyStatus {
+    case Complete
+    case Pending
+    case Incomplete
+    case Punted
+}

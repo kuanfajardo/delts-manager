@@ -66,3 +66,10 @@ class Punt: NSObject, NSCoding {
     }
 
 }
+
+
+enum PuntStatus {
+    case JustThere
+    case Madeup
+    case MaekupRequested
+}
