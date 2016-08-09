@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Punt: NSObject, NSCoding {
+class Punt {
     // MARK: Properties
     
     var name: String
@@ -21,50 +21,18 @@ class Punt: NSObject, NSCoding {
         }
     }
     var givenBy: String
-    // TODO: implement as Const.Status (init all three methods below)
-    var status: String
+    var status: PuntStatus
     var slave: String
-    
-    
-    // MARK: Types
-    
-    struct PropertyKey {
-        static let slaveKey = "slave"
-        static let nameKey = "name"
-        static let dateKey = "date"
-        static let givenByKey = "givenBy"
-        static let statusKey = "status"
-    }
+
     
     // MARK: Init
-    init(slave: String, name: String, date: NSDate, givenBy: String, status: String) {
+    init(slave: String, name: String, date: NSDate, givenBy: String, status: PuntStatus) {
         self.slave = slave
         self.name = name
         self.date = date
         self.givenBy = givenBy
         self.status = status
-        
-        super.init()
     }
-    
-    // MARK: NSCoding
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
-        aCoder.encodeObject(date, forKey: PropertyKey.dateKey)
-        aCoder.encodeObject(givenBy, forKey: PropertyKey.givenByKey)
-        aCoder.encodeObject(status, forKey: PropertyKey.statusKey)
-    }
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let slave = aDecoder.decodeObjectForKey(PropertyKey.slaveKey) as! String
-        let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
-        let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
-        let givenBy = aDecoder.decodeObjectForKey(PropertyKey.givenByKey) as! String
-        let status = aDecoder.decodeObjectForKey(PropertyKey.statusKey) as! String
-        
-        self.init(slave: slave, name: name, date: date, givenBy: givenBy, status: status)
-    }
-
 }
 
 
