@@ -61,11 +61,12 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     var duties = [Duty]()
     
     func loadSampleDuties() {
-        let duty1 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Completed")
-        let duty2 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: "Incomplete")
-        let duty3 = Duty(slave: "Juan", name: "Kitchen", type: Constants.DutyType.House, date: NSDate(), status: "Pending")
+        let duty1 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Complete)
+        let duty2 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Pending)
+        let duty3 = Duty(slave: "Juan", name: "Kitchen", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Punted)
+        let duty4 = Duty(slave: "Juan", name: "2nd Little / Vacuum", type: .House, date: NSDate(), status: .Incomplete)
         
-        duties += [duty1, duty2, duty3]
+        duties += [duty1, duty2, duty3, duty4]
     }
     
     var segControl: UISegmentedControl?
@@ -119,20 +120,22 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             cell.dateLabel.textColor = UIColor.whiteColor()
             cell.slaveLabel.textColor = UIColor.whiteColor()
 
+            let duty = duties[indexPath.row]
+
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
-            cell.rightButtons = [checkButton]
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightButtons = buttonsFromStatus(duty.status)
+            cell.rightSwipeSettings.transition = .Static
+            cell.rightExpansion.fillOnTrigger = true
+            cell.rightExpansion.buttonIndex = 0
             cell.delegate = self
             
-            let duty = duties[indexPath.row]
             cell.duty = duty
             cell.dutyLabel.text = duty.name
             cell.dateLabel.text = duty.dateString
             cell.slaveLabel.text = duty.slave
-            // TODO: Real
-            cell.statusImageView?.image = Constants.Photos.BlackCircle
+            cell.statusImageView?.image = imageFromStatus(duty.status)
             cell.selectionStyle = .Gray
+            
             return cell
 
         } else {
@@ -145,21 +148,22 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             
             cell.dutyLabel.textColor = UIColor.whiteColor()
             cell.dateLabel.textColor = UIColor.whiteColor()
+            
+            let duty = duties[indexPath.row]
 
             
             // right buttons
-            let checkButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
-            cell.rightButtons = [checkButton]
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightButtons = buttonsFromStatus(duty.status)
+            cell.rightSwipeSettings.transition = .Static
+            cell.rightExpansion.fillOnTrigger = true
+            cell.rightExpansion.buttonIndex = 0
             cell.delegate = self
             
-            let duty = duties[indexPath.row]
             
             cell.duty = duty
             cell.dutyLabel.text = duty.name
             cell.dateLabel.text = duty.dateString
-            // TODO: Real
-            cell.statusImageView?.image = Constants.Photos.BlackCircle
+            cell.statusImageView?.image = imageFromStatus(duty.status)
             cell.selectionStyle = .Gray
             
             return cell
@@ -237,6 +241,54 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     
     func adminGrantCheckoff() {
         //
+    }
+    
+    // MARK: Helper
+    func imageFromStatus(status: DutyStatus) -> UIImage {
+        switch status {
+        case .Complete:
+            return Constants.Photos.GreenCheck
+        case .Incomplete:
+            return Constants.Photos.WhiteAttention
+        case .Pending:
+            return Constants.Photos.Clock
+        case .Punted:
+            return Constants.Photos.Cancel
+        }
+    }
+    
+    func buttonsFromStatus(status: DutyStatus) -> [MGSwipeButton] {
+        let requestCheckoffButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
+        let grantCheckoffButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
+        
+        let noButtons = [MGSwipeButton]()
+        
+        switch self.segment {
+        case Segment.User:
+            switch status {
+            case .Complete:
+                return noButtons
+            case .Incomplete:
+                return [requestCheckoffButton]
+            case .Pending:
+                return noButtons
+            case .Punted:
+                return noButtons
+            }
+        case Segment.Checker, Segment.Admin:
+            switch status {
+            case .Complete:
+                return noButtons
+            case .Incomplete:
+                return noButtons
+            case .Pending:
+                return [grantCheckoffButton]
+            case .Punted:
+                return noButtons
+            }
+        default:
+            return noButtons
+        }
     }
 
 }
