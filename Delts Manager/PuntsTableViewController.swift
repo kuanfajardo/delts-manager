@@ -85,9 +85,9 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     var punts = [Punt]()
     
     func loadSamplePunts() {
-        let punt1 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Erick Friis", status: "Completed")
-        let punt2 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: "Incomplete")
-        let punt3 = Punt(slave: "Juan", name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: "Pending")
+        let punt1 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Erick Friis", status: .JustThere)
+        let punt2 = Punt(slave: "Juan", name: "Pantry", date: NSDate(), givenBy: "Sam Resnick", status: .Madeup)
+        let punt3 = Punt(slave: "Juan", name: "Kitchen", date: NSDate(), givenBy: "Automatic", status: .MakeupRequested)
         
         punts += [punt1, punt2, punt3]
     }
