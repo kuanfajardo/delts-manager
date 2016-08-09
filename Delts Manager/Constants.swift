@@ -65,7 +65,6 @@ struct Constants {
         static let PuntMakupPosted = "Punt Makeup Posted Notifications"
         static let CheckoffNotification = "Checkoff Notifications"
         static let PuntNotification = "Punt Notifications"
-        static let CheckoffEnabled = "Checkoff Enabled"
         static let Punts = "Punts"
         static let ScheduleEnabled = "Schedule Enabled"
         static let Duties = "Duties"

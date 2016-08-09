@@ -182,13 +182,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Overview" id="qFv-bm-iFo">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="hrz-Rl-wvU">
-                            <connections>
-                                <segue destination="R9h-MS-zaC" kind="show" id="sib-Kg-f7A"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Overview" id="qFv-bm-iFo"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="checkoffImageView" destination="q3a-d4-IHk" id="roU-5j-VUD"/>
@@ -223,7 +217,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="DutySelectorController" title="Duty Selector" id="R9h-MS-zaC" customClass="DutySelectorTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8It-Dt-OOE">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

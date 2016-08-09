@@ -46,8 +46,6 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.flatWhiteColor()
-        
         setUI()
     }
     
