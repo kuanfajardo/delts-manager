@@ -141,6 +141,50 @@ struct Constants {
         static var Check: UIImage {
             return UIImage(named: "Check")!
         }
+        
+        static var One: UIImage {
+            return UIImage(named: "One")!
+        }
+        
+        static var Two: UIImage {
+            return UIImage(named: "Two")!
+        }
+        
+        static var Three: UIImage {
+            return UIImage(named: "Three")!
+        }
+        
+        static var Four: UIImage {
+            return UIImage(named: "Four")!
+        }
+        
+        static var Five: UIImage {
+            return UIImage(named: "Five")!
+        }
+        
+        static var Six: UIImage {
+            return UIImage(named: "Six")!
+        }
+        
+        static var Seven: UIImage {
+            return UIImage(named: "Seven")!
+        }
+        
+        static var Eight: UIImage {
+            return UIImage(named: "Eight")!
+        }
+        
+        static var Nine: UIImage {
+            return UIImage(named: "Nine")!
+        }
+        
+        static var SmileyFace: UIImage {
+            return UIImage(named: "Smiley")!
+        }
+        
+        static var Calendar: UIImage {
+            return UIImage(named: "Calendar")!
+        }
     }
     
     struct Identifiers {
