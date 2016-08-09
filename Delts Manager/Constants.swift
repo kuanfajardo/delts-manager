@@ -133,6 +133,10 @@ struct Constants {
         static var Clock: UIImage {
             return UIImage(named: "Yellow Clock")!
         }
+        
+        static var WhiteAttention: UIImage {
+            return UIImage(named: "White Attention")!
+        }
     }
     
     struct Identifiers {
