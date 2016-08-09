@@ -124,7 +124,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
 
             // right buttons
             cell.rightButtons = buttonsFromStatus(duty.status)
-            cell.rightSwipeSettings.transition = .Static
+            cell.rightSwipeSettings.transition = .Rotate3D
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
             cell.delegate = self
@@ -154,7 +154,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             
             // right buttons
             cell.rightButtons = buttonsFromStatus(duty.status)
-            cell.rightSwipeSettings.transition = .Static
+            cell.rightSwipeSettings.transition = .Rotate3D
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
             cell.delegate = self
@@ -258,7 +258,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     }
     
     func buttonsFromStatus(status: DutyStatus) -> [MGSwipeButton] {
-        let requestCheckoffButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatWatermelonColor())
+        let requestCheckoffButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
         let grantCheckoffButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
         
         let noButtons = [MGSwipeButton]()
