@@ -94,6 +94,8 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
         let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
         cell.rightButtons = [deleteButton]
         cell.rightSwipeSettings.transition = .Rotate3D
+        cell.rightExpansion.fillOnTrigger = true
+        cell.rightExpansion.buttonIndex = 0
         cell.delegate = self
         
         let event = events[indexPath.row]
