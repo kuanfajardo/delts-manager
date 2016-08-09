@@ -147,19 +147,19 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.puntLabel.textColor = UIColor.flatWhiteColor()
             cell.dateLabel.textColor = UIColor.flatWhiteColor()
             
-            // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
-            cell.rightButtons = [makeupButton]
-            cell.rightSwipeSettings.transition = .Rotate3D
-            cell.delegate = self
-            
             let punt = punts[indexPath.row]
+
+            // right buttons
+            cell.rightButtons = buttonsFromStatus(punt.status)
+            cell.rightExpansion.fillOnTrigger = true
+            cell.rightExpansion.buttonIndex = 0
+            cell.rightSwipeSettings.transition = .Static
+            cell.delegate = self
             
             cell.punt = punt
             cell.puntLabel.text = punt.name
             cell.dateLabel.text = punt.dateString
-            // TODO: Real
-            cell.checkoffImageView?.image = Constants.Photos.BlackCircle
+            cell.checkoffImageView?.image = imageFromStatus(punt.status)
             
             return cell
             
@@ -173,26 +173,30 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                 cell.backgroundColor = UIColor.flatWatermelonColor()//Constants.Colors.deltsYellow
             }
             
+            
+            
             cell.puntLabel.textColor = UIColor.flatWhiteColor()
             cell.dateLabel.textColor = UIColor.flatWhiteColor()
             cell.slaveLabel.textColor = UIColor.flatWhiteColor()
             
-            // right buttons
-            let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatMintColor())
-            let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
-            cell.rightButtons = [deleteButton, makeupButton]
-            cell.rightSwipeSettings.transition = .Rotate3D
-            cell.delegate = self
-            
-            
             let punt = punts[indexPath.row]
+
+            // right buttons
+            cell.rightButtons = buttonsFromStatus(punt.status)
+            cell.rightExpansion.fillOnTrigger = true
+            if punt.status == .JustThere {
+                cell.rightExpansion.buttonIndex = 0
+            } else {
+                cell.rightExpansion.buttonIndex = 1
+            }
+            cell.rightSwipeSettings.transition = .Static
+            cell.delegate = self
             
             cell.punt = punt
             cell.puntLabel.text = punt.name
             cell.dateLabel.text = punt.dateString
             cell.slaveLabel.text = punt.slave
-            // TODO: Real
-            cell.statusImageView?.image = Constants.Photos.BlackCircle
+            cell.statusImageView?.image = imageFromStatus(punt.status)
             
             return cell
         }
@@ -278,5 +282,45 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     
     func adminMakeupPunt() {
         //
+    }
+    
+    // MARK: Helper
+    func imageFromStatus(status: PuntStatus) -> UIImage {
+        switch status {
+        case .JustThere:
+            return Constants.Photos.WhiteAttention
+        case .Madeup:
+            return Constants.Photos.GreenCheck
+        case .MakeupRequested:
+            return Constants.Photos.Clock
+        }
+    }
+    
+    func buttonsFromStatus(status: PuntStatus) -> [MGSwipeButton] {
+        let makeupButton = MGSwipeButton(title: "", icon: Constants.Photos.Duty, backgroundColor: UIColor.flatGreenColor())
+        let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatRedColor())
+        
+        let noButtons = [MGSwipeButton]()
+        
+        switch self.segment {
+        case Segment.User:
+            switch status {
+            case .JustThere:
+                return [makeupButton]
+            default:
+                return noButtons
+            }
+        case Segment.Admin:
+            switch status {
+            case .JustThere:
+                return [deleteButton]
+            case .MakeupRequested:
+                return [deleteButton, makeupButton]
+            case .Madeup:
+                return noButtons
+            }
+        default:
+            return noButtons
+        }
     }
 }
