@@ -19,16 +19,22 @@ class OverviewViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func checkoffPressed() {
-        print("checkoff button pressed")
+        if self.checkoffImageView.userInteractionEnabled {
+            print("checkoff button pressed")
+        }
     }
     
     @IBAction func puntMakeupPressed() {
-        print("punt button pressed")
+        if self.puntMakeupImageView.userInteractionEnabled {
+            print("punt button pressed")
+        }
     }
     
-    @IBAction func schedulePressed() {
+    @IBAction func schedulePressed(sender: UITapGestureRecognizer) {
         // TODO: Make check for type of schedule (party v house) one or both?
-        print("schedule button pressed")
+        if self.scheduleImageView.userInteractionEnabled {
+            print("schedule button pressed")
+        }
     }
     
     // MARK: Life Cycle
@@ -42,42 +48,25 @@ class OverviewViewController: UIViewController {
     
     // MARK: Helper functions
     func setUI() {
-        let checkoffEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.CheckoffEnabled)
+        //let checkoffEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.CheckoffEnabled)
         let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
         let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
         let scheduleEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.ScheduleEnabled)
         
         // Duty Section
-        self.checkoffImageView.userInteractionEnabled = false//checkoffEnabled
+        self.checkoffImageView.userInteractionEnabled = (numDuties != 0)
         self.checkoffImageView.image = imageFromNumber(numDuties)
-        
-        if checkoffEnabled {
-            self.dutyLabel.text = "\(numDuties)"
-        } else {
-            self.dutyLabel.text = "No Duties Today :)"
-        }
-        
+        self.dutyLabel.text = (numDuties != 0) ? "\(numDuties)" : "No Duties Today :)"
+
         // Punts Section
         self.puntLabel.text = "\(numPunts)"
         self.puntMakeupImageView.image = imageFromNumber(numPunts)
+        self.puntMakeupImageView.userInteractionEnabled = !(numPunts == 0)
         
-        /*
-        if numPunts > 0 {
-            self.puntMakeupImageView.userInteractionEnabled = true
-        } else {
-            self.puntMakeupImageView.userInteractionEnabled = true
-        }*/
-        
-        self.puntMakeupImageView.userInteractionEnabled = false
         
         // Schedule Section
-        self.scheduleLabel.userInteractionEnabled = false//scheduleEnabled
-        
-        if scheduleEnabled {
-            self.scheduleLabel.text = "Open"
-        } else {
-            self.scheduleLabel.text = "Closed: Friday 5:00"
-        }
+        self.scheduleImageView.userInteractionEnabled = scheduleEnabled
+        self.scheduleLabel.text = scheduleEnabled ? "Open" : "Closed: Friday 5:00"
     }
     
     func imageFromNumber(number: Int) -> UIImage {
