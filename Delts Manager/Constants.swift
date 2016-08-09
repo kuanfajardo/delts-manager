@@ -224,6 +224,7 @@ struct Constants {
             static let DutyChooserController = "DutyChooser"
             static let DutyTimeChooserController = "DutyTimeChooser"
             static let NewPartyController = "New Party"
+            static let DutySelectorController = "DutySelectorController"
         }
         
         struct Segues {

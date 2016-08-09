@@ -32,9 +32,14 @@ class OverviewViewController: UIViewController {
     
     @IBAction func schedulePressed(sender: UITapGestureRecognizer) {
         // TODO: Make check for type of schedule (party v house) one or both?
-        if self.scheduleImageView.userInteractionEnabled {
-            print("schedule button pressed")
+        guard self.scheduleImageView.userInteractionEnabled else {
+            return
         }
+        
+        let identifier = Constants.Identifiers.Controllers.DutySelectorController
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! DutySelectorTableViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: Life Cycle

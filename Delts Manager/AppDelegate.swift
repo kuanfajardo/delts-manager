@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Enabled
             Constants.DefaultsKeys.CheckoffEnabled : false,
-            Constants.DefaultsKeys.ScheduleEnabled : false,
+            Constants.DefaultsKeys.ScheduleEnabled : true,
             
             // Other
             Constants.DefaultsKeys.Punts : 3,
