@@ -121,6 +121,18 @@ struct Constants {
         static var RedAttention: UIImage {
             return UIImage(named: "Red Attention")!
         }
+        
+        static var DarkRedAttention: UIImage {
+            return UIImage(named: "Dark Red Attention")!
+        }
+        
+        static var Cancel: UIImage {
+            return UIImage(named: "Red Cancel")!
+        }
+        
+        static var Clock: UIImage {
+            return UIImage(named: "Yellow Clock")!
+        }
     }
     
     struct Identifiers {
