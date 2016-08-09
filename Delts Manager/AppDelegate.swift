@@ -43,7 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.ScheduleEnabled : false,
             
             // Other
-            Constants.DefaultsKeys.Punts : 0
+            Constants.DefaultsKeys.Punts : 3,
+            Constants.DefaultsKeys.Duties : 4
         ]
 
         standardDefaults.registerDefaults(appDefaults)
