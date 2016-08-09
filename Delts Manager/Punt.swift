@@ -39,5 +39,5 @@ class Punt {
 enum PuntStatus {
     case JustThere
     case Madeup
-    case MaekupRequested
+    case MakeupRequested
 }
