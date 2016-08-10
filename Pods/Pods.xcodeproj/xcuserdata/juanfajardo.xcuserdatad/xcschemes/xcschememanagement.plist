@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GBDeviceInfo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MGSwipeTableCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,7 +57,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4E0C43B6BD7C526E87868ACBD5FF68F9</key>
+		<key>3F0E15E66B54B2B42F029A61934F800D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42EA7A574E11E81F04BF9E7AF4FFBE69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>733206DFBBCC49D3502AE07C330E98E6</key>
+		<key>6355BE9F37F7A162251C3EB8147206E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77E21D07B80547FFDB624A157130F324</key>
+		<key>733206DFBBCC49D3502AE07C330E98E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
