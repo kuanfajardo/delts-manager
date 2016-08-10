@@ -16,6 +16,21 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var dutyLabel: UILabel!
     @IBOutlet weak var puntLabel: UILabel!
     @IBOutlet weak var scheduleLabel: UILabel!
+    @IBOutlet weak var scheduleDetailLabel: UILabel!
+    
+    @IBOutlet weak var dutyImageLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var puntImageLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scheduleImageLeftConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var puntLabelRightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scheduleLabelRightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var dutyLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var puntLabelWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var dutyPuntLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var puntScheduleLeadingConstraint: NSLayoutConstraint!
+    
     
     // MARK: Actions
     @IBAction func checkoffPressed() {
@@ -70,6 +85,36 @@ class OverviewViewController: UIViewController {
         // Schedule Section
         self.scheduleImageView.userInteractionEnabled = scheduleEnabled
         self.scheduleLabel.text = scheduleEnabled ? "Open" : "Closed: Friday 5:00"
+        
+        let isBigPhone = true
+        
+        self.dutyImageLeftConstraint.constant = isBigPhone ? 22 : 10
+        self.puntImageLeftConstraint.constant = isBigPhone ? 22 : 10
+        self.scheduleImageLeftConstraint.constant = isBigPhone ? 22 : 10
+        
+        self.puntLabelRightConstraint.constant = isBigPhone ? 25 : 58
+        self.scheduleLabelRightConstraint.constant = isBigPhone ? 25 : 56
+        
+        if isBigPhone {
+            self.dutyLabelWidthConstraint.constant = 160
+            self.puntLabelWidthConstraint.constant = 122
+            self.dutyPuntLeadingConstraint.priority = 0
+            self.puntScheduleLeadingConstraint.priority = 0
+        } else {
+            self.dutyLabelWidthConstraint.priority = 0
+            self.puntLabelWidthConstraint.priority = 0
+            self.puntScheduleLeadingConstraint.priority = 1000
+            self.dutyPuntLeadingConstraint.priority = 1000
+        }
+        
+        self.dutyLabel.frame = isBigPhone ? CGRect(x: 360, y: 45, width: 160, height: 26) : CGRect(x: 391, y: 45, width: 129, height: 26)
+        self.puntLabel.frame = isBigPhone ? CGRect(x: 360, y: 45, width: 122, height: 26) : CGRect(x: 391, y: 45, width: 124, height: 26)
+        self.scheduleDetailLabel.frame = isBigPhone ? CGRect(x: 360, y: 66, width: 100.5, height: 18) : CGRect(x: 391, y: 66, width: 100.5, height: 18)
+        self.scheduleLabel.frame = isBigPhone ? CGRect(x: 360, y: 33, width: 124, height: 26) : CGRect(x: 391, y: 33, width: 124, height: 26)
+        
+        self.checkoffImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
+        self.puntMakeupImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
+        self.scheduleImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
     }
     
     func imageFromNumber(number: Int) -> UIImage {
