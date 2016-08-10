@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GBDeviceInfo
 
 class OverviewViewController: UIViewController {
     // MARK: Outlets
@@ -27,9 +28,7 @@ class OverviewViewController: UIViewController {
     
     @IBOutlet weak var dutyLabelWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var puntLabelWidthConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var dutyPuntLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var puntScheduleLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scheduleLabelWidthConstraint: NSLayoutConstraint!
     
     
     // MARK: Actions
@@ -66,7 +65,6 @@ class OverviewViewController: UIViewController {
     
     // MARK: Helper functions
     func setUI() {
-        //let checkoffEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.CheckoffEnabled)
         let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
         let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
         let scheduleEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.ScheduleEnabled)
@@ -74,19 +72,17 @@ class OverviewViewController: UIViewController {
         // Duty Section
         self.checkoffImageView.userInteractionEnabled = (numDuties != 0)
         self.checkoffImageView.image = imageFromNumber(numDuties)
-        //self.dutyLabel.text = (numDuties != 0) ? "\(numDuties)" : "No Duties Today :)"
 
         // Punts Section
-        //self.puntLabel.text = "\(numPunts)"
         self.puntMakeupImageView.image = imageFromNumber(numPunts)
         self.puntMakeupImageView.userInteractionEnabled = !(numPunts == 0)
         
-        
         // Schedule Section
         self.scheduleImageView.userInteractionEnabled = scheduleEnabled
-        self.scheduleLabel.text = scheduleEnabled ? "Open" : "Closed: Friday 5:00"
+        self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed: Friday 5:00"
         
-        let isBigPhone = true
+        // TODO: lololll
+        let isBigPhone = false//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)
         
         self.dutyImageLeftConstraint.constant = isBigPhone ? 22 : 10
         self.puntImageLeftConstraint.constant = isBigPhone ? 22 : 10
@@ -95,16 +91,16 @@ class OverviewViewController: UIViewController {
         self.puntLabelRightConstraint.constant = isBigPhone ? 25 : 58
         self.scheduleLabelRightConstraint.constant = isBigPhone ? 25 : 56
         
+        self.dutyLabelWidthConstraint.constant = isBigPhone ? 160 : 129
+        self.puntLabelWidthConstraint.constant = isBigPhone ? 155 : 124
+        self.scheduleLabelWidthConstraint.constant = isBigPhone ? 155 : 124
+        
         if isBigPhone {
-            self.dutyLabelWidthConstraint.constant = 160
-            self.puntLabelWidthConstraint.constant = 122
-            self.dutyPuntLeadingConstraint.priority = 0
-            self.puntScheduleLeadingConstraint.priority = 0
+            //self.dutyPuntLeadingConstraint.priority = 0
+            //self.puntScheduleLeadingConstraint.priority = 0
         } else {
-            self.dutyLabelWidthConstraint.priority = 0
-            self.puntLabelWidthConstraint.priority = 0
-            self.puntScheduleLeadingConstraint.priority = 1000
-            self.dutyPuntLeadingConstraint.priority = 1000
+            //self.puntScheduleLeadingConstraint.priority = 1000
+            //self.dutyPuntLeadingConstraint.priority = 1000
         }
         
         self.dutyLabel.frame = isBigPhone ? CGRect(x: 360, y: 45, width: 160, height: 26) : CGRect(x: 391, y: 45, width: 129, height: 26)
@@ -115,6 +111,9 @@ class OverviewViewController: UIViewController {
         self.checkoffImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
         self.puntMakeupImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
         self.scheduleImageView.frame = isBigPhone ? CGRect(x: 22, y: 8, width: 100, height: 100) : CGRect(x: 10, y: 8, width: 100, height: 100)
+        
+        self.dutyLabel.text = isBigPhone ? "Upcoming Duties" : "Duties"
+        self.puntLabel.text = isBigPhone ? "Current Punts" : "Punts"
     }
     
     func imageFromNumber(number: Int) -> UIImage {
