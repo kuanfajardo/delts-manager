@@ -79,7 +79,8 @@ class OverviewViewController: UIViewController {
         
         // Schedule Section
         self.scheduleImageView.userInteractionEnabled = scheduleEnabled
-        self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed: Friday 5:00"
+        self.scheduleImageView.alpha = scheduleEnabled ? 1 : 0.5
+        self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed"
         
         // TODO: lololll
         let isBigPhone = false//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)
