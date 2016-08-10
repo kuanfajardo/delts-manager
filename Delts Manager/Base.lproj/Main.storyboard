@@ -1237,7 +1237,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnH-Eu-8It">
-                                            <rect key="frame" x="522" y="11" width="42" height="21"/>
+                                            <rect key="frame" x="535" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1247,7 +1247,7 @@
                                     <constraints>
                                         <constraint firstItem="RnH-Eu-8It" firstAttribute="centerY" secondItem="msw-ad-yFw" secondAttribute="centerY" id="3C5-Gj-BeI"/>
                                         <constraint firstItem="S2r-1n-K4B" firstAttribute="centerY" secondItem="msw-ad-yFw" secondAttribute="centerY" id="KIm-6N-UUE"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="RnH-Eu-8It" secondAttribute="trailing" constant="28" id="Wxb-BE-gzg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RnH-Eu-8It" secondAttribute="trailing" constant="15" id="Wxb-BE-gzg"/>
                                         <constraint firstItem="S2r-1n-K4B" firstAttribute="leading" secondItem="msw-ad-yFw" secondAttribute="leadingMargin" constant="25" id="uQl-fx-B0e"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -1273,12 +1273,12 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bht-cV-4gb">
-                                            <rect key="frame" x="515" y="6" width="51" height="31"/>
+                                            <rect key="frame" x="528" y="6" width="51" height="31"/>
                                             <color key="onTintColor" red="0.529552044" green="0.1168236471" blue="1" alpha="0.64310344829999999" colorSpace="calibratedRGB"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Bht-cV-4gb" secondAttribute="trailing" constant="28" id="3ez-wn-yVj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Bht-cV-4gb" secondAttribute="trailing" constant="15" id="3ez-wn-yVj"/>
                                         <constraint firstItem="Bht-cV-4gb" firstAttribute="centerY" secondItem="VHP-cB-5z6" secondAttribute="centerY" id="Cgb-Na-69t"/>
                                         <constraint firstItem="1lr-SF-s9S" firstAttribute="leading" secondItem="VHP-cB-5z6" secondAttribute="leadingMargin" constant="25" id="PBP-JI-rLN"/>
                                         <constraint firstItem="1lr-SF-s9S" firstAttribute="centerY" secondItem="VHP-cB-5z6" secondAttribute="centerY" id="rwU-G8-Pso"/>
