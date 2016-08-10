@@ -2229,6 +2229,38 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyDutyCell" id="eVj-3H-4HK" customClass="PartyDutyTableCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="160" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eVj-3H-4HK" id="Cpo-fk-jca">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DutyLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-68-Uuf">
+                                            <rect key="frame" x="23" y="11" width="77" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SlaveLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYz-Mr-sUp">
+                                            <rect key="frame" x="495.5" y="11" width="81.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OtS-68-Uuf" firstAttribute="leading" secondItem="Cpo-fk-jca" secondAttribute="leadingMargin" constant="15" id="Ad8-Yt-qnt"/>
+                                        <constraint firstItem="NYz-Mr-sUp" firstAttribute="centerY" secondItem="Cpo-fk-jca" secondAttribute="centerY" id="hGN-yR-5e6"/>
+                                        <constraint firstItem="OtS-68-Uuf" firstAttribute="centerY" secondItem="Cpo-fk-jca" secondAttribute="centerY" id="hYf-KS-LUy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="NYz-Mr-sUp" secondAttribute="trailing" constant="15" id="jnh-G6-cMe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dutyLabel" destination="OtS-68-Uuf" id="gnV-LR-91A"/>
+                                    <outlet property="slaveLabel" destination="NYz-Mr-sUp" id="NaJ-ys-GAJ"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="hDS-c1-UNb" id="fPz-XP-h6W"/>

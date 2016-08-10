@@ -211,6 +211,7 @@ struct Constants {
             static let NewInviteCell = "NewInviteCell"
             static let ExpandingDutySelectorCell = "ExpandingDutySelector"
             static let NewDutySelectorCell = "NewDutySelector"
+            static let PartyDutyCell = "PartyDutyCell"
         }
         
         struct Controllers {

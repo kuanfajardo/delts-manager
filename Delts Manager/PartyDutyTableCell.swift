@@ -6,8 +6,13 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PartyDutyTableCell: UITableViewCell {
-
+    // MARK: Outlets
+    @IBOutlet weak var slaveLabel: UILabel!
+    @IBOutlet weak var dutyLabel: UILabel!
+    
+    // MARK: Properties
+    var duty: Duty?
 }

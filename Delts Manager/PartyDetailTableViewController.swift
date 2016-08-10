@@ -29,6 +29,9 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         static let Duties = "Duties"
     }
     
+    // Duties
+    var sectionTitles = ["10:00", "11:00", "12:00", "1:00", "2:00"]
+    
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,11 +153,11 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(15, self.numInvites + 1)
+        return self.segment == Segment.Invites ? max(15, self.numInvites + 1) : 0
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return self.segment == Segment.Duties ? self.sectionTitles.count : 1
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -176,6 +179,15 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
     func addInvite() {
         self.event!.invites.append(Invite(invite: ""))
         self.tableView.reloadData()
+    }
+    
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard self.segment == Segment.Duties else {
+            return nil
+        }
+        
+        return self.sectionTitles[section]
     }
     
     // MARK: Text Field Delegate
