@@ -59,10 +59,10 @@ class OverviewViewController: UIViewController {
         // Duty Section
         self.checkoffImageView.userInteractionEnabled = (numDuties != 0)
         self.checkoffImageView.image = imageFromNumber(numDuties)
-        self.dutyLabel.text = (numDuties != 0) ? "\(numDuties)" : "No Duties Today :)"
+        //self.dutyLabel.text = (numDuties != 0) ? "\(numDuties)" : "No Duties Today :)"
 
         // Punts Section
-        self.puntLabel.text = "\(numPunts)"
+        //self.puntLabel.text = "\(numPunts)"
         self.puntMakeupImageView.image = imageFromNumber(numPunts)
         self.puntMakeupImageView.userInteractionEnabled = !(numPunts == 0)
         
