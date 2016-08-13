@@ -42,16 +42,22 @@ class DutyDetailViewController: UIViewController {
             self.slaveLabel.hidden = true
         }
         
-        // TODO: Implement status enum here
-        //self.statusImageView.image = UIImage(named: duty?.status)
-        self.statusImageView.image = Constants.Photos.BlackCircle
         
-        /*
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Duties", style: .Plain, target: self, action: #selector(backPressed))*/
+        self.statusImageView.image = imageFromStatus((self.duty?.status)!)
+        
     }
-    
-    func backPressed() {
-        self.navigationController?.popViewControllerAnimated(true)
+
+    func imageFromStatus(status: DutyStatus) -> UIImage {
+        switch status {
+        case .Complete:
+            return Constants.Photos.GreenCircle
+        case .Punted:
+            return Constants.Photos.RedCircle
+        case .Pending:
+            return Constants.Photos.YellowCircle
+        case .Incomplete:
+            return Constants.Photos.WhiteCircle
+        }
     }
 }
 

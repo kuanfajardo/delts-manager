@@ -44,8 +44,7 @@ class PuntDetailViewController: UIViewController {
         }
         
         // TODO: Implement status enum here
-        //self.statusImageView.image = UIImage(named: duty?.status)
-        self.statusImageView.image = Constants.Photos.BlackCircle
+        self.statusImageView.image = imageFromStatus((self.punt?.status)!)
         
         guard let controller = self.navigationController else {
             return
@@ -53,6 +52,17 @@ class PuntDetailViewController: UIViewController {
         
         // TODO: Fund key
         controller.navigationBar.backItem?.backBarButtonItem?.setTitleTextAttributes(["key": Constants.Colors.deltsPurple], forState: UIControlState.Normal)
+    }
+    
+    func imageFromStatus(status: PuntStatus) -> UIImage {
+        switch status {
+        case .JustThere:
+            return Constants.Photos.WhiteCircle
+        case .Madeup:
+            return Constants.Photos.GreenCircle
+        case .MakeupRequested:
+            return Constants.Photos.YellowCircle
+        }
     }
 
 }
