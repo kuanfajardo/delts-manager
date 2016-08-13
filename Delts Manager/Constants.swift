@@ -185,6 +185,22 @@ struct Constants {
         static var Calendar: UIImage {
             return UIImage(named: "Calendar")!
         }
+        
+        static var GreenCircle: UIImage {
+            return UIImage(named: "Green Circle")!
+        }
+        
+        static var YellowCircle: UIImage {
+            return UIImage(named: "Yellow Circle")!
+        }
+        
+        static var RedCircle: UIImage {
+            return UIImage(named: "Red Circle")!
+        }
+        
+        static var WhiteCircle: UIImage {
+            return UIImage(named: "White Circle")!
+        }
     }
     
     struct Identifiers {
