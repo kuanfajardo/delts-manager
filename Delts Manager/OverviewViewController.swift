@@ -83,7 +83,7 @@ class OverviewViewController: UIViewController {
         self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed"
         
         // TODO: lololll
-        let isBigPhone = false//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)
+        let isBigPhone = true//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)
         
         self.dutyImageLeftConstraint.constant = isBigPhone ? 22 : 10
         self.puntImageLeftConstraint.constant = isBigPhone ? 22 : 10
@@ -142,7 +142,7 @@ class OverviewViewController: UIViewController {
         case 9:
             return Constants.Photos.Nine
         default:
-            return Constants.Photos.BlackCircle
+            return Constants.Photos.Nine
         }
     }
     
