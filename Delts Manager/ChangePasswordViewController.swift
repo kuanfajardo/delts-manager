@@ -35,6 +35,17 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         userDidTapView(self)
         updatePassword()
         
+        /*
+        let alertController = UIAlertController(title: "Change Password", message: "Password Changed!", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alert: UIAlertAction) in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+            return
+        }))
+        
+        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+        */
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
