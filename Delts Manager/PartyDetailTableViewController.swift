@@ -244,6 +244,14 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         return true
     }
     
+    func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool {
+        guard isKeyboardShowing == false else {
+            return false
+        }
+        
+        return true
+    }
+    
     
     // Actions
     func deleteInvite() {
