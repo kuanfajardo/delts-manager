@@ -278,6 +278,7 @@ struct Constants {
         static let ApiKey = "apiKey"
         static let Token = "token"
         static let DutyID = "DutyID"
+        static let PuntID = "PuntID"
         
     }
     
@@ -295,12 +296,15 @@ struct Constants {
             static let AccountDuties = "account/duties"
             static let AccountPunts = "account/punts"
             static let AccountPostCheckoff = "account/checkoff"
+            static let AccountRequestPuntMakeup = "account/punt_makeup"
             
             // Manager Methods
             static let ManagerAllDuties = "manager/duties"
             static let ManagerPunts = "manager/punts"
             static let ManagerRequestedCheckoffs = "manager/duty_checkoffs"
             static let ManagerCheckoffDuty = "manager/checkoff_duty"
+            static let ManagerDeletePunt = "manager/delete_punt"
+            static let ManagerMakeupPunt = "manager/makeup_punt"
         }
     }
 }
