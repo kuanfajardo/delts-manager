@@ -8,6 +8,8 @@
 
 import UIKit
 import ExpandingTableView
+import Alamofire
+import Freddy
 
 class DutySelectorTableViewController: UITableViewController {
     
@@ -30,6 +32,8 @@ class DutySelectorTableViewController: UITableViewController {
         loadSampleDuties()
         loadSampleDutyNames()
         loadSampleHouseDuties()
+        
+        loadHouseDuties()
     }
     
     func cancelPressed() {
@@ -135,6 +139,27 @@ class DutySelectorTableViewController: UITableViewController {
         return 1
     }
     
+    
+    func loadHouseDuties() {
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+            ]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.GetHouseDuties))")
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.GetHouseDuties), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
+    }
+
+    
     // MARK: Helper
     func colorFromAvailability(availability: DutyAvailability) -> UIColor {
         switch availability {
@@ -147,5 +172,9 @@ class DutySelectorTableViewController: UITableViewController {
         case .Unavailable:
             return UIColor.flatGrayColorDark()
         }
+    }
+    
+    func DeltURLWithMethod(method: String) -> String {
+        return Constants.Networking.BaseURL + method
     }
 }
