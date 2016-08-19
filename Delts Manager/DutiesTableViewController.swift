@@ -63,10 +63,10 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     var duties = [Duty]()
     
     func loadSampleDuties() {
-        let duty1 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Complete)
-        let duty2 = Duty(slave: "Juan", name: "Pantry", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Pending)
-        let duty3 = Duty(slave: "Juan", name: "Kitchen", type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Punted)
-        let duty4 = Duty(slave: "Juan", name: "2nd Little / Vacuum", type: .House, date: NSDate(), status: .Incomplete)
+        let duty1 = Duty(slave: "Juan", name: "Pantry", id: 1, type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Complete)
+        let duty2 = Duty(slave: "Juan", name: "Pantry", id: 2, type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Pending)
+        let duty3 = Duty(slave: "Juan", name: "Kitchen", id: 3, type: Constants.DutyType.House, date: NSDate(), status: DutyStatus.Punted)
+        let duty4 = Duty(slave: "Juan", name: "2nd Little / Vacuum", id: 4, type: .House, date: NSDate(), status: .Incomplete)
         
         duties += [duty1, duty2, duty3, duty4]
     }

@@ -378,7 +378,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             
             for _ in 0..<numSlots {
                 let date = self.startTime?.dateByAddingTimeInterval(NSTimeInterval(durationSec))
-                let duty = Duty(slave: "", name: dutyName, type: .Party, status: .Incomplete, startTime: date!, duration: durationMin)
+                let duty = Duty(slave: "", name: dutyName, id: -1, type: .Party, status: .Incomplete, startTime: date!, duration: durationMin)
                 allDuties.append(duty)
             }
         }
