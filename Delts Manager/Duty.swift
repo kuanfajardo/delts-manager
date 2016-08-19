@@ -16,6 +16,7 @@ class Duty {
     var name: String
     var type: Constants.DutyType
     var status: DutyStatus
+    var id : Int
     
     // House Duties
     var date: NSDate?
@@ -36,18 +37,20 @@ class Duty {
     
     // MARK: Init
     // House
-    init(slave: String, name: String, type: Constants.DutyType, date: NSDate, status: DutyStatus) {
+    init(slave: String, name: String, id: Int, type: Constants.DutyType, date: NSDate, status: DutyStatus) {
         self.slave = slave
         self.name = name
+        self.id = id
         self.date = date
         self.status = status
         self.type = type
     }
     
     // Party
-    init(slave: String, name: String, type: Constants.DutyType, status: DutyStatus, startTime: NSDate, duration: Int) {
+    init(slave: String, name: String, id: Int, type: Constants.DutyType, status: DutyStatus, startTime: NSDate, duration: Int) {
         self.slave = slave
         self.name = name
+        self.id = id
         self.startTime = startTime
         self.status = status
         self.type = type
