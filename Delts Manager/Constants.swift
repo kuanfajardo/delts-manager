@@ -272,4 +272,35 @@ struct Constants {
         case House = "House"
         case Party = "Party"
     }
+    
+    // MARK: Networking
+    struct AlamoKeys {
+        static let ApiKey = "apiKey"
+        static let Token = "token"
+        static let DutyID = "DutyID"
+        
+    }
+    
+    struct AlamoValues {
+        static let ApiKey = "3Ha63GR28fbkknu29HUb1Qk3RO2NR9ga"
+        static let Token = "0"
+    }
+    
+    struct Networking {
+        static let BaseURL = "http://dtd.mit.edu/"
+        
+        struct Methods {
+            // Account Methods
+            static let AccountInfo = "account"
+            static let AccountDuties = "account/duties"
+            static let AccountPunts = "account/punts"
+            static let AccountPostCheckoff = "account/checkoff"
+            
+            // Manager Methods
+            static let ManagerAllDuties = "manager/duties"
+            static let ManagerPunts = "manager/punts"
+            static let ManagerRequestedCheckoffs = "manager/duty_checkoffs"
+            static let ManagerCheckoffDuty = "manager/checkoff_duty"
+        }
+    }
 }
