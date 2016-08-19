@@ -8,6 +8,8 @@
 
 import UIKit
 import MGSwipeTableCell
+import Alamofire
+import Freddy
 
 class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate {
     // MARK: Life Cycle
@@ -242,11 +244,39 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     
     // MARK: Punt Loading
     func loadUserPunts() {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountPunts))")
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.AccountPunts), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     func loadAdminPunts() {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerPunts))")
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerPunts), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     // MARK: MGSwipeTableCellDelegate
@@ -279,15 +309,63 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
 
     // Actions
     func userRequestMakeup(id: Int) {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.PuntID : id
+        ] as! [String : AnyObject]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountRequestPuntMakeup))")
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.AccountRequestPuntMakeup), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     func adminDeletePunt(id: Int) {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.PuntID : id
+            ] as! [String : AnyObject]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerDeletePunt))")
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.ManagerDeletePunt), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     func adminMakeupPunt(id: Int) {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.PuntID : id
+            ] as! [String : AnyObject]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerMakeupPunt))")
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.ManagerMakeupPunt), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     // MARK: Helper
@@ -328,5 +406,9 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         default:
             return noButtons
         }
+    }
+    
+    func DeltURLWithMethod(method: String) -> String {
+        return Constants.Networking.BaseURL + method
     }
 }
