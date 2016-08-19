@@ -290,11 +290,41 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     
     // Actions
     func userRequestCheckoff(id: Int) {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.DutyID : id
+            ] as! [String : AnyObject]
+        
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.AccountPostCheckoff), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     func adminGrantCheckoff(id: Int) {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.DutyID : id
+            ] as! [String : AnyObject]
+        
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.ManagerCheckoffDuty), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     // MARK: Helper
