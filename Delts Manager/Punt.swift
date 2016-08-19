@@ -23,12 +23,14 @@ class Punt {
     var givenBy: String
     var status: PuntStatus
     var slave: String
+    var id: Int
 
     
     // MARK: Init
-    init(slave: String, name: String, date: NSDate, givenBy: String, status: PuntStatus) {
+    init(slave: String, name: String, id: Int, date: NSDate, givenBy: String, status: PuntStatus) {
         self.slave = slave
         self.name = name
+        self.id = id
         self.date = date
         self.givenBy = givenBy
         self.status = status
