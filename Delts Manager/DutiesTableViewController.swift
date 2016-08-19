@@ -218,6 +218,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token
         ]
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountDuties))")
         Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.AccountDuties), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -236,6 +237,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token
         ]
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerRequestedCheckoffs))")
         Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerRequestedCheckoffs), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -255,6 +257,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token
         ]
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerAllDuties))")
         Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerAllDuties), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -296,6 +299,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             Constants.AlamoKeys.DutyID : id
             ] as! [String : AnyObject]
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountPostCheckoff))")
         Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.AccountPostCheckoff), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -315,6 +319,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             Constants.AlamoKeys.DutyID : id
             ] as! [String : AnyObject]
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerCheckoffDuty))")
         Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.ManagerCheckoffDuty), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
