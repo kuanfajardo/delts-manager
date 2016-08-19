@@ -138,6 +138,8 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             cell.statusImageView?.image = imageFromStatus(duty.status)
             cell.selectionStyle = .Gray
             
+            cell.tag = indexPath.row
+            
             return cell
 
         } else {
@@ -167,6 +169,8 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             cell.dateLabel.text = duty.dateString
             cell.statusImageView?.image = imageFromStatus(duty.status)
             cell.selectionStyle = .Gray
+            
+            cell.tag = indexPath.row
             
             return cell
         }
@@ -272,12 +276,12 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch self.segment {
         case Segment.User:
-            print("User request checkoff")
-            userRequestCheckoff()
+            print("User request checkoff @ \(index) for cell \(cell.tag)")
+            userRequestCheckoff(duties[cell.tag].id)
             break
         case Segment.Admin, Segment.Checker:
-            print("Checker/Admin grant checkoff")
-            adminGrantCheckoff()
+            print("Checker/Admin grant checkoff @ \(index) for cell \(cell.tag)")
+            adminGrantCheckoff(duties[cell.tag].id)
         default:
             break
         }
@@ -285,11 +289,11 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     }
     
     // Actions
-    func userRequestCheckoff() {
+    func userRequestCheckoff(id: Int) {
         //
     }
     
-    func adminGrantCheckoff() {
+    func adminGrantCheckoff(id: Int) {
         //
     }
     
