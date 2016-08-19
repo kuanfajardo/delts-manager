@@ -9,6 +9,8 @@
 import UIKit
 import MGSwipeTableCell
 import ChameleonFramework
+import Alamofire
+import Freddy
 
 class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate {
 
@@ -207,15 +209,63 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     
     // MARK: Duty Loading
     func loadUserDuties() {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+        ]
+        
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.AccountDuties), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
     }
     
     func loadCheckerDuties() {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+        ]
+        
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerRequestedCheckoffs), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
+
     }
     
     func loadAdminDuties() {
-        //
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+        ]
+        
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerAllDuties), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
+
+    }
+    
+    func DeltURLWithMethod(method: String) -> String {
+        return Constants.Networking.BaseURL + method
     }
     
     // MGSwipeTableCellDelegate
