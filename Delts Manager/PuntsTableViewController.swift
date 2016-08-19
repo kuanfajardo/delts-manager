@@ -161,6 +161,8 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.dateLabel.text = punt.dateString
             cell.checkoffImageView?.image = imageFromStatus(punt.status)
             
+            cell.tag = indexPath.row
+            
             return cell
             
         } else /*if self.segment == Segment.Admin*/ {
@@ -197,6 +199,8 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.dateLabel.text = punt.dateString
             cell.slaveLabel.text = punt.slave
             cell.statusImageView?.image = imageFromStatus(punt.status)
+            
+            cell.tag = indexPath.row
             
             return cell
         }
@@ -247,20 +251,22 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     
     // MARK: MGSwipeTableCellDelegate
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        let cellID = punts[cell.tag].id
+        
         switch self.segment {
         case Segment.User:
             print("User request punt makeup")
-            userRequestMakeup()
+            userRequestMakeup(cellID)
             break
         case Segment.Admin:
             switch index {
             case 0:
                 print("Admin delete punt")
-                adminDeletePunt()
+                adminDeletePunt(cellID)
                 break
             case 1:
                 print("Admin makeup punt")
-                adminMakeupPunt()
+                adminMakeupPunt(cellID)
                 break
             default:
                 break
@@ -272,15 +278,15 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     }
 
     // Actions
-    func userRequestMakeup() {
+    func userRequestMakeup(id: Int) {
         //
     }
     
-    func adminDeletePunt() {
+    func adminDeletePunt(id: Int) {
         //
     }
     
-    func adminMakeupPunt() {
+    func adminMakeupPunt(id: Int) {
         //
     }
     
