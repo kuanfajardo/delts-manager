@@ -305,6 +305,10 @@ struct Constants {
             static let ManagerCheckoffDuty = "manager/checkoff_duty"
             static let ManagerDeletePunt = "manager/delete_punt"
             static let ManagerMakeupPunt = "manager/makeup_punt"
+            
+            // Scheduling Methods
+            static let GetHouseDuties = "scheduling/house_duties"
+            static let UpdateHouseDuty = "scheduling/update_duty"
         }
     }
 }
