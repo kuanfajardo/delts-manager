@@ -109,6 +109,7 @@
 		568720A01D29C033001D9AF3 /* PuntsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewCell.swift; sourceTree = "<group>"; };
 		568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntsTableViewController.swift; sourceTree = "<group>"; };
 		56A5743A1D5AEEA400FDC80C /* PartyDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDutyTableCell.swift; sourceTree = "<group>"; };
+		56A5743C1D68C67C00FDC80C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncingViewController.swift; sourceTree = "<group>"; };
 		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlannerTableViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				564C960E1D1E0A6A003EE50F /* Info.plist */,
+				56A5743C1D68C67C00FDC80C /* Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -729,6 +731,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Delts-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Delts Manager/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -745,6 +748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.Delts-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Delts Manager/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
