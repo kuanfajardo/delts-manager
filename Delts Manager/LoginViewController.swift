@@ -29,9 +29,12 @@ class LoginViewController: UIViewController {
             debugTextLabel.text = ""
             authenticateLogin()
         }*/
-        
+
         // STEP 1: Authenticate
-        authenticateLogin()
+        //authenticateLogin()
+        guard digestAuth() else {
+            return
+        }
         
         // STEP 2: Get User Info
         getLoginInfo()
@@ -105,6 +108,85 @@ class LoginViewController: UIViewController {
                 }
         }
     }
+    
+    private func digestAuth() -> Bool {
+        let methodParameters = [Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey]
+        let method = Constants.Networking.Methods.Authenticate
+        let URL = DeltURLWithMethod(method)
+        var success = false
+        
+        Alamofire.request(.POST, URL, parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                    let realm = try json.string("realm")
+                    let nonce = try json.string("nonce")
+                    let opaque = try json.string("opaque")
+                    
+                    /* for here purpose only
+                    let realm = "dtd"
+                    let nonce = "1234567890"
+                    let opaque = "0987654321"
+                    */
+                    
+                    let email = self.emailTextField.text!
+                    let password = self.passwordTextField.text!
+                    
+                    let a1 = self.md5(string: "\(email):\(realm):\(password)")
+                    let a2 = self.md5(string: "\(method):\(URL)")
+                    let response = self.md5(string: "\(a1):\(nonce):\(a2)")
+                    
+                    let methodParameters = [
+                        Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+                        "username" : "\(email)",
+                        "realm" : "\(realm)",
+                        "nonce" : "\(nonce)",
+                        "opaque" : "\(opaque)",
+                        "method" : "\(method)",
+                        "uri" : "\(URL)",
+                        "response" : "\(response)"
+                    ]
+                        
+                       // "Authorization" : "Digest username=\"\(email)\", realm=\"\(realm)\", nonce=\"\(nonce)\", opaque=\"\(opaque)\", uri=\"\(URL)\", response=\"\(response)\""]
+                    
+                    Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
+                        .responseJSON(completionHandler: { (response) in
+                            do {
+                                let newJson = try JSON(data: response.data!)
+                                //parse rest of data here
+                                let statusCode = try newJson.int("status")
+                                
+                                success = statusCode == 1
+                                
+                            } catch {
+                                print("Error")
+                            }
+                    })
+                    
+                } catch {
+                    print("Error")
+                }
+        }
+        
+        return success
+    }
+    
+    private func md5(string string: String) -> String {
+        var digest = [UInt8](count: Int(CC_MD5_DIGEST_LENGTH), repeatedValue: 0)
+        if let data = string.dataUsingEncoding(NSUTF8StringEncoding) {
+            CC_MD5(data.bytes, CC_LONG(data.length), &digest)
+        }
+        
+        var digestHex = ""
+        for index in 0..<Int(CC_MD5_DIGEST_LENGTH) {
+            digestHex += String(format: "%02x", digest[index])
+        }
+        
+        return digestHex
+    }
+
     
     func DeltURLWithMethod(method: String) -> String {
         return Constants.Networking.BaseURL + method
