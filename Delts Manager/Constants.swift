@@ -292,23 +292,27 @@ struct Constants {
         
         struct Methods {
             // Account Methods
-            static let AccountInfo = "account"
+            static let AccountInfo = "account/"
             static let AccountDuties = "account/duties"
             static let AccountPunts = "account/punts"
             static let AccountPostCheckoff = "account/checkoff"
-            static let AccountRequestPuntMakeup = "account/punt_makeup"
+            //static let AccountRequestPuntMakeup = "account/punt_makeup"
             
             // Manager Methods
             static let ManagerAllDuties = "manager/duties"
             static let ManagerPunts = "manager/punts"
             static let ManagerRequestedCheckoffs = "manager/duty_checkoffs"
             static let ManagerCheckoffDuty = "manager/checkoff_duty"
-            static let ManagerDeletePunt = "manager/delete_punt"
-            static let ManagerMakeupPunt = "manager/makeup_punt"
+            static let ManagerPunt = "manager/punt"
+            //static let ManagerDeletePunt = "manager/delete_punt"
+            //static let ManagerMakeupPunt = "manager/makeup_punt"
             
             // Scheduling Methods
             static let GetHouseDuties = "scheduling/house_duties"
             static let UpdateHouseDuty = "scheduling/update_duty"
+            
+            // Authentication Methods
+            static let Authenticate = "authenticate/"
         }
     }
 }
