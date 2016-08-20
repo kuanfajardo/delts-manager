@@ -296,7 +296,7 @@ struct Constants {
             static let AccountDuties = "account/duties"
             static let AccountPunts = "account/punts"
             static let AccountPostCheckoff = "account/checkoff"
-            //static let AccountRequestPuntMakeup = "account/punt_makeup"
+            static let AccountRequestPuntMakeup = "account/punt_makeup"
             
             // Manager Methods
             static let ManagerAllDuties = "manager/duties"
@@ -304,8 +304,8 @@ struct Constants {
             static let ManagerRequestedCheckoffs = "manager/duty_checkoffs"
             static let ManagerCheckoffDuty = "manager/checkoff_duty"
             static let ManagerPunt = "manager/punt"
-            //static let ManagerDeletePunt = "manager/delete_punt"
-            //static let ManagerMakeupPunt = "manager/makeup_punt"
+            static let ManagerDeletePunt = "manager/delete_punt"
+            static let ManagerMakeupPunt = "manager/makeup_punt"
             
             // Scheduling Methods
             static let GetHouseDuties = "scheduling/house_duties"

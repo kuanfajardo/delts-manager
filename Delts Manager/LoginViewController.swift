@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import Freddy
 
 class LoginViewController: UIViewController {
 
@@ -78,6 +80,34 @@ class LoginViewController: UIViewController {
             displayError("Invalid email/password combination")
             setUIEnabled(true)
         }*/
+        
+        let methodParameters = [Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey]
+        
+        let email = emailTextField.text!
+        let password = passwordTextField.text!
+        let credentialData = "\(email):\(password)".dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64Credentials = credentialData.base64EncodedStringWithOptions([])
+        
+        let headers = [
+            "Authorization": "Basic \(base64Credentials)",
+            "Accept" : "application/json",
+            "Content-Type" : "application/json"
+        ]
+
+        Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.Authenticate), parameters: methodParameters, encoding: .JSON, headers: headers)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    // Rest of parsing here
+                } catch {
+                    print("Error")
+                }
+        }
+    }
+    
+    func DeltURLWithMethod(method: String) -> String {
+        return Constants.Networking.BaseURL + method
     }
     
     private func completeLogin() {
