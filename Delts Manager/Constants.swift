@@ -288,7 +288,7 @@ struct Constants {
     }
     
     struct Networking {
-        static let BaseURL = "http://dtd.mit.edu/"
+        static let BaseURL = "http://dtd.mit.edu/api/v1/"
         
         struct Methods {
             // Account Methods
