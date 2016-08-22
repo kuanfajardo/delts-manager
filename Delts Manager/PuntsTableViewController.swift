@@ -22,7 +22,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         if Constants.userAuthorized(Constants.Roles.HonorBoard) || Constants.userAuthorized(Constants.Roles.HouseManager) || Constants.userAuthorized(Constants.Roles.Admin) {
             self.segControl = UISegmentedControl(items: [Segment.User, Segment.Admin/*, "Makeups"*/])
             
-            self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+            self.segControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
             self.segControl!.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
             self.segControl!.selectedSegmentIndex = 0
             
@@ -35,11 +35,11 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
 
         }
         
-        //loadPunts()
+        loadUserPunts()
         loadSamplePunts()
     }
     
-    func segmentChanged(sender: UISegmentedControl) {
+    func reloadData() {
         // Reload correct set of punts
         switch self.segment {
         case Segment.User:
@@ -246,7 +246,9 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     func loadUserPunts() {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-            Constants.AlamoKeys.Token : Constants.AlamoValues.Token]
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
+        ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountPunts))")
         Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.AccountPunts), parameters: methodParameters)
@@ -254,7 +256,28 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let numPunts = try json.array(0).count
+                    var newPunts = [Punt]()
+                    
+                    for x in 0..<numPunts {
+                        let id = try json.int(0, x, "punt_id")
+                        let dateString = try json.string(0, x, "timestamp")
+                        let givenBy = try json.string(0, x, "given_by")
+                        let comments = try json.string(0, x, "comment   ")
+                        let makeupGivenBy = try json.string(0, x, "makeup_given_by")
+                        let makeupDateString = try json.string(0, x, "makeup_timestamp")
+                        let makeupComment = try json.string(0, x, "makeup_comment")
+                        
+                        let slave = Constants.defaults.stringForKey(Constants.DefaultsKeys.Name)!
+                        
+                        let punt = Punt(slave: slave, id: id, givenBy: givenBy, comment: comments, makeupGivenBy: makeupGivenBy, makeupComment: makeupComment, dateString: dateString, makeupDateString: makeupDateString)
+                        
+                        newPunts.append(punt)
+                    }
+                    
+                    self.punts = newPunts
+
                 } catch {
                     print("Error")
                 }
@@ -264,7 +287,9 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     func loadAdminPunts() {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-            Constants.AlamoKeys.Token : Constants.AlamoValues.Token]
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
+        ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerPunts))")
         Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerPunts), parameters: methodParameters)
@@ -272,7 +297,57 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let numPunts = try json.array(0).count
+                    var newPunts = [Punt]()
+                    
+                    for x in 0..<numPunts {
+                        let id = try json.int(0, x, "punt_id")
+                        let dateString = try json.string(0, x, "timestamp")
+                        let givenBy = try json.string(0, x, "given_by")
+                        let puntSlave = try json.string(0, x, "punted_user_name")
+                        let comments = try json.string(0, x, "comment   ")
+                        let makeupGivenBy = try json.string(0, x, "makeup_given_by")
+                        let makeupDateString = try json.string(0, x, "makeup_timestamp")
+                        let makeupComment = try json.string(0, x, "makeup_comment")
+                        
+                        let punt = Punt(slave: puntSlave, id: id, givenBy: givenBy, comment: comments, makeupGivenBy: makeupGivenBy, makeupComment: makeupComment, dateString: dateString, makeupDateString: makeupDateString)
+                        
+                        newPunts.append(punt)
+                    }
+                    
+                    /*
+                    // OR
+                    let puntsJSON = try json.array(0)
+                    for x in 0..<numPunts {
+                        let puntJSON = puntsJSON[x]
+                        
+                        let id = try puntJSON.int("punt_id")
+                        let dateString = try puntJSON.string("timestamp")
+                        let givenBy = try puntJSON.string("given_by")
+                        let puntSlave = try puntJSON.string("punted_user_name")
+                        let comments = try puntJSON.string("comment   ")
+                        let makeupGivenBy = try puntJSON.string("makeup_given_by")
+                        let makeupDateString = try puntJSON.string("makeup_timestamp")
+                        let makeupComment = try puntJSON.string("makeup_comment")
+                        
+                        let punt = Punt(slave: puntSlave, id: id, givenBy: givenBy, comment: comments, makeupGivenBy: makeupGivenBy, makeupComment: makeupComment, dateString: dateString, makeupDateString: makeupDateString)
+                        
+                        newPunts.append(punt)
+                    }*/
+                    
+                     /*
+                    // OR
+                    let allPuntsJSON = try json.array(0)
+                    for x in 0..<numPunts {
+                        let puntJSON = allPuntsJSON[x]
+                        let punt = try Punt(json: puntJSON, type: "Admin")
+                        newPunts.append(punt)
+                    }
+                    */
+                    
+                    self.punts = newPunts
+                
                 } catch {
                     print("Error")
                 }
@@ -308,10 +383,12 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     }
 
     // Actions
+    // to be implemented by API
     func userRequestMakeup(id: Int) {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!,
             Constants.AlamoKeys.PuntedID : id
         ] as! [String : AnyObject]
         
@@ -328,10 +405,12 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         }
     }
     
+    // to be implemented by api
     func adminDeletePunt(id: Int) {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!,
             Constants.AlamoKeys.PuntedID : id
             ] as! [String : AnyObject]
         
@@ -348,6 +427,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         }
     }
     
+    // to be implemented with api
     func adminMakeupPunt(id: Int) {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
