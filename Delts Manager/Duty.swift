@@ -40,16 +40,38 @@ class Duty {
     
     
     // MARK: Init
-    convenience init(json: JSON) throws {
+    convenience init(json: JSON, type: String) throws {
         let dutyID = try json.int("duty_id")
         let dutyDateString = try json.string("date")
         let dutyName = try json.string("duty_name")
         let dutyDescription = try json.string("description")
         let dutyStatusString = try json.string("status")
-        let checkerName = try json.string("checker")
-        let checkComments = try json.string("check_comments")
         
-        self.init(slave: Constants.defaults.stringForKey(Constants.DefaultsKeys.Name)!, name: dutyName, id: dutyID, description: dutyDescription, checker: checkerName, comments: checkComments, status: dutyStatusString, date: dutyDateString)
+        var checkerName: String
+        var checkComments: String
+        var dutySlave: String
+        
+        switch type {
+        case "User":
+            dutySlave = Constants.defaults.stringForKey(Constants.DefaultsKeys.Name)!
+            checkerName = try json.string("checker")
+            checkComments = try json.string("check_comments")
+            break
+        case "Checker":
+            dutySlave = try json.string("duty_user_name")
+            checkerName = "N/A"
+            checkComments = ""
+        case "Admin":
+            dutySlave = try json.string("duty_user_name")
+            checkerName = try json.string("checker")
+            checkComments = try json.string("check_comments")
+        default:
+            dutySlave = "Delt"
+            checkerName = ""
+            checkComments = ""
+        }
+        
+        self.init(slave: dutySlave, name: dutyName, id: dutyID, description: dutyDescription, checker: checkerName, comments: checkComments, status: dutyStatusString, date: dutyDateString)
     }
     
     
