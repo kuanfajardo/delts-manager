@@ -26,10 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.Token : 0,
             
             // User Info
-            Constants.DefaultsKeys.Name : "Juan",
-            Constants.DefaultsKeys.ID : 0,
-            Constants.DefaultsKeys.Email : "jfajardo@mit.edu",
-            Constants.DefaultsKeys.Roles : [0,1,2,5],
+            Constants.DefaultsKeys.Name : "Juan", //""
+            Constants.DefaultsKeys.ID : 0, //0
+            Constants.DefaultsKeys.Email : "jfajardo@mit.edu", //""
+            Constants.DefaultsKeys.Roles : [0,1,2,5], //[0]
             
             // Notifications
             Constants.DefaultsKeys.Notifications : true,
@@ -43,8 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.ScheduleEnabled : true,
             
             // Other
-            Constants.DefaultsKeys.Punts : 3,
-            Constants.DefaultsKeys.Duties : 4
+            Constants.DefaultsKeys.Punts : 3, //0
+            Constants.DefaultsKeys.Duties : 4 //0
         ]
 
         standardDefaults.registerDefaults(appDefaults)

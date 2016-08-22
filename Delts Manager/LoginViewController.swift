@@ -46,6 +46,43 @@ class LoginViewController: UIViewController {
     // Get Login Stuff
     private func getLoginInfo() {
         // GET Const. NAME, ID, ROLES, EMAIL
+        let methodParameters : [String : AnyObject] = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.defaults.integerForKey(Constants.DefaultsKeys.Token),
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
+        ]
+        
+        let URL = DeltURLWithMethod(Constants.Networking.Methods.AccountInfo)
+        
+        Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
+            .responseJSON(completionHandler: { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    
+                    let id = try json.int("user_id")
+                    let firstName = try json.string("first_name")
+                    //let fullName = try json.string("full_name")
+                    let privileges = try json.array("privileges")
+                    
+                    var roles = [Int]()
+                    
+                    for x in 0..<privileges.count {
+                        let role = try json.int("privileges", x)
+                        roles += [role]
+                    }
+                    
+                    // Set defaults to parsed data
+                    Constants.defaults.setInteger(id, forKey: Constants.DefaultsKeys.ID)
+                    Constants.defaults.setValue(firstName, forUndefinedKey: Constants.DefaultsKeys.Name)
+                    Constants.defaults.setValue(roles, forUndefinedKey: Constants.DefaultsKeys.Roles)
+                    
+                    
+                } catch {
+                    print("Error")
+                }
+            })
+
+        
         // Set LOGGED IN
     }
     
@@ -167,6 +204,7 @@ class LoginViewController: UIViewController {
                                 // Change login stuffff
                                 Constants.defaults.setInteger(1, forKey: Constants.DefaultsKeys.Token)
                                 Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.LoggedIn)
+                                Constants.defaults.setValue(email, forUndefinedKey: Constants.DefaultsKeys.Email)
                                 
                             } catch {
                                 print("Error")
