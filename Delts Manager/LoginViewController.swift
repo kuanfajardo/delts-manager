@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
         let URL = DeltURLWithMethod(method)
         var success = false
         
-        Alamofire.request(.POST, URL, parameters: methodParameters)
+        Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
                 do {
@@ -140,13 +140,13 @@ class LoginViewController: UIViewController {
                     
                     let methodParameters = [
                         Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-                        "username" : "\(email)",
-                        "realm" : "\(realm)",
-                        "nonce" : "\(nonce)",
-                        "opaque" : "\(opaque)",
-                        "method" : "\(method)",
-                        "uri" : "\(URL)",
-                        "response" : "\(response)"
+                        Constants.AlamoKeys.Username : "\(email)",
+                        Constants.AlamoKeys.Realm : "\(realm)",
+                        Constants.AlamoKeys.Nonce : "\(nonce)",
+                        Constants.AlamoKeys.Opaque : "\(opaque)",
+                        Constants.AlamoKeys.Method : "\(method)",
+                        Constants.AlamoKeys.URI : "\(URL)",
+                        Constants.AlamoKeys.Response : "\(response)"
                     ]
                         
                        // "Authorization" : "Digest username=\"\(email)\", realm=\"\(realm)\", nonce=\"\(nonce)\", opaque=\"\(opaque)\", uri=\"\(URL)\", response=\"\(response)\""]
