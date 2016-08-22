@@ -289,7 +289,7 @@ struct Constants {
         static let Opaque = "opaque"
         static let Method = "method"
         static let URI = "uri"
-        static let Responnse = "response"
+        static let Response = "response"
         
     }
     
