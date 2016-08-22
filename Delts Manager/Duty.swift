@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Freddy
 
 class Duty {
     // MARK: Properties
@@ -17,6 +18,9 @@ class Duty {
     var type: Constants.DutyType
     var status: DutyStatus
     var id : Int
+    var description: String = ""
+    var checker: String = "N/A"
+    var checkComments = "---"
     
     // House Duties
     var date: NSDate?
@@ -56,6 +60,7 @@ class Duty {
         self.type = type
         self.duration = duration
     }
+
   
 }
 
