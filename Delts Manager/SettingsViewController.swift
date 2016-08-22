@@ -149,10 +149,10 @@ class SettingsTableViewController: UITableViewController {
         Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Token)
         
         // User Info
-        Constants.defaults.setValue("Delt", forKey: Constants.DefaultsKeys.Name)
-        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.ID)
-        Constants.defaults.setValue("", forKey: Constants.DefaultsKeys.Email)
-        Constants.defaults.setValue([0], forKey: Constants.DefaultsKeys.Roles)
+        Constants.defaults.setValue("Juan", forKey: Constants.DefaultsKeys.Name) // Delt
+        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.ID) // 0
+        Constants.defaults.setValue("jfajardo@mit.edu", forKey: Constants.DefaultsKeys.Email) // ""
+        Constants.defaults.setValue([0,1,2,3,4,5], forKey: Constants.DefaultsKeys.Roles) // [0]
         
         // Notifications
         Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.Notifications)
@@ -163,11 +163,11 @@ class SettingsTableViewController: UITableViewController {
         Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntNotification)
         
         // Enabled
-        Constants.defaults.setBool(false, forKey: Constants.DefaultsKeys.ScheduleEnabled)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.ScheduleEnabled) //false
         
         // Other 
-        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Punts)
-        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Duties)
+        Constants.defaults.setInteger(4, forKey: Constants.DefaultsKeys.Punts) // 0
+        Constants.defaults.setInteger(3, forKey: Constants.DefaultsKeys.Duties) // 0
     }
     
     

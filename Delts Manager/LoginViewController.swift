@@ -147,7 +147,7 @@ class LoginViewController: UIViewController {
         let methodParameters = [Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey]
         let method = Constants.Networking.Methods.Authenticate
         let URL = DeltURLWithMethod(method)
-        var success = false
+        var success = true
         
         Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
             .validate(contentType: ["application/json"])
