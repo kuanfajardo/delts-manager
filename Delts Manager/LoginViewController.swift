@@ -73,17 +73,14 @@ class LoginViewController: UIViewController {
                     
                     // Set defaults to parsed data
                     Constants.defaults.setInteger(id, forKey: Constants.DefaultsKeys.ID)
-                    Constants.defaults.setValue(firstName, forUndefinedKey: Constants.DefaultsKeys.Name)
-                    Constants.defaults.setValue(roles, forUndefinedKey: Constants.DefaultsKeys.Roles)
+                    Constants.defaults.setValue(firstName, forKey: Constants.DefaultsKeys.Name)
+                    Constants.defaults.setValue(roles, forKey: Constants.DefaultsKeys.Roles)
                     
                     
                 } catch {
                     print("Error")
                 }
             })
-
-        
-        // Set LOGGED IN
     }
     
     
@@ -204,7 +201,7 @@ class LoginViewController: UIViewController {
                                 // Change login stuffff
                                 Constants.defaults.setInteger(1, forKey: Constants.DefaultsKeys.Token)
                                 Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.LoggedIn)
-                                Constants.defaults.setValue(email, forUndefinedKey: Constants.DefaultsKeys.Email)
+                                Constants.defaults.setValue(email, forKey: Constants.DefaultsKeys.Email)
                                 
                             } catch {
                                 print("Error")

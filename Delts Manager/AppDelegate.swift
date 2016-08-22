@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.PuntNotification : true,
             
             // Enabled
-            Constants.DefaultsKeys.ScheduleEnabled : true,
+            Constants.DefaultsKeys.ScheduleEnabled : true, //false
             
             // Other
             Constants.DefaultsKeys.Punts : 3, //0

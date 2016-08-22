@@ -122,10 +122,8 @@ class SettingsTableViewController: UITableViewController {
                 
                 let loginController = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.LoginController) as! LoginViewController
                 
-                // Reset auth defaults
-                Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Token)
-                Constants.defaults.setBool(false, forKey: Constants.DefaultsKeys.LoggedIn)
-
+                self.resetDefaults()
+                
                 self.presentViewController(loginController, animated: false, completion: nil)
                 return
             }))
@@ -142,6 +140,34 @@ class SettingsTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //
+    }
+    
+    // HELPER for resetting defaults
+    func resetDefaults() {
+        // Log In
+        Constants.defaults.setBool(false, forKey: Constants.DefaultsKeys.LoggedIn)
+        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Token)
+        
+        // User Info
+        Constants.defaults.setValue("Delt", forKey: Constants.DefaultsKeys.Name)
+        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.ID)
+        Constants.defaults.setValue("", forKey: Constants.DefaultsKeys.Email)
+        Constants.defaults.setValue([0], forKey: Constants.DefaultsKeys.Roles)
+        
+        // Notifications
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.Notifications)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.DutyReminders)
+        Constants.defaults.setValue("08:00", forKey: Constants.DefaultsKeys.DutyTime)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntMakupPosted)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.CheckoffNotification)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntNotification)
+        
+        // Enabled
+        Constants.defaults.setBool(false, forKey: Constants.DefaultsKeys.ScheduleEnabled)
+        
+        // Other 
+        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Punts)
+        Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Duties)
     }
     
     
