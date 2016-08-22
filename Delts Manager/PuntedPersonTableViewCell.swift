@@ -6,8 +6,9 @@
 //  Copyright © 2016 Juan Diego Fajardo. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PuntedPersonTableViewCell: UITableViewCell {
-
+    // MARK: Outlets
+    @IBOutlet weak var nameLabel: UILabel!
 }

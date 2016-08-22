@@ -66,19 +66,16 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         alertController.addAction(cancelAction)
         
         let puntAction = UIAlertAction(title: "New Punt", style: .Default) { (action) in
-            print("New Personal Punt")
+            print("New Punt(s)")
+            self.initiateNewPunt()
         }
         alertController.addAction(puntAction)
-        
-        let massPuntAction = UIAlertAction(title: "New Mass Punt", style: .Default) { (action) in
-            print("New Mass Punt")
-        }
-        alertController.addAction(massPuntAction)
+
         
         let puntMakeupAction = UIAlertAction(title: "New Punt Makeup", style: .Default) { (action) in
             print("New Punt Makeup")
         }
-        //alertController.addAction(puntMakeupAction)
+        alertController.addAction(puntMakeupAction)
 
         self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
     }
@@ -490,5 +487,12 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
     
     func DeltURLWithMethod(method: String) -> String {
         return Constants.Networking.BaseURL + method
+    }
+    
+    func initiateNewPunt() {
+        let identifier = Constants.Identifiers.Controllers.NewPuntController
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! NewPuntPersonChooserTableViewController
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

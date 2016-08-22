@@ -229,6 +229,7 @@ struct Constants {
             static let ExpandingDutySelectorCell = "ExpandingDutySelector"
             static let NewDutySelectorCell = "NewDutySelector"
             static let PartyDutyCell = "PartyDutyCell"
+            static let PuntedPersonCell = "PuntedPersonCell"
         }
         
         struct Controllers {
@@ -242,6 +243,7 @@ struct Constants {
             static let DutyTimeChooserController = "DutyTimeChooser"
             static let NewPartyController = "New Party"
             static let DutySelectorController = "DutySelectorController"
+            static let NewPuntController = "New Punt Controller"
         }
         
         struct Segues {
@@ -320,6 +322,7 @@ struct Constants {
             static let ManagerRequestedCheckoffs = "manager/duty_checkoffs"
             static let ManagerCheckoffDuty = "manager/checkoff_duty"
             static let ManagerPunt = "manager/punt"
+            static let ManagerUsers = "manager/users"
             
             // Authentication Methods
             static let Authenticate = "authenticate/"
