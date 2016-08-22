@@ -34,6 +34,7 @@
 		565544D31D52581500DF9957 /* Invite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544D21D52581500DF9957 /* Invite.swift */; };
 		565544D51D52944600DF9957 /* PartyDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565544D41D52944600DF9957 /* PartyDetailTableViewController.swift */; };
 		5664BB6A1D6B4845005E9603 /* PuntedPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664BB691D6B4845005E9603 /* PuntedPersonTableViewCell.swift */; };
+		5664BB6C1D6B4910005E9603 /* NewPuntPersonChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5664BB6B1D6B4910005E9603 /* NewPuntPersonChooserTableViewController.swift */; };
 		568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720981D29B555001D9AF3 /* DutiesTableViewController.swift */; };
 		5687209B1D29B67E001D9AF3 /* DutiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */; };
 		5687209F1D29C019001D9AF3 /* Punt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5687209E1D29C019001D9AF3 /* Punt.swift */; };
@@ -105,6 +106,7 @@
 		565544D21D52581500DF9957 /* Invite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invite.swift; sourceTree = "<group>"; };
 		565544D41D52944600DF9957 /* PartyDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDetailTableViewController.swift; sourceTree = "<group>"; };
 		5664BB691D6B4845005E9603 /* PuntedPersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntedPersonTableViewCell.swift; sourceTree = "<group>"; };
+		5664BB6B1D6B4910005E9603 /* NewPuntPersonChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPuntPersonChooserTableViewController.swift; sourceTree = "<group>"; };
 		568720981D29B555001D9AF3 /* DutiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewController.swift; sourceTree = "<group>"; };
 		5687209A1D29B67E001D9AF3 /* DutiesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DutiesTableViewCell.swift; sourceTree = "<group>"; };
 		5687209E1D29C019001D9AF3 /* Punt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Punt.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				560765711D2A47F6008D3337 /* PuntDetailViewController.swift */,
 				565544CE1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift */,
 				5664BB691D6B4845005E9603 /* PuntedPersonTableViewCell.swift */,
+				5664BB6B1D6B4910005E9603 /* NewPuntPersonChooserTableViewController.swift */,
 			);
 			name = "Punts Tab";
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */,
 				561AF3491D2584370097B1F3 /* SettingsSwitchTableViewCell.swift in Sources */,
 				56A5743B1D5AEEA400FDC80C /* PartyDutyTableCell.swift in Sources */,
+				5664BB6C1D6B4910005E9603 /* NewPuntPersonChooserTableViewController.swift in Sources */,
 				56F863251D3F991A00E5D850 /* EventNameViewController.swift in Sources */,
 				560765761D2C059B008D3337 /* OverviewViewController.swift in Sources */,
 				560765721D2A47F6008D3337 /* PuntDetailViewController.swift in Sources */,
