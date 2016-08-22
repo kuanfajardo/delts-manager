@@ -312,7 +312,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
-            Constants.AlamoKeys.PuntID : id
+            Constants.AlamoKeys.PuntedID : id
         ] as! [String : AnyObject]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountRequestPuntMakeup))")
@@ -332,7 +332,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
-            Constants.AlamoKeys.PuntID : id
+            Constants.AlamoKeys.PuntedID : id
             ] as! [String : AnyObject]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerDeletePunt))")
@@ -352,7 +352,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
-            Constants.AlamoKeys.PuntID : id
+            Constants.AlamoKeys.PuntedID : id
             ] as! [String : AnyObject]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerMakeupPunt))")
