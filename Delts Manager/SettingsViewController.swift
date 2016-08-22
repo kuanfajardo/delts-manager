@@ -122,6 +122,10 @@ class SettingsTableViewController: UITableViewController {
                 
                 let loginController = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.LoginController) as! LoginViewController
                 
+                // Reset auth defaults
+                Constants.defaults.setInteger(0, forKey: Constants.DefaultsKeys.Token)
+                Constants.defaults.setBool(false, forKey: Constants.DefaultsKeys.LoggedIn)
+
                 self.presentViewController(loginController, animated: false, completion: nil)
                 return
             }))

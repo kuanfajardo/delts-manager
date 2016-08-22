@@ -55,6 +55,7 @@ struct Constants {
     
     struct DefaultsKeys {
         static let LoggedIn = "Logged In"
+        static let Token = "Token"
         static let Name = "Name"
         static let ID = "ID"
         static let Email = "Email"

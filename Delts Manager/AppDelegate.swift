@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appDefaults: [String : AnyObject] = [
             // Log In
             Constants.DefaultsKeys.LoggedIn : false,
+            Constants.DefaultsKeys.Token : 0,
             
             // User Info
             Constants.DefaultsKeys.Name : "Juan",

@@ -159,6 +159,14 @@ class LoginViewController: UIViewController {
                                 let statusCode = try newJson.int("status")
                                 
                                 success = statusCode == 1
+
+                                guard success else {
+                                    return
+                                }
+                                
+                                // Change login stuffff
+                                Constants.defaults.setInteger(1, forKey: Constants.DefaultsKeys.Token)
+                                Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.LoggedIn)
                                 
                             } catch {
                                 print("Error")
@@ -169,7 +177,7 @@ class LoginViewController: UIViewController {
                     print("Error")
                 }
         }
-        
+
         return success
     }
     
