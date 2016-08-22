@@ -28,7 +28,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                 self.segControl!.insertSegmentWithTitle(Segment.Admin, atIndex: 2, animated: false)
             }
             
-            self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+            self.segControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
             self.segControl!.tintColor = UIColor.whiteColor()//Constants.Colors.deltsDarkPurple
             self.segControl!.selectedSegmentIndex = 0
 
@@ -36,11 +36,12 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             self.navigationItem.titleView = self.segControl
         }
         
-        // loadUserDuties()
+        loadUserDuties()
         loadSampleDuties()
     }
     
-    func segmentChanged(sender: UISegmentedControl) {
+
+    func reloadData() {
         // Reload correct set of duties
         switch self.segment {
         case Segment.User:
@@ -215,7 +216,8 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     func loadUserDuties() {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
         ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountDuties))")
@@ -224,7 +226,34 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let numDuties = try json.array(0).count
+                    var newDuties = [Duty]()
+                    
+                    for x in 0..<numDuties {
+                        let dutyID = try json.int(0, x, "duty_id")
+                        let dutyDateString = try json.string(0, x, "date")
+                        let dutyName = try json.string(0, x, "duty_name")
+                        let dutyDescription = try json.string(0, x, "description")
+                        let dutyStatusString = try json.string(0, x, "status")
+                        let checkerName = try json.string(0, x, "checker")
+                        let checkComments = try json.string(0, x, "check_comments")
+                        
+                        let duty = Duty(slave: Constants.defaults.stringForKey(Constants.DefaultsKeys.Name)!, name: dutyName, id: dutyID, description: dutyDescription, checker: checkerName, comments: checkComments, status: dutyStatusString, date: dutyDateString)
+                        
+                        newDuties.append(duty)
+                    }
+                    
+                    // ORRR
+                    /*
+                    let dutyJSON = try json.array(0)
+                    for x in 0..<numDuties {
+                        let duty = try Duty(json: dutyJSON[x])
+                        newDuties.append(duty)
+                    }*/
+                    
+                    self.duties = newDuties
+                    
                 } catch {
                     print("Error")
                 }
@@ -234,7 +263,8 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
     func loadCheckerDuties() {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
         ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerRequestedCheckoffs))")
@@ -243,18 +273,36 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let numDuties = try json.array(0).count
+                    var newDuties = [Duty]()
+                    
+                    for x in 0..<numDuties {
+                        let dutyID = try json.int(0, x, "duty_id")
+                        let dutyDateString = try json.string(0, x, "date")
+                        let dutyName = try json.string(0, x, "duty_name")
+                        let dutyDescription = try json.string(0, x, "description")
+                        let dutyStatusString = try json.string(0, x, "status")
+                        let slaveName = try json.string(0, x, "duty_user_name")
+                        
+                        let duty = Duty(slave: slaveName, name: dutyName, id: dutyID, description: dutyDescription, checker: "N/A", comments: "", status: dutyStatusString, date: dutyDateString)
+                        
+                        newDuties.append(duty)
+                    }
+                    
+                    self.duties = newDuties
+                    
                 } catch {
                     print("Error")
                 }
         }
-
     }
     
     func loadAdminDuties() {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
-            Constants.AlamoKeys.Token : Constants.AlamoValues.Token
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
         ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerAllDuties))")
@@ -263,12 +311,31 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let numDuties = try json.array(0).count
+                    var newDuties = [Duty]()
+                    
+                    for x in 0..<numDuties {
+                        let dutyID = try json.int(0, x, "duty_id")
+                        let dutyDateString = try json.string(0, x, "date")
+                        let dutyName = try json.string(0, x, "duty_name")
+                        let dutyDescription = try json.string(0, x, "description")
+                        let dutyStatusString = try json.string(0, x, "status")
+                        let slaveName = try json.string(0, x, "duty_user_name")
+                        let checkerName = try json.string(0, x, "checker")
+                        let checkComments = try json.string(0, x, "check_comments")
+                        
+                        let duty = Duty(slave: slaveName, name: dutyName, id: dutyID, description: dutyDescription, checker: checkerName, comments: checkComments, status: dutyStatusString, date: dutyDateString)
+                        
+                        newDuties.append(duty)
+                    }
+                    
+                    self.duties = newDuties
+                    
                 } catch {
                     print("Error")
                 }
         }
-
     }
     
     func DeltURLWithMethod(method: String) -> String {
@@ -296,6 +363,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!,
             Constants.AlamoKeys.DutyID : id
             ] as! [String : AnyObject]
         
@@ -305,19 +373,34 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let statusCode = try json.int("status")
+                    
+                    guard statusCode == 1 else {
+                        let alertController = UIAlertController(title: "Error", message: "Sorry. Not able to request checkoff rn. Walk up the stairs you lazy bum", preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        
+                        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+                        
+                        return
+                    }
+                    
                 } catch {
                     print("Error")
                 }
         }
+        
+        reloadData()
     }
     
     func adminGrantCheckoff(id: Int) {
         let methodParameters = [
             Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
             Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
-            Constants.AlamoKeys.DutyID : id
-            ] as! [String : AnyObject]
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!,
+            Constants.AlamoKeys.DutyID : id,
+            Constants.AlamoKeys.Comments : "" // TODO: see where to put comments
+        ] as! [String : AnyObject]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerCheckoffDuty))")
         Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.ManagerCheckoffDuty), parameters: methodParameters)
@@ -325,11 +408,24 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             .responseJSON { (response) in
                 do {
                     let json = try JSON(data: response.data!)
-                    // Rest of parsing here
+                    
+                    let statusCode = try json.int("status")
+                    
+                    guard statusCode == 1 || statusCode == 2 else {
+                        let alertController = UIAlertController(title: "Error", message: "Sorry. Not able to grant checkoff rn. Use ur laptop you lazy bum", preferredStyle: .Alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        
+                        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
+                        
+                        return
+                    }
+                    
                 } catch {
                     print("Error")
                 }
         }
+        
+        reloadData()
     }
     
     // MARK: Helper
