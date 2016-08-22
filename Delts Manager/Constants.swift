@@ -275,10 +275,21 @@ struct Constants {
     
     // MARK: Networking
     struct AlamoKeys {
-        static let ApiKey = "apiKey"
+        static let ApiKey = "api_key"
         static let Token = "token"
-        static let DutyID = "DutyID"
-        static let PuntID = "PuntID"
+        static let Email = "email"
+        static let DutyID = "duty_id"
+        static let Claim = "claim"
+        static let Comments = "comments"
+        static let UserID = "user_id"
+        static let PuntedID = "punted_id"
+        static let Username = "username"
+        static let Realm = "realm"
+        static let Nonce = "nonce"
+        static let Opaque = "opaque"
+        static let Method = "method"
+        static let URI = "uri"
+        static let Responnse = "response"
         
     }
     
