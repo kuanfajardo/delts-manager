@@ -246,9 +246,30 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     
                     // ORRR
                     /*
-                    let dutyJSON = try json.array(0)
+                    let dutiesJSON = try json.array(0)
                     for x in 0..<numDuties {
-                        let duty = try Duty(json: dutyJSON[x])
+                        let dutyJSON = dutiesJSON[x]
+                        
+                        let dutyID = try dutyJSON.int(0, x, "duty_id")
+                        let dutyDateString = try dutyJSON.string(0, x, "date")
+                        let dutyName = try dutyJSON.string(0, x, "duty_name")
+                        let dutyDescription = try dutyJSON.string(0, x, "description")
+                        let dutyStatusString = try dutyJSON.string(0, x, "status")
+                        let checkerName = try dutyJSON.string(0, x, "checker")
+                        let checkComments = try dutyJSON.string(0, x, "check_comments")
+                        
+                        let duty = Duty(slave: Constants.defaults.stringForKey(Constants.DefaultsKeys.Name)!, name: dutyName, id: dutyID, description: dutyDescription, checker: checkerName, comments: checkComments, status: dutyStatusString, date: dutyDateString)
+                        
+                        newDuties.append(duty)
+
+                    }*/
+                    
+                    // ORRR
+                    /*
+                    let allDutiesJSON = try json.array(0)
+                    for x in 0..<numDuties {
+                        let puntJSON = allDutiesJSON[x]
+                        let duty = try Duty(json: puntJSON, type: "User")
                         newDuties.append(duty)
                     }*/
                     
