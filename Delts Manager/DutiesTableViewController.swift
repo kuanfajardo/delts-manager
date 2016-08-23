@@ -127,7 +127,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
 
             // right buttons
             cell.rightButtons = buttonsFromStatus(duty.status)
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightSwipeSettings.transition = .Static
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
             cell.delegate = self
@@ -159,7 +159,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             
             // right buttons
             cell.rightButtons = buttonsFromStatus(duty.status)
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightSwipeSettings.transition = .Static
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
             cell.delegate = self

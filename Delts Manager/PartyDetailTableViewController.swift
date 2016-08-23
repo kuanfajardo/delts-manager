@@ -130,7 +130,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
             // right buttons
             let deleteButton = MGSwipeButton(title: "", icon: Constants.Photos.Punt, backgroundColor: UIColor.flatWatermelonColor())
             cell.rightButtons = [deleteButton]
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightSwipeSettings.transition = .Static
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
             cell.delegate = self

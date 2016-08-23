@@ -150,7 +150,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             cell.rightButtons = buttonsFromStatus(punt.status)
             cell.rightExpansion.fillOnTrigger = true
             cell.rightExpansion.buttonIndex = 0
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightSwipeSettings.transition = .Static
             cell.delegate = self
             
             cell.punt = punt
@@ -188,7 +188,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
             } else {
                 cell.rightExpansion.buttonIndex = 1
             }
-            cell.rightSwipeSettings.transition = .Rotate3D
+            cell.rightSwipeSettings.transition = .Static
             cell.delegate = self
             
             cell.punt = punt
