@@ -244,6 +244,7 @@ struct Constants {
             static let NewPartyController = "New Party"
             static let DutySelectorController = "DutySelectorController"
             static let NewPuntController = "New Punt Controller"
+            static let NewPuntCommentController = "NewPuntCommentController"
         }
         
         struct Segues {

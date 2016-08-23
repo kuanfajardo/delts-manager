@@ -1912,10 +1912,10 @@
             </objects>
             <point key="canvasLocation" x="-786" y="1632"/>
         </scene>
-        <!--Choose Slaves-->
+        <!--Slaves-->
         <scene sceneID="cUt-2b-x1N">
             <objects>
-                <tableViewController storyboardIdentifier="New Punt Controller" title="Choose Slaves" id="Prc-GJ-Y1I" customClass="NewPuntPersonChooserTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="New Punt Controller" title="Slaves" id="Prc-GJ-Y1I" customClass="NewPuntPersonChooserTableViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mk7-QS-33i">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1962,6 +1962,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scm-Hi-X7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-786" y="2364"/>
+        </scene>
+        <!--Comment-->
+        <scene sceneID="jiG-zY-KiH">
+            <objects>
+                <viewController storyboardIdentifier="NewPuntCommentController" title="Comment" id="dvD-xG-8V0" customClass="NewPuntCommentViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VS6-YL-wXq"/>
+                        <viewControllerLayoutGuide type="bottom" id="TuX-nW-78N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0sQ-RT-nfI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments to the Punted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHc-dK-ONc">
+                                <rect key="frame" x="20" y="70" width="210.5" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="u stupid" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8rr-9J-dfW">
+                                <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8rr-9J-dfW" firstAttribute="centerX" secondItem="0sQ-RT-nfI" secondAttribute="centerX" id="EY7-aL-NUh"/>
+                            <constraint firstItem="8rr-9J-dfW" firstAttribute="top" secondItem="pHc-dK-ONc" secondAttribute="bottom" constant="8" id="HGV-dN-4gN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8rr-9J-dfW" secondAttribute="leading" id="e6y-UN-x3h"/>
+                            <constraint firstItem="pHc-dK-ONc" firstAttribute="top" secondItem="VS6-YL-wXq" secondAttribute="bottom" constant="50" id="eqE-xr-tfT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8rr-9J-dfW" secondAttribute="trailing" id="hdw-tW-i0O"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="pHc-dK-ONc" secondAttribute="leading" id="vVy-yX-93m"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vsH-M8-M7e" appends="YES" id="fqN-KY-Eda"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="commentTextField" destination="8rr-9J-dfW" id="EbJ-UU-wPl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hM-Bl-o1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vsH-M8-M7e">
+                    <connections>
+                        <action selector="userDidTapView:" destination="dvD-xG-8V0" id="rMK-hP-qWY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-786" y="3054"/>
         </scene>
         <!--Start Time-->
         <scene sceneID="rM8-x0-FPD">

@@ -12,9 +12,8 @@ import Freddy
 
 class NewPuntPersonChooserTableViewController: UITableViewController {
     // MARK: Properties
-    var allSlaves = [String]()
-    var selectedSlaves = [String]()
-    
+    var allSlaves = [(String, Int)]()
+    var selectedSlaves = [(String, Int)]()
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -24,14 +23,16 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
         self.tableView.bounces = false
 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
-        print("yetu loaded")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancel))
+        
+        self.navigationItem.rightBarButtonItem?.enabled = false
         
         loadSlaves()
         loadSampleSlaves()
     }
     
     func loadSampleSlaves() {
-        allSlaves += ["Juan", "Tim Plump", "Sam Resnick", "Sam Ravnaas", "Brennan Lee", "Malik Coville", "Adam TS", "Talla Babou", "Jeremy Sands", "Tim Henry", "Alex Lynch", "Erick Friis", "Ini OG", "Jake Stein", "Subby OBIG", "David Merchan", "John Crack", "Isaac the Slut", "Jackson Wang", "RIP Andre"]
+        allSlaves += [("Juan", 0), ("Tim Plump", 1), ("Sam Resnick", 2), ("Sam Ravnaas", 3), ("Brennan Lee", 4), ("Malik Coville", 5), ("Adam TS", 6), ("Talla Babou", 7), ("Jeremy Sands", 8), ("Tim Henry", 10), ("Alex Lynch", 11), ("Erick Friis", 12), ("Ini OG", 13), ("Jake Stein", 14), ("Subby OBIG", 15), ("David Merchan", 16), ("John Crack", 17), ("Isaac the Slut", 18), ("Jackson Wang", 19), ("RIP Andre", 20)]
     }
     
     func loadSlaves() {
@@ -52,11 +53,12 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
                     
                     for user in users {
                         let name = try user.string("user_name")
-                        self.allSlaves.append(name)
+                        let id = try user.int("user_id")
+                        self.allSlaves.append((name, id))
                     }
                     
                 } catch {
-                    print("Error")
+                    print("Error in loadSlaves")
                 }
         }
 
@@ -67,7 +69,17 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
     }
 
     func donePressed() {
-        print(selectedSlaves)
+        let identifier = Constants.Identifiers.Controllers.NewPuntCommentController
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! NewPuntCommentViewController
+        
+        controller.slaves = self.selectedSlaves
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    func cancel() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     
@@ -99,14 +111,8 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
             cell.backgroundColor = UIColor.flatWatermelonColorDark()
         }
         
-        cell.nameLabel.text = allSlaves[indexPath.row]
-        
-        if selectedSlaves.indexOf(allSlaves[indexPath.row]) != nil {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
-        }
-        
+        cell.nameLabel.text = allSlaves[indexPath.row].0
+        cell.accessoryType = .None
         cell.selectionStyle = .Gray
         
         return cell
@@ -128,10 +134,26 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
         
         if cell.accessoryType == UITableViewCellAccessoryType.None {
             cell.accessoryType = .Checkmark
-            self.selectedSlaves.append(cell.nameLabel.text!)
+            
+            let index = self.allSlaves.indexOf({ (name, _) -> Bool in
+                return name == cell.nameLabel.text!
+            })
+            
+            self.selectedSlaves.append(allSlaves[index!])
+            self.navigationItem.rightBarButtonItem?.enabled = true
+            
         } else {
             cell.accessoryType = .None
-            self.selectedSlaves.removeAtIndex(self.selectedSlaves.indexOf(cell.nameLabel.text!)!)
+            
+            let index = self.selectedSlaves.indexOf({ (name, _) -> Bool in
+                return name == cell.nameLabel.text!
+            })
+            
+            self.selectedSlaves.removeAtIndex(index!)
+            
+            if self.selectedSlaves.count == 0 {
+                self.navigationItem.rightBarButtonItem?.enabled = false
+            }
         }
     }
 }
