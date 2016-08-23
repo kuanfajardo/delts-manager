@@ -236,13 +236,11 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     // User Defined
     func cancelPressed() {
         // TODO: Add functionality
-        print("cancel pressed")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func donePressed() {
         // TODO: Add functionality
-        print("done pressed")
         let event = Event(name: self.eventName, startTime: self.startTime!, endTime: self.endTime!, duties: makeDuties(), times: self.times)
         self.delegate?.passEventBack(event)
         self.navigationController?.popViewControllerAnimated(true)

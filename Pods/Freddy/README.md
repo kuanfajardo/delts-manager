@@ -87,7 +87,7 @@ There can be any number of subscripts, and each subscript can be either a `Strin
 
 [More on Subscripting](https://github.com/bignerdranch/Freddy/wiki/Subscripting)
 
-#### JSONDecodable: Deserializing Models Directly
+#### scodable: Deserializing Models Directly
 Now, let's look an example that parses the data into a model class:
 
 ```swift

@@ -72,7 +72,7 @@ class DutySelectorCell: UITableViewCell {
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in updateHouseDuties")
                 }
         }
     }

@@ -61,12 +61,10 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
         let alertController = UIAlertController(title: "Add...", message: nil, preferredStyle: .ActionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            print("Cancel")
         }
         alertController.addAction(cancelAction)
         
         let puntAction = UIAlertAction(title: "New Punt", style: .Default) { (action) in
-            print("New Punt(s)")
             self.initiateNewPunt()
         }
         alertController.addAction(puntAction)
@@ -276,7 +274,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     self.punts = newPunts
 
                 } catch {
-                    print("Error")
+                    print("Error in loadUserPunts")
                 }
         }
     }
@@ -346,7 +344,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     self.punts = newPunts
                 
                 } catch {
-                    print("Error")
+                    print("Error in loadAdminPunts")
                 }
         }
     }
@@ -397,7 +395,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in userRequestMakeup")
                 }
         }
     }
@@ -419,7 +417,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in adminDeletePunts")
                 }
         }
     }
@@ -440,7 +438,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in adminMakeupPunt")
                 }
         }
     }

@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         
         let URL = DeltURLWithMethod(Constants.Networking.Methods.AccountInfo)
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountInfo))")
         Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
             .responseJSON(completionHandler: { (response) in
                 do {
@@ -78,7 +79,7 @@ class LoginViewController: UIViewController {
                     
                     
                 } catch {
-                    print("Error")
+                    print("Error in getLoginInfo")
                 }
             })
     }
@@ -131,6 +132,7 @@ class LoginViewController: UIViewController {
             "Content-Type" : "application/json"
         ]
 
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.Authenticate))")
         Alamofire.request(.POST, DeltURLWithMethod(Constants.Networking.Methods.Authenticate), parameters: methodParameters, encoding: .JSON, headers: headers)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -138,7 +140,7 @@ class LoginViewController: UIViewController {
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in authenticateLogin")
                 }
         }
     }
@@ -149,6 +151,7 @@ class LoginViewController: UIViewController {
         let URL = DeltURLWithMethod(method)
         var success = true
         
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.Authenticate))")
         Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
@@ -185,6 +188,7 @@ class LoginViewController: UIViewController {
                         
                        // "Authorization" : "Digest username=\"\(email)\", realm=\"\(realm)\", nonce=\"\(nonce)\", opaque=\"\(opaque)\", uri=\"\(URL)\", response=\"\(response)\""]
                     
+                    print("Request to \(self.DeltURLWithMethod(Constants.Networking.Methods.ManagerPunt))")
                     Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
                         .responseJSON(completionHandler: { (response) in
                             do {
@@ -204,12 +208,12 @@ class LoginViewController: UIViewController {
                                 Constants.defaults.setValue(email, forKey: Constants.DefaultsKeys.Email)
                                 
                             } catch {
-                                print("Error")
+                                print("Error in digestAuth B")
                             }
                     })
                     
                 } catch {
-                    print("Error")
+                    print("Error in digestAuth A")
                 }
         }
 

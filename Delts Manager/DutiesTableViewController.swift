@@ -276,7 +276,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
-                    print("Error")
+                    print("Error in loadUserDuties")
                 }
         }
     }
@@ -314,7 +314,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
-                    print("Error")
+                    print("Error in loadCheckerDuties")
                 }
         }
     }
@@ -354,7 +354,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
-                    print("Error")
+                    print("Error in loadAdminDuties")
                 }
         }
     }
@@ -407,7 +407,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     }
                     
                 } catch {
-                    print("Error")
+                    print("Error in userRequestCheckoff")
                 }
         }
         
@@ -442,7 +442,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     }
                     
                 } catch {
-                    print("Error")
+                    print("Error in adminGrantCheckoff")
                 }
         }
         

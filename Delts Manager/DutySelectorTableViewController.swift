@@ -38,13 +38,11 @@ class DutySelectorTableViewController: UITableViewController {
     
     func cancelPressed() {
         // TODO: Add functionality
-        print("cancel pressed")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     func donePressed() {
         // TODO: Add functionality
-        print("done pressed")
         self.navigationController?.popViewControllerAnimated(true)
     }
     
@@ -154,7 +152,7 @@ class DutySelectorTableViewController: UITableViewController {
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
-                    print("Error")
+                    print("Error in loadHouseDuties")
                 }
         }
     }
