@@ -43,7 +43,7 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
         ]
         
         print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.ManagerUsers))")
-        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerPunts), parameters: methodParameters)
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.ManagerUsers), parameters: methodParameters)
             .validate(contentType: ["application/json"])
             .responseJSON { (response) in
                 do {

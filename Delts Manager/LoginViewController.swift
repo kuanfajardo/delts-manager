@@ -188,7 +188,7 @@ class LoginViewController: UIViewController {
                         
                        // "Authorization" : "Digest username=\"\(email)\", realm=\"\(realm)\", nonce=\"\(nonce)\", opaque=\"\(opaque)\", uri=\"\(URL)\", response=\"\(response)\""]
                     
-                    print("Request to \(self.DeltURLWithMethod(Constants.Networking.Methods.ManagerPunt))")
+                    print("Request to \(self.DeltURLWithMethod(Constants.Networking.Methods.Authenticate))")
                     Alamofire.request(.POST, URL, parameters: methodParameters, encoding: .JSON)
                         .responseJSON(completionHandler: { (response) in
                             do {
