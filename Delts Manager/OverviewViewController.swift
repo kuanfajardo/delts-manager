@@ -8,6 +8,8 @@
 
 import UIKit
 import GBDeviceInfo
+import Alamofire
+import Freddy
 
 class OverviewViewController: UIViewController {
     // MARK: Outlets
@@ -59,12 +61,17 @@ class OverviewViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setUI()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         setUI()
     }
     
     // MARK: Helper functions
     func setUI() {
+        getStats()
+        
         let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
         let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
         let scheduleEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.ScheduleEnabled)
@@ -146,4 +153,36 @@ class OverviewViewController: UIViewController {
         }
     }
     
+    func getStats() {
+        let methodParameters = [
+            Constants.AlamoKeys.ApiKey : Constants.AlamoValues.ApiKey,
+            Constants.AlamoKeys.Token : Constants.AlamoValues.Token,
+            Constants.AlamoKeys.Email : Constants.defaults.stringForKey(Constants.DefaultsKeys.Email)!
+        ]
+        
+        print("Request to \(DeltURLWithMethod(Constants.Networking.Methods.AccountStats))")
+        Alamofire.request(.GET, DeltURLWithMethod(Constants.Networking.Methods.AccountStats), parameters: methodParameters)
+            .validate(contentType: ["application/json"])
+            .responseJSON { (response) in
+                do {
+                    let json = try JSON(data: response.data!)
+                    
+                    let numDuties = try json.int("num_duties")
+                    let numPunts = try json.int("num_punts")
+                    let scheduleOpen = try json.bool("schedule_open")
+                    
+                    Constants.defaults.setInteger(numDuties, forKey: Constants.DefaultsKeys.Duties)
+                    Constants.defaults.setInteger(numPunts, forKey: Constants.DefaultsKeys.Punts)
+                    Constants.defaults.setBool(scheduleOpen, forKey: Constants.DefaultsKeys.ScheduleEnabled)
+                    
+                } catch {
+                    print("Error in getStats")
+                }
+        }
+    }
+
+    func DeltURLWithMethod(method: String) -> String {
+        return Constants.Networking.BaseURL + method
+    }
+
 }

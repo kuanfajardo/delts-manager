@@ -311,6 +311,7 @@ struct Constants {
             static let AccountDuties = "account/duties"
             static let AccountPunts = "account/punts"
             static let AccountPostCheckoff = "account/checkoff"
+            static let AccountStats = "/account/stats"
             
             // Scheduling Methods
             static let GetHouseDuties = "scheduling/house_duties"
