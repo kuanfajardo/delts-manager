@@ -8,9 +8,12 @@
 
 import UIKit
 
-func presentAPIErrorOn(view: UIViewController, withMessage message: String = "Ini took a dump on the server") {
-    let alertController = UIAlertController(title: "Oops!", message: message, preferredStyle: .Alert)
-    let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-    alertController.addAction(okAction)
-    view.presentViewController(alertController, animated: true, completion: nil)
+struct Functions {
+    static func presentAPIErrorOn(view: UIViewController, withTitle title: String = "Oops!", withMessage message: String = "Ini took a dump on the server. \nPlease try again.") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        view.presentViewController(alertController, animated: true, completion: nil)
+    }
 }
+
