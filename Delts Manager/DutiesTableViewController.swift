@@ -398,11 +398,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     let statusCode = try json.int("status")
                     
                     guard statusCode == 1 else {
-                        let alertController = UIAlertController(title: "Error", message: "Sorry. Not able to request checkoff rn. Walk up the stairs you lazy bum", preferredStyle: .Alert)
-                        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                        
-                        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
-                        
+                        Functions.presentAPIErrorOn(self, withMessage: "Sorry. Not able to request checkoff rn. Walk up the stairs you lazy bum")
                         return
                     }
                     
@@ -433,11 +429,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     let statusCode = try json.int("status")
                     
                     guard statusCode == 1 || statusCode == 2 else {
-                        let alertController = UIAlertController(title: "Error", message: "Sorry. Not able to grant checkoff rn. Use ur laptop you lazy bum", preferredStyle: .Alert)
-                        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                        
-                        self.navigationController?.presentViewController(alertController, animated: true, completion: nil)
-                        
+                        Functions.presentAPIErrorOn(self, withMessage: "Sorry. Not able to grant checkoff rn. Use ur laptop you lazy bum")
                         return
                     }
                     

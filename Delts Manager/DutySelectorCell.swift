@@ -76,13 +76,7 @@ class DutySelectorCell: UITableViewCell {
         print(alertMessage)
         
         guard claim != nil else {
-            let alertController = UIAlertController(title: "Nope. Stop.", message: alertMessage, preferredStyle: .Alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(okAction)
-            
-            self.delegate?.presentViewController(alertController, animated: true, completion: nil)
-            
+            Functions.presentAPIErrorOn(self.delegate!, withTitle: "Nope. Stop.", withMessage: alertMessage)
             return
         }
         
@@ -113,12 +107,7 @@ class DutySelectorCell: UITableViewCell {
                     let alertTitle = statusCode == 1 ? "Success!" : "Fail"
                     let alertMessage = statusCode == 1 ? "Duty \(claim == true ? "claimed" : "disclaimed") successfully" : "Something went wrong."
                     
-                    let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
-                    
-                    let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                    alertController.addAction(okAction)
-                    
-                    self.delegate?.presentViewController(alertController, animated: true, completion: nil)
+                    Functions.presentAPIErrorOn(self.delegate!, withTitle: alertTitle, withMessage: alertMessage)
                     
                     return
                     
