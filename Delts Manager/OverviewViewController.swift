@@ -61,15 +61,16 @@ class OverviewViewController: UIViewController {
     // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+        setAllUI()
+
     }
     
     override func viewWillAppear(animated: Bool) {
-        setUI()
+        setImageUI()
     }
     
     // MARK: Helper functions
-    func setUI() {
+    func setAllUI() {
         getStats()
         
         let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
@@ -151,6 +152,27 @@ class OverviewViewController: UIViewController {
         default:
             return Constants.Photos.Nine
         }
+    }
+    
+    func setImageUI() {
+        getStats()
+        
+        let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
+        let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
+        let scheduleEnabled = Constants.defaults.boolForKey(Constants.DefaultsKeys.ScheduleEnabled)
+        
+        // Duty Section
+        self.checkoffImageView.userInteractionEnabled = (numDuties != 0)
+        self.checkoffImageView.image = imageFromNumber(numDuties)
+        
+        // Punts Section
+        self.puntMakeupImageView.image = imageFromNumber(numPunts)
+        self.puntMakeupImageView.userInteractionEnabled = !(numPunts == 0)
+        
+        // Schedule Section
+        self.scheduleImageView.userInteractionEnabled = scheduleEnabled
+        self.scheduleImageView.alpha = scheduleEnabled ? 1 : 0.5
+        self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed"
     }
     
     func getStats() {
