@@ -29,7 +29,7 @@ struct HouseDuty {
     
     // Convenience init for testing ui with random duty availabilities; also used by init above to help with init overloading
     init(name: String, days: [DutyAvailability]) {
-        let slaves = ["", "", "", "", "", "", ""]
+        let slaves = ["", "Chaz", "Jian", "Evan", "ur mom", "Andre", ""]
         let ids = [-1, -1, -1, -1, -1, -1, -1]
         
         self.init(name: name, days: days, slaves: slaves, ids: ids)
