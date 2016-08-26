@@ -58,6 +58,7 @@ class NewPuntPersonChooserTableViewController: UITableViewController {
                     }
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadSlaves")
                 }
         }

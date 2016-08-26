@@ -151,6 +151,7 @@ class DutySelectorTableViewController: UITableViewController {
                         
                     }
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadHouseDuties")
                 }
         }

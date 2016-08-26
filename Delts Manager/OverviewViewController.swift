@@ -91,7 +91,7 @@ class OverviewViewController: UIViewController {
         self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed"
         
         // TODO: lololll
-        let isBigPhone = true//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)
+        let isBigPhone = true//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)//true
         
         self.dutyImageLeftConstraint.constant = isBigPhone ? 22 : 10
         self.puntImageLeftConstraint.constant = isBigPhone ? 22 : 10
@@ -198,6 +198,7 @@ class OverviewViewController: UIViewController {
                     Constants.defaults.setBool(scheduleOpen, forKey: Constants.DefaultsKeys.ScheduleEnabled)
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in getStats")
                 }
         }

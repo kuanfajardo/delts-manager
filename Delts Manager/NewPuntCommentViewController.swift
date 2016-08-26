@@ -102,7 +102,7 @@ class NewPuntCommentViewController: UIViewController, UITextFieldDelegate {
                     alertController.addAction(okAction)
                     self.presentViewController(alertController, animated: true, completion: nil)
                 } catch {
-                    Functions.presentAPIErrorOn(self)
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in sendPunt")
                 }
         }

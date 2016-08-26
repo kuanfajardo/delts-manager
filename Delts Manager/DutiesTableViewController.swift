@@ -276,6 +276,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadUserDuties")
                 }
         }
@@ -314,6 +315,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadCheckerDuties")
                 }
         }
@@ -354,6 +356,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     self.duties = newDuties
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadAdminDuties")
                 }
         }
@@ -403,6 +406,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     }
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self, withMessage: "Sorry. Not able to request checkoff rn. Walk up the stairs you lazy bum")
                     print("Error in userRequestCheckoff")
                 }
         }
@@ -434,6 +438,7 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
                     }
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self, withMessage: "Sorry. Not able to grant checkoff rn. Use ur laptop you lazy bum")
                     print("Error in adminGrantCheckoff")
                 }
         }

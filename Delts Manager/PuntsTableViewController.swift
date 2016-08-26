@@ -274,6 +274,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     self.punts = newPunts
 
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadUserPunts")
                 }
         }
@@ -344,6 +345,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     self.punts = newPunts
                 
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in loadAdminPunts")
                 }
         }
@@ -395,6 +397,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in userRequestMakeup")
                 }
         }
@@ -417,6 +420,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in adminDeletePunts")
                 }
         }
@@ -438,6 +442,7 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
                     let json = try JSON(data: response.data!)
                     // Rest of parsing here
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in adminMakeupPunt")
                 }
         }

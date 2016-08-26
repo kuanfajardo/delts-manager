@@ -112,6 +112,7 @@ class DutySelectorCell: UITableViewCell {
                     return
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self.delegate!, withTitle: "Oops!", withMessage: "Not able to update house duty.")
                     print("Error in updateHouseDuties")
                 }
         }

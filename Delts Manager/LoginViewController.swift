@@ -79,6 +79,7 @@ class LoginViewController: UIViewController {
                     
                     
                 } catch {
+                    //Functions.presentAPIErrorOn(self)
                     print("Error in getLoginInfo")
                 }
             })
@@ -208,6 +209,7 @@ class LoginViewController: UIViewController {
                                 Constants.defaults.setValue(email, forKey: Constants.DefaultsKeys.Email)
                                 
                             } catch {
+                                //Functions.presentAPIErrorOn(self)
                                 print("Error in digestAuth B")
                             }
                     })
