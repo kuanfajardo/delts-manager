@@ -8,14 +8,14 @@
 
 struct HouseDuty {
     var name: String
-    var days: [DutyAvailability]
+    var availabilities: [DutyAvailability]
     var takers: [String]
     var ids: [Int]
     
     // MAIN INIT
-    init(name: String, days: [DutyAvailability], slaves: [String], ids: [Int]) {
+    init(name: String, availabilities: [DutyAvailability], slaves: [String], ids: [Int]) {
         self.name = name
-        self.days = days
+        self.availabilities = availabilities
         self.takers = slaves
         self.ids = ids
     }
@@ -24,15 +24,15 @@ struct HouseDuty {
     init(name: String) {
         let availabilities: [DutyAvailability] = [.Unavailable, .Unavailable, .Unavailable, .Unavailable, .Unavailable, .Unavailable, .Unavailable]
 
-        self.init(name: name, days: availabilities)
+        self.init(name: name, availabilities: availabilities)
     }
     
     // Convenience init for testing ui with random duty availabilities; also used by init above to help with init overloading
-    init(name: String, days: [DutyAvailability]) {
+    init(name: String, availabilities: [DutyAvailability]) {
         let slaves = ["", "Chaz", "Jian", "Evan", "ur mom", "Andre", ""]
         let ids = [-1, -1, -1, -1, -1, -1, -1]
         
-        self.init(name: name, days: days, slaves: slaves, ids: ids)
+        self.init(name: name, availabilities: availabilities, slaves: slaves, ids: ids)
     }
     
     // main function for editing each day of the house duty: since the default is unavailable, this only builds from nil up
@@ -41,7 +41,7 @@ struct HouseDuty {
             return false
         }
         
-        self.days[dayofWeek] = availability
+        self.availabilities[dayofWeek] = availability
         self.takers[dayofWeek] = slave
         self.ids[dayofWeek] = dutyID
         

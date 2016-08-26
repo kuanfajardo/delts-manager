@@ -49,7 +49,7 @@ class DutySelectorCell: UITableViewCell {
     
     // MARK: main action
     func buttonPressedForDay(dayOfWeek: Int) {
-        let availability = self.houseDuty!.days[dayOfWeek]
+        let availability = self.houseDuty!.availabilities[dayOfWeek]
         let claim: Bool?
         var alertMessage = ""
         

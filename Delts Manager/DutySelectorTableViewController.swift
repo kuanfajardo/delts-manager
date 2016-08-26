@@ -54,12 +54,12 @@ class DutySelectorTableViewController: UITableViewController {
     }
     
     func loadSampleHouseDuties() {
-        let duty1 = HouseDuty(name: "Pantry One", days: [.Unavailable, .Selected,.Open,.Taken,.Taken,.Open, .Unavailable])
-        let duty2 = HouseDuty(name: "Pantry Two", days: [.Unavailable, .Taken,.Open,.Taken,.Taken,.Open, .Unavailable])
-        let duty3 = HouseDuty(name: "Kitchen", days: [.Unavailable, .Open,.Unavailable,.Taken,.Unavailable,.Open, .Unavailable])
-        let duty4 = HouseDuty(name: "Basement", days: [.Unavailable, .Taken,.Unavailable,.Taken,.Unavailable,.Taken, .Unavailable])
-        let duty5 = HouseDuty(name: "1st / Foyer", days: [.Unavailable, .Open,.Unavailable,.Open,.Unavailable,.Open, .Unavailable])
-        let duty6 = HouseDuty(name: "2nd Little / Vacuum", days: [.Unavailable, .Taken,.Unavailable,.Open,.Unavailable,.Open, .Unavailable])
+        let duty1 = HouseDuty(name: "Pantry One", availabilities: [.Unavailable, .Selected,.Open,.Taken,.Taken,.Open, .Unavailable])
+        let duty2 = HouseDuty(name: "Pantry Two", availabilities: [.Unavailable, .Taken,.Open,.Taken,.Taken,.Open, .Unavailable])
+        let duty3 = HouseDuty(name: "Kitchen", availabilities: [.Unavailable, .Open,.Unavailable,.Taken,.Unavailable,.Open, .Unavailable])
+        let duty4 = HouseDuty(name: "Basement", availabilities: [.Unavailable, .Taken,.Unavailable,.Taken,.Unavailable,.Taken, .Unavailable])
+        let duty5 = HouseDuty(name: "1st / Foyer", availabilities: [.Unavailable, .Open,.Unavailable,.Open,.Unavailable,.Open, .Unavailable])
+        let duty6 = HouseDuty(name: "2nd Little / Vacuum", availabilities: [.Unavailable, .Taken,.Unavailable,.Open,.Unavailable,.Open, .Unavailable])
         
         self.houseDuties += [duty1, duty2, duty3, duty4, duty5, duty6]
     }
@@ -96,11 +96,11 @@ class DutySelectorTableViewController: UITableViewController {
         cell.thursdayButton.tag = indexPath.row
         cell.fridayButton.tag = indexPath.row
         
-        cell.mondayButton.backgroundColor = colorFromAvailability(houseDuty.days[1])
-        cell.tuesdayButton.backgroundColor = colorFromAvailability(houseDuty.days[2])
-        cell.wednesdayButton.backgroundColor = colorFromAvailability(houseDuty.days[3])
-        cell.thursdayButton.backgroundColor = colorFromAvailability(houseDuty.days[4])
-        cell.fridayButton.backgroundColor = colorFromAvailability(houseDuty.days[5])
+        cell.mondayButton.backgroundColor = colorFromAvailability(houseDuty.availabilities[1])
+        cell.tuesdayButton.backgroundColor = colorFromAvailability(houseDuty.availabilities[2])
+        cell.wednesdayButton.backgroundColor = colorFromAvailability(houseDuty.availabilities[3])
+        cell.thursdayButton.backgroundColor = colorFromAvailability(houseDuty.availabilities[4])
+        cell.fridayButton.backgroundColor = colorFromAvailability(houseDuty.availabilities[5])
         
         
         cell.selectionStyle = .None
