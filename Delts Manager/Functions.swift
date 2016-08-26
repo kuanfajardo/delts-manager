@@ -9,7 +9,7 @@
 import UIKit
 
 struct Functions {
-    static func presentAPIErrorOn(view: UIViewController, withTitle title: String = "Oops!", withMessage message: String = "Ini took a dump on the server. \nPlease try again.") {
+    static func presentAPIErrorOn(view: UIViewController, withTitle title: String = "Oops!", withMessage message: String = "Not able to load data- Ini took a dump on the server. \nPlease try again.") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         alertController.addAction(okAction)
