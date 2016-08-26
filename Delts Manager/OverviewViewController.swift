@@ -201,6 +201,9 @@ class OverviewViewController: UIViewController {
                 } catch {
                     //Functions.presentAPIErrorOn(self)
                     print("Error in getStats")
+                    //self.checkoffImageView.image = Constants.Photos.PurpleCircle
+                    //self.puntMakeupImageView.image = Constants.Photos.PurpleCircle
+                    //self.scheduleImageView.image = Constants.Photos.PurpleCircle
                 }
         }
     }
