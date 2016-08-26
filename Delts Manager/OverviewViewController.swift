@@ -71,7 +71,7 @@ class OverviewViewController: UIViewController {
     
     // MARK: Helper functions
     func setAllUI() {
-        getStats()
+        /*getStats()
         
         let numDuties = Constants.defaults.integerForKey(Constants.DefaultsKeys.Duties)
         let numPunts = Constants.defaults.integerForKey(Constants.DefaultsKeys.Punts)
@@ -89,6 +89,7 @@ class OverviewViewController: UIViewController {
         self.scheduleImageView.userInteractionEnabled = scheduleEnabled
         self.scheduleImageView.alpha = scheduleEnabled ? 1 : 0.5
         self.scheduleDetailLabel.text = scheduleEnabled ? "Open" : "Closed"
+        */
         
         // TODO: lololll
         let isBigPhone = true//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)//true
