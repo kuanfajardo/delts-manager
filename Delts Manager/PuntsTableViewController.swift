@@ -35,6 +35,8 @@ class PuntsTableViewController: UITableViewController, MGSwipeTableCellDelegate 
 
         }
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: Constants.Photos.RefreshIcon, style: .Plain, target: self, action: #selector(reloadData))
+        
         loadUserPunts()
         loadSamplePunts()
     }

@@ -23,6 +23,8 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
             self.navigationItem.rightBarButtonItem = rightAddButton
         }
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: Constants.Photos.RefreshIcon, style: .Plain, target: self, action: #selector(reloadData))
+        
         // loadEvents()
         loadSampleEvents()
     }
@@ -32,6 +34,10 @@ class PartiesTableViewController: UITableViewController, PartyPlannerDelegate, M
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier(identifier) as! EventPlannerTableViewController
         
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func reloadData() {
+        //
     }
     
     

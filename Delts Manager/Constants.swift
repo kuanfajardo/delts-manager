@@ -206,6 +206,10 @@ struct Constants {
         static var PurpleCircle: UIImage {
             return UIImage(named: "Purple Circle")!
         }
+        
+        static var RefreshIcon: UIImage {
+            return UIImage(named: "Refresh")!
+        }
     }
     
     struct Identifiers {

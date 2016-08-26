@@ -37,10 +37,11 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         super.viewDidLoad()
         
         self.segControl = UISegmentedControl(items: [Segment.Invites, Segment.Duties])
-        self.segControl!.addTarget(self, action: #selector(segmentChanged), forControlEvents: .ValueChanged)
+        self.segControl!.addTarget(self, action: #selector(reloadData), forControlEvents: .ValueChanged)
         self.segControl!.tintColor = UIColor.flatWhiteColor()//Constants.Colors.deltsDarkPurple
         self.segControl!.selectedSegmentIndex = 0
         self.navigationItem.titleView = self.segControl
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: Constants.Photos.RefreshIcon, style: .Plain, target: self, action: #selector(reloadData))
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardDidShow), name: UIKeyboardDidShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardDidHide), name: UIKeyboardDidHideNotification, object: nil)
@@ -48,7 +49,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         self.tableView.bounces = false
 
     }
-    
+
     func keyboardDidShow() {
         self.isKeyboardShowing = true
     }
@@ -57,7 +58,7 @@ class PartyDetailTableViewController: UITableViewController, UITextFieldDelegate
         self.isKeyboardShowing = false
     }
     
-    func segmentChanged(sender: UISegmentedControl) {
+    func reloadData(sender: UISegmentedControl) {
         switch self.segment {
         case Segment.Invites:
             loadInvites()

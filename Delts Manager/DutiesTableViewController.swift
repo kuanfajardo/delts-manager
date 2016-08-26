@@ -36,9 +36,12 @@ class DutiesTableViewController: UITableViewController, MGSwipeTableCellDelegate
             self.navigationItem.titleView = self.segControl
         }
         
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: Constants.Photos.RefreshIcon, style: .Plain, target: self, action: #selector(reloadData))
+        
         loadUserDuties()
         loadSampleDuties()
     }
+
     
 
     func reloadData() {

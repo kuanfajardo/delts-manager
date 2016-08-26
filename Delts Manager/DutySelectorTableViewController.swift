@@ -18,7 +18,7 @@ class DutySelectorTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Navigation items
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: #selector(refreshPressed))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: Constants.Photos.RefreshIcon, style: .Plain, target: self, action: #selector(refreshPressed))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(donePressed))
         
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.flatWhiteColor()
