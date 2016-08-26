@@ -27,7 +27,7 @@
                             <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdk-OW-kou">
                                 <rect key="frame" x="30" y="170" width="540" height="116"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Three" translatesAutoresizingMaskIntoConstraints="NO" id="8pf-wW-HXb">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purple Circle" translatesAutoresizingMaskIntoConstraints="NO" id="8pf-wW-HXb">
                                         <rect key="frame" x="22" y="8" width="100" height="100"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Punt Makeup"/>
                                         <gestureRecognizers/>
@@ -112,7 +112,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Smiley" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-d4-IHk">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Purple Circle" translatesAutoresizingMaskIntoConstraints="NO" id="q3a-d4-IHk">
                                         <rect key="frame" x="20" y="8" width="100" height="100"/>
                                         <accessibility key="accessibilityConfiguration" identifier="Checkoff"/>
                                         <gestureRecognizers/>
@@ -2333,9 +2333,8 @@
         <image name="OverviewIcon" width="25" height="25"/>
         <image name="PartyIcon" width="25" height="25"/>
         <image name="PuntIcon" width="25" height="25"/>
+        <image name="Purple Circle" width="525" height="525"/>
         <image name="SettingsIcon" width="25" height="25"/>
-        <image name="Smiley" width="525" height="525"/>
-        <image name="Three" width="525" height="525"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>

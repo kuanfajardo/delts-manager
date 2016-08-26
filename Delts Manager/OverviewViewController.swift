@@ -151,7 +151,7 @@ class OverviewViewController: UIViewController {
         case 9:
             return Constants.Photos.Nine
         default:
-            return Constants.Photos.Nine
+            return Constants.Photos.PurpleCircle
         }
     }
     
