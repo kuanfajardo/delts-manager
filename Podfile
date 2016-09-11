@@ -15,6 +15,7 @@ target 'Delts Manager' do
   pod 'UIImage+Additions'
   pod 'GBDeviceInfo'
   pod 'PermissionScope'
+  pod 'Firebase'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
