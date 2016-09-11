@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PermissionScope
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -90,9 +91,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func registerForPushNotifications(application: UIApplication) {
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Badge, .Alert, .Sound], categories: nil)
+        let pscope = PermissionScope()
+        pscope.addPermission(NotificationsPermission(notificationCategories: nil), message: "To send death threats")
         
-        application.registerUserNotificationSettings(notificationSettings)
+        pscope.permissionButtonTextColor = UIColor.flatMagentaColor()
+        pscope.permissionButtonBorderColor = UIColor.flatMagentaColor()
+        pscope.closeButton = UIButton()
+        pscope.authorizedButtonColor = UIColor.flatGreenColor()
+        pscope.unauthorizedButtonColor = UIColor.flatWatermelonColor()
+        
+        pscope.show({ (finished, results) in
+            print("got results \(results)")
+            }) { (results) in
+                print("cancelled")
+        }
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
