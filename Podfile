@@ -14,6 +14,7 @@ target 'Delts Manager' do
   pod 'ChameleonFramework/Swift'
   pod 'UIImage+Additions'
   pod 'GBDeviceInfo'
+  pod 'PermissionScope'
 
   target 'Delts ManagerTests' do
     inherit! :search_paths
