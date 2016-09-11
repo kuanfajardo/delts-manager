@@ -10,6 +10,7 @@ PODS:
     - GBDeviceInfo/Core (= 4.1.0)
   - GBDeviceInfo/Core (4.1.0)
   - MGSwipeTableCell (1.5.5)
+  - PermissionScope (1.0.2)
   - UIImage+Additions (2.1.1)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Freddy
   - GBDeviceInfo
   - MGSwipeTableCell
+  - PermissionScope
   - UIImage+Additions
 
 SPEC CHECKSUMS:
@@ -30,8 +32,9 @@ SPEC CHECKSUMS:
   Freddy: bbdca013977db29638b24baf6572ce94452bec29
   GBDeviceInfo: e50df975a95e21faec93e2bf98376846fe17d307
   MGSwipeTableCell: bafeb5f351124544c9364ecbdf24c7b06a37d340
+  PermissionScope: 860828c5516d349b6f49e5491799cfef33c5ccc7
   UIImage+Additions: 0857fe36fc04d3f21862867931e39cf4914bace5
 
-PODFILE CHECKSUM: 7d8fbe680d68e386b05d982f348919a8889e541b
+PODFILE CHECKSUM: 35c24f226294990b0ccd8e2889b13088f9c92e5c
 
 COCOAPODS: 1.0.1
