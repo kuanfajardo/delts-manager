@@ -54,21 +54,34 @@ struct Constants {
     }
     
     struct DefaultsKeys {
+        // LOGIN
         static let LoggedIn = "Logged In"
         static let Token = "Token"
+        
+        // USER INFO
         static let Name = "Name"
         static let ID = "ID"
         static let Email = "Email"
         static let Roles = "Roles"
-        static let Notifications = "Notifications"
+        
+        // NOTIFICATIONS
         static let DutyReminders = "Duty Reminders"
-        static let DutyTime = "Duty Reminder Time"
-        static let PuntMakupPosted = "Punt Makeup Posted Notifications"
-        static let CheckoffNotification = "Checkoff Notifications"
+        static let CheckoffGrantedNotification = "Checkoff Granted Notifications"
+        static let CheckoffRequestedNotification = "Checkoff Requested Notifications"
         static let PuntNotification = "Punt Notifications"
+        static let ScheduleOpenedNotification = "Schedule Opened Notification"
+
+        // OVERVIEW
         static let Punts = "Punts"
         static let ScheduleEnabled = "Schedule Enabled"
         static let Duties = "Duties"
+        
+        // LATER
+        static let DutyTime = "Duty Reminder Time"
+        static let PuntMakupPosted = "Punt Makeup Posted Notifications"
+        static let PuntForgiven = "Punt Forgiven Notification"
+        static let PuntMakeupRequested = "Punt makeup Requested"
+        static let PuntPetitioned = "Punt Petitioned"
     }
 
     
