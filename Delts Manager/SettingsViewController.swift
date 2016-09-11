@@ -15,11 +15,11 @@ class SettingsTableViewController: UITableViewController {
     var settings: [String : [(String, String, AnyObject)]] = [:]
     
     var keys = [
-        Constants.DefaultsKeys.Notifications,
         Constants.DefaultsKeys.DutyReminders,
-        Constants.DefaultsKeys.PuntMakupPosted,
-        Constants.DefaultsKeys.CheckoffNotification,
-        Constants.DefaultsKeys.PuntNotification
+        Constants.DefaultsKeys.CheckoffGrantedNotification,
+        Constants.DefaultsKeys.PuntNotification,
+        Constants.DefaultsKeys.ScheduleOpenedNotification,
+        Constants.DefaultsKeys.CheckoffRequestedNotification
     ]
     
     var sectionTitles = [
@@ -38,16 +38,19 @@ class SettingsTableViewController: UITableViewController {
                     ("Change Password", "Text", "")
                 ],
                 "Notifications" : [
-                    ("Toggle Notifications", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.Notifications)!),
                     ("Duties Reminders", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.DutyReminders)!),
-                    ("Punt Makeup Posted", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.PuntMakupPosted)!),
-                    ("Checkoffs", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.CheckoffNotification)!),
-                    ("Punts", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.PuntNotification)!)
+                    ("Checkoffs", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.CheckoffGrantedNotification)!),
+                    ("Punts", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.PuntNotification)!),
+                    ("Open Schedule", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.ScheduleOpenedNotification)!)
                 ],
                 "Logout" : [
                     ("Logout", "Text", "")
                 ]
         ]
+        
+        if Constants.userAuthorized(Constants.Roles.Checker) || Constants.userAuthorized(Constants.Roles.Admin) || Constants.userAuthorized(Constants.Roles.HouseManager) {
+            self.settings["Notifications"]?.append(("Checkoff Requests", "Switch", Constants.defaults.valueForKey(Constants.DefaultsKeys.CheckoffRequestedNotification)!))
+        }
     }
 
     // MARK: Data Source & Delegate Protocol Methods
@@ -155,19 +158,21 @@ class SettingsTableViewController: UITableViewController {
         Constants.defaults.setValue([0,1,2,3,4,5], forKey: Constants.DefaultsKeys.Roles) // [0]
         
         // Notifications
-        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.Notifications)
         Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.DutyReminders)
-        Constants.defaults.setValue("08:00", forKey: Constants.DefaultsKeys.DutyTime)
-        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntMakupPosted)
-        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.CheckoffNotification)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.CheckoffRequestedNotification)
         Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntNotification)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.ScheduleOpenedNotification)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.CheckoffRequestedNotification)
         
-        // Enabled
+        // Overview
         Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.ScheduleEnabled) //false
-        
-        // Other 
         Constants.defaults.setInteger(4, forKey: Constants.DefaultsKeys.Punts) // 0
         Constants.defaults.setInteger(3, forKey: Constants.DefaultsKeys.Duties) // 0
+        
+        // Later
+        Constants.defaults.setValue("08:00", forKey: Constants.DefaultsKeys.DutyTime)
+        Constants.defaults.setBool(true, forKey: Constants.DefaultsKeys.PuntMakupPosted)
+
     }
     
     

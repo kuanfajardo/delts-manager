@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        print(launchOptions)
+        
         registerForPushNotifications(application)
         
         // Override point for customization after application launch.
@@ -34,19 +37,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Constants.DefaultsKeys.Roles : [0,1,2,5], //[0]
             
             // Notifications
-            Constants.DefaultsKeys.Notifications : true,
             Constants.DefaultsKeys.DutyReminders : true,
-            Constants.DefaultsKeys.DutyTime : "08:00",
-            Constants.DefaultsKeys.PuntMakupPosted : true,
-            Constants.DefaultsKeys.CheckoffNotification : true,
+            Constants.DefaultsKeys.CheckoffGrantedNotification : true,
+            Constants.DefaultsKeys.CheckoffRequestedNotification : true,
             Constants.DefaultsKeys.PuntNotification : true,
+            Constants.DefaultsKeys.ScheduleOpenedNotification : true,
             
-            // Enabled
+            // Overview
+            Constants.DefaultsKeys.Punts : 3, //0
+            Constants.DefaultsKeys.Duties : 4, //0
             Constants.DefaultsKeys.ScheduleEnabled : true, //false
             
-            // Other
-            Constants.DefaultsKeys.Punts : 3, //0
-            Constants.DefaultsKeys.Duties : 4 //0
+            // Later
+            Constants.DefaultsKeys.DutyTime : "08:00",
+            Constants.DefaultsKeys.PuntMakupPosted : true,
+            Constants.DefaultsKeys.PuntForgiven : true,
+            Constants.DefaultsKeys.PuntMakeupRequested : true,
+            Constants.DefaultsKeys.PuntPetitioned : true
         ]
 
         standardDefaults.registerDefaults(appDefaults)
@@ -125,7 +132,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print("ailed to register: ", error)
+        print("failed to register: ", error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        print(userInfo)
     }
 
 }
