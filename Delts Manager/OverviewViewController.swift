@@ -92,7 +92,7 @@ class OverviewViewController: UIViewController {
         */
         
         // TODO: lololll
-        let isBigPhone = true//(GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)//true
+        let isBigPhone = (GBDeviceInfo.deviceInfo().deviceVersion.major >= 7)//true
         
         self.dutyImageLeftConstraint.constant = isBigPhone ? 22 : 10
         self.puntImageLeftConstraint.constant = isBigPhone ? 22 : 10
