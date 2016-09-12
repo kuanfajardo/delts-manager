@@ -42,6 +42,16 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         
         return nil
     }
+    var setupTime: NSDate?
+    var setupTimeString: String? {
+        if let date = setupTime {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "EEE, MM/dd, hh:mm"
+            return dateFormatter.stringFromDate(date)
+        }
+        
+        return nil
+    }
     var duties = [String]()
     var times = [String]()
     var delegate: PartyPlannerExtendedDelegate?
@@ -49,11 +59,13 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     var isNameSet = false
     var isStartTimeSet = false
     var isEndTimeSet = false
+    var isSetupTimeSet = false
     var isDutiesSet = false
     var isTimesSet = false
     
     var startTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
     var endTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
+    var setupTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
     
 
     // MARK: Life Cycle
@@ -89,6 +101,16 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.endTimeTableCell.leftLabel.text = "End Time"
         self.endTimeTableCell.datePicker.minuteInterval = 30
         
+        self.setupTimeTableCell.backgroundColor = UIColor.flatBlackColorDark()
+        self.setupTimeTableCell.rightLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.setupTimeTableCell.leftLabel.font = UIFont(name: Constants.Fonts.systemLight, size: CGFloat(17))
+        self.setupTimeTableCell.rightLabelTextColor = UIColor.flatWhiteColor()
+        self.setupTimeTableCell.tintColor = UIColor.flatWhiteColor()
+        self.setupTimeTableCell.leftLabel.textColor = UIColor.flatWhiteColor()
+        self.setupTimeTableCell.leftLabel.text = "Setup Time"
+        self.setupTimeTableCell.datePicker.minuteInterval = 30
+
+        
         reloadData()
     }
     
@@ -99,7 +121,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             ],
             "Times" : [
                 ("Start Time", "\(self.startTimeString ?? "None")"),
-                ("End Time", "\(self.endTimeString ?? "None")")
+                ("End Time", "\(self.endTimeString ?? "None")"),
+                ("Setup Time", "\(self.setupTimeString ?? "None")")
             ],
             "Duties" : [
                 ("Select Duties", "\("\(self.duties.count)" ?? "No") Duties Selected")
@@ -109,7 +132,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             "" : []
         ]
         
-        if isNameSet && isStartTimeSet && isEndTimeSet && isDutiesSet && isTimesSet {
+        if isNameSet && isStartTimeSet && isEndTimeSet && isSetupTimeSet && isDutiesSet && isTimesSet {
             self.navigationItem.rightBarButtonItem!.enabled = true
         }
     }
@@ -136,6 +159,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
                 return self.startTimeTableCell
             case 1:
                 return self.endTimeTableCell
+            case 2:
+                return self.setupTimeTableCell
             default:
                 return UITableViewCell()
             }
