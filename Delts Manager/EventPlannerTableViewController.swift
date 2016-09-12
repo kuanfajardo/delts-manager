@@ -16,7 +16,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         1 : "Times",
         2 : "Duties",
         3 : "Duty Time Slots",
-        4 : ""
+        4 : "Rooms",
+        5 : ""
     ]
     
     var data: [String : [(String, String)]] = [:]
@@ -54,6 +55,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     }
     var duties = [String]()
     var times = [String]()
+    var rooms = [String]()
+    
     var delegate: PartyPlannerExtendedDelegate?
     
     var isNameSet = false
@@ -62,6 +65,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     var isSetupTimeSet = false
     var isDutiesSet = false
     var isTimesSet = false
+    var isRoomsSet = false
     
     var startTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
     var endTimeTableCell = DatePickerCell(style: .Default, reuseIdentifier: nil)
@@ -129,10 +133,12 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             ],
             "Duty Time Slots" : [
                 ("Select Duty Times", "\("\(self.duties.count)" ?? "No") Duties Selected")],
+            "Rooms" : [
+                ("Select Rooms", "\("\(self.rooms.count)" ?? "No") Rooms Selected")],
             "" : []
         ]
         
-        if isNameSet && isStartTimeSet && isEndTimeSet && isSetupTimeSet && isDutiesSet && isTimesSet {
+        if isNameSet && isStartTimeSet && isEndTimeSet && isSetupTimeSet && isDutiesSet && isTimesSet && isRoomsSet {
             self.navigationItem.rightBarButtonItem!.enabled = true
         }
     }
@@ -203,8 +209,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 4 {
-            return CGFloat(400)
+        if section == 5 {
+            return CGFloat(10)
         }
         
         return CGFloat(0)
@@ -251,6 +257,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             editDuties()
         case 3:
             editDutyTimes()
+        case 4:
+            editRooms()
         default:
             return
         }
@@ -319,6 +327,15 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func editRooms() {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier(Constants.Identifiers.Controllers.RoomChooserController) as! EventRoomSelectorViewController
+        
+        controller.delegate = self
+        controller.selectedRooms = self.rooms
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func validateTimes() {
         guard self.startTimeTableCell.date.compare(NSDate()).rawValue == 1 else {
             return
@@ -372,6 +389,13 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     func passDutyTimesBack(value: [String]) {
         self.times = value
         self.isTimesSet = true
+        reloadData()
+        self.tableView.reloadData()
+    }
+    
+    func passRoomsBack(value: [String]) {
+        self.rooms = value
+        self.isRoomsSet = true
         reloadData()
         self.tableView.reloadData()
     }

@@ -14,6 +14,7 @@ import Foundation
     optional func passEndTimeBack(value: NSDate)
     optional func passDutiesBack(value: [String])
     optional func passDutyTimesBack(value: [String])
+    optional func passRoomsBack(value: [String])
 }
 
 protocol PartyPlannerExtendedDelegate {

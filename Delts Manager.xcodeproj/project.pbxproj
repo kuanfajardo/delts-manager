@@ -44,6 +44,8 @@
 		568720A31D29C059001D9AF3 /* PuntsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568720A21D29C059001D9AF3 /* PuntsTableViewController.swift */; };
 		56A5743B1D5AEEA400FDC80C /* PartyDutyTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5743A1D5AEEA400FDC80C /* PartyDutyTableCell.swift */; };
 		56BB62A71D6E0E240042F3E1 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB62A61D6E0E240042F3E1 /* Functions.swift */; };
+		56C4149D1D8652C90077D1F3 /* EventRoomSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */; };
+		56C4149F1D865B6C0077D1F3 /* EventRoomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */; };
 		56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */; };
 		56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CF1D3E7EBE009D6F58 /* Event.swift */; };
 		56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */; };
@@ -120,6 +122,8 @@
 		56A5743A1D5AEEA400FDC80C /* PartyDutyTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyDutyTableCell.swift; sourceTree = "<group>"; };
 		56A5743C1D68C67C00FDC80C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		56BB62A61D6E0E240042F3E1 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRoomSelectorViewController.swift; sourceTree = "<group>"; };
+		56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRoomTableCell.swift; sourceTree = "<group>"; };
 		56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncingViewController.swift; sourceTree = "<group>"; };
 		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlannerTableViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				56F8632A1D3FD14300E5D850 /* EventDutyTimeSelectorTableViewController.swift */,
 				56F8632C1D3FD58F00E5D850 /* EventDutyTimeSelectorCell.swift */,
 				56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */,
+				56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */,
+				56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 				5664BB6E1D6B5488005E9603 /* NewPuntCommentViewController.swift in Sources */,
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
+				56C4149F1D865B6C0077D1F3 /* EventRoomTableCell.swift in Sources */,
 				564C962B1D1E3AA7003EE50F /* Duty.swift in Sources */,
 				565544D11D52578800DF9957 /* PartyInviteTableViewCell.swift in Sources */,
 				565544CF1D4F7DE000DF9957 /* PuntAdminTableViewCell.swift in Sources */,
@@ -606,6 +613,7 @@
 				565544D31D52581500DF9957 /* Invite.swift in Sources */,
 				56F863321D465F8600E5D850 /* PartiesTableViewController.swift in Sources */,
 				5687209F1D29C019001D9AF3 /* Punt.swift in Sources */,
+				56C4149D1D8652C90077D1F3 /* EventRoomSelectorViewController.swift in Sources */,
 				568720991D29B555001D9AF3 /* DutiesTableViewController.swift in Sources */,
 				56BB62A71D6E0E240042F3E1 /* Functions.swift in Sources */,
 				56487A4D1D3D288800825A0F /* DutySelectorTableViewCell.swift in Sources */,

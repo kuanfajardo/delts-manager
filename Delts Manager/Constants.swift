@@ -251,6 +251,7 @@ struct Constants {
             static let NewDutySelectorCell = "NewDutySelector"
             static let PartyDutyCell = "PartyDutyCell"
             static let PuntedPersonCell = "PuntedPersonCell"
+            static let EventRoomCell = "EventRoom"
         }
         
         struct Controllers {
@@ -266,6 +267,7 @@ struct Constants {
             static let DutySelectorController = "DutySelectorController"
             static let NewPuntController = "New Punt Controller"
             static let NewPuntCommentController = "NewPuntCommentController"
+            static let RoomChooserController = "RoomChooserController"
         }
         
         struct Segues {

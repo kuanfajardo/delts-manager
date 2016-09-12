@@ -2106,6 +2106,60 @@
             </objects>
             <point key="canvasLocation" x="1643" y="2334"/>
         </scene>
+        <!--Rooms-->
+        <scene sceneID="DDE-mR-ulu">
+            <objects>
+                <tableViewController storyboardIdentifier="RoomChooserController" title="Rooms" id="jD4-T1-LHQ" customClass="EventRoomSelectorViewController" customModule="Delts_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="McU-5z-myk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Plain" id="UDi-jJ-Rl0">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UDi-jJ-Rl0" id="l0u-nH-9zu">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventRoom" id="Dfe-xZ-lsA" customClass="EventRoomTableCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dfe-xZ-lsA" id="pTq-c3-in7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RoomName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yw7-x5-AFg" userLabel="Room Name">
+                                            <rect key="frame" x="23" y="11.5" width="500" height="20.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="500" id="Tk3-Ps-9Vh"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Yw7-x5-AFg" firstAttribute="leading" secondItem="pTq-c3-in7" secondAttribute="leadingMargin" constant="15" id="Vlg-9n-AEY"/>
+                                        <constraint firstItem="Yw7-x5-AFg" firstAttribute="centerY" secondItem="pTq-c3-in7" secondAttribute="centerY" id="yjh-3q-Qwe"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="roomLabel" destination="Yw7-x5-AFg" id="y9U-Qz-3qU"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jD4-T1-LHQ" id="AGL-fo-Ixu"/>
+                            <outlet property="delegate" destination="jD4-T1-LHQ" id="D8t-A7-eeW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v3U-h4-4mi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="3038"/>
+        </scene>
         <!--Duties-->
         <scene sceneID="ycB-gh-hHi">
             <objects>
