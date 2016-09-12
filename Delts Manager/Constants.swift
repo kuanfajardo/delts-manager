@@ -252,6 +252,7 @@ struct Constants {
             static let PartyDutyCell = "PartyDutyCell"
             static let PuntedPersonCell = "PuntedPersonCell"
             static let EventRoomCell = "EventRoom"
+            static let EventValueCell = "EventValueCell"
         }
         
         struct Controllers {

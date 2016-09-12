@@ -9,7 +9,7 @@
 import UIKit
 import DatePickerCell
 
-class EventPlannerTableViewController: UITableViewController, PartyPlannerDelegate {
+class EventPlannerTableViewController: UITableViewController, UITextFieldDelegate, PartyPlannerDelegate {
     // MARK: Properties
     var sectionTitles = [
         0 : "Info",
@@ -56,6 +56,7 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
     var duties = [String]()
     var times = [String]()
     var rooms = [String]()
+    var capacity = 0
     
     var delegate: PartyPlannerExtendedDelegate?
     
@@ -134,7 +135,8 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             "Duty Time Slots" : [
                 ("Select Duty Times", "\("\(self.duties.count)" ?? "No") Duties Selected")],
             "Rooms" : [
-                ("Select Rooms", "\("\(self.rooms.count)" ?? "No") Rooms Selected")],
+                ("Select Rooms", "\("\(self.rooms.count)" ?? "No") Rooms Selected"),
+                ("Capacity", "\(self.capacity)")],
             "" : []
         ]
         
@@ -170,6 +172,16 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
             default:
                 return UITableViewCell()
             }
+        }
+        
+        guard indexPath != NSIndexPath(forRow: 1, inSection: 4) else {
+            let identifier = Constants.Identifiers.TableViewCells.EventValueCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! EventTextInputTableCell
+            
+            cell.backgroundColor = UIColor.flatBlackColorDark()
+            cell.propertyLabel.text = "Capacity"
+            
+            return cell
         }
         
         let identifier = Constants.Identifiers.TableViewCells.EventPropertyCell
@@ -431,5 +443,13 @@ class EventPlannerTableViewController: UITableViewController, PartyPlannerDelega
         }
 
         return allDuties
+    }
+    
+    // MARK: UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        self.capacity = Int(textField.text!)!
+        print(self.capacity)
+        return true
     }
 }

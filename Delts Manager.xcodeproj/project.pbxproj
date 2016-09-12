@@ -46,6 +46,7 @@
 		56BB62A71D6E0E240042F3E1 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB62A61D6E0E240042F3E1 /* Functions.swift */; };
 		56C4149D1D8652C90077D1F3 /* EventRoomSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */; };
 		56C4149F1D865B6C0077D1F3 /* EventRoomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */; };
+		56C414A11D8740620077D1F3 /* EventTextInputTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C414A01D8740620077D1F3 /* EventTextInputTableCell.swift */; };
 		56C5E4CE1D3E7E99009D6F58 /* BouncingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */; };
 		56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4CF1D3E7EBE009D6F58 /* Event.swift */; };
 		56C5E4D21D3EC7EE009D6F58 /* EventPlannerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */; };
@@ -124,6 +125,7 @@
 		56BB62A61D6E0E240042F3E1 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRoomSelectorViewController.swift; sourceTree = "<group>"; };
 		56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRoomTableCell.swift; sourceTree = "<group>"; };
+		56C414A01D8740620077D1F3 /* EventTextInputTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTextInputTableCell.swift; sourceTree = "<group>"; };
 		56C5E4CD1D3E7E99009D6F58 /* BouncingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncingViewController.swift; sourceTree = "<group>"; };
 		56C5E4CF1D3E7EBE009D6F58 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		56C5E4D11D3EC7EE009D6F58 /* EventPlannerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPlannerTableViewController.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 				56F8632E1D411D4300E5D850 /* CustomEventDutyTableCell.swift */,
 				56C4149C1D8652C90077D1F3 /* EventRoomSelectorViewController.swift */,
 				56C4149E1D865B6C0077D1F3 /* EventRoomTableCell.swift */,
+				56C414A01D8740620077D1F3 /* EventTextInputTableCell.swift */,
 			);
 			name = "Bouncing Tab";
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				560765701D29CEBD008D3337 /* DutyDetailViewController.swift in Sources */,
 				56C5E4D01D3E7EBE009D6F58 /* Event.swift in Sources */,
 				5664BB6E1D6B5488005E9603 /* NewPuntCommentViewController.swift in Sources */,
+				56C414A11D8740620077D1F3 /* EventTextInputTableCell.swift in Sources */,
 				564C96231D1E1753003EE50F /* LoginViewController.swift in Sources */,
 				560765741D2A84C7008D3337 /* ChangePasswordViewController.swift in Sources */,
 				56C4149F1D865B6C0077D1F3 /* EventRoomTableCell.swift in Sources */,
@@ -761,6 +765,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.mit.dtd.Delts-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -778,6 +783,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Delts Manager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.mit.dtd.Delts-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

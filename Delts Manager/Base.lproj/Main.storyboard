@@ -714,6 +714,44 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventValueCell" id="cnP-ai-w7w" customClass="EventTextInputTableCell" customModule="Delts_Manager" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnP-ai-w7w" id="2KL-SA-BpT">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PropertyName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTn-H8-T21">
+                                            <rect key="frame" x="23" y="11" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="7TO-JI-wYt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-IB-bfZ">
+                                            <rect key="frame" x="477" y="11.5" width="100" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="ZYF-0f-cjd"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BTn-H8-T21" firstAttribute="leading" secondItem="2KL-SA-BpT" secondAttribute="leadingMargin" constant="15" id="4yl-ZS-RhZ"/>
+                                        <constraint firstItem="ZmE-IB-bfZ" firstAttribute="centerY" secondItem="2KL-SA-BpT" secondAttribute="centerY" id="C5H-2t-nep"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZmE-IB-bfZ" secondAttribute="trailing" constant="15" id="uzC-cW-PGR"/>
+                                        <constraint firstItem="BTn-H8-T21" firstAttribute="centerY" secondItem="2KL-SA-BpT" secondAttribute="centerY" id="wpG-3t-Ksg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="propertyLabel" destination="BTn-H8-T21" id="Ioq-ZG-SOs"/>
+                                    <outlet property="valueTextField" destination="ZmE-IB-bfZ" id="e1O-Ae-ysL"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="YAP-3I-epL" id="hdg-HZ-9dp"/>
